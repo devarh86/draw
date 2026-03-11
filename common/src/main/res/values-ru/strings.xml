@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <string name="next">Следующий</string>-->
+    <string name="downloading">Загрузка...</string>
+    <string name="exit_title">Вы уверены, что хотите выйти?</string>
+    <string name="discard">Отказаться</string>
+    <string name="exit">Выход</string>
+    <string name="cancel">Отмена</string>
+    <string name="edit_photo">Редактировать фото</string>
+    <string name="try_again">Попробуйте еще раз</string>
+    <string name="select_language">Выберите язык</string>
+    <string name="term_of_use">Срок использования</string>
+    <string name="welcome_to_collagepic">Добро пожаловать в CollagePic</string>
+    <string name="what_do_you_want_to_do_in_this_app">Что вы хотите сделать в этом приложении?</string>
+
+    <string name="unlock_all_features">Разблокировать все функции</string>
+    <string name="start_free_trail">Начать бесплатную пробную версию</string>
+    <string name="start_now">Начать сейчас</string>
+
+    <string name="ratio">Соотношение</string>
+    <string name="add_image">Добавить изображение</string>
+    <string name="select_1_10_photos">Выберите от 1 до 10 фотографий</string>
+    <string name="select_1_9_photos">Выберите от 1 до 9 фотографий</string>
+    <string name="background">Фон</string>
+    <string name="filter">Фильтр</string>
+    <string name="add">Добавить</string>
+    <string name="stitch">Сшить</string>
+    <string name="demandMessage">Вы можете выбрать только %d изображение</string>
+    <string name="requestMessage">Пожалуйста, выберите как минимум %d изображение</string>
+    <string name="requestMessageCollage">Пожалуйста, выберите как минимум %d изображение</string>
+    <string name="noImage">Изображения не найдены</string>
+    <string name="multi_fit">Множественное подгонка</string>
+    <string name="_continue">Продолжить</string>
+    <string name="square">Квадрат</string>
+    <string name="options">Опции\n</string>
+    <string name="stay">Остаться</string>
+
+    <string name="quick_tutorial">Быстрое руководство</string>
+    <string name="shortcut_template">Шаблон</string>
+    <string name="use_this_template">Использовать этот шаблон</string>
+    <string name="tap_to_apply">Нажмите, чтобы применить</string>
+    <string name="great_work">Отличная работа</string>
+    <string name="done">Готово</string>
+    <string name="getting_ready">Подготовка</string>
+    <string name="change_photos_with_just_one_touch">Изменяйте фото одним касанием</string>
+    <string name="show_me">Покажи мне</string>
+    <string name="create_stunning_designs_in_a_single_tap">Создавайте потрясающие дизайны в одно касание</string>
+
+    <string name="privacy_policy">политика конфиденциальности</string>
+    <string name="cancel_subscription">Отменить подписку</string>
+    <string name="subscription_detail">По завершении пробная версия автоматически преобразуется в подписку. Подписка продлевается автоматически. Отмените в любое время в Google Play Store.</string>
+    <string name="continue_text">Продолжать</string>
+    <string name="no_watermark">Нет водяного знака</string>
+    <string name="no_obligatory_ads">Нет обязательной рекламы</string>
+    <string name="smoother_experience">Более плавный опыт</string>
+    <string name="access_to_all_features">Доступ ко всем функциям</string>
+    <string name="pro">ПРО</string>
+    <string name="say_goodbye_to_watermark">Попрощайтесь с водяным знаком</string>
+    <string name="draft">Черновик</string>
+    <string name="language_indo" translatable="false">индонезийский</string>
+    <string name="language_english" translatable="false">Английский</string>
+    <string name="language_bengali" translatable="false">Бенгальский</string>
+    <string name="language_german" translatable="false">немецкий</string>
+    <string name="language_portuguese" translatable="false">португальский</string>
+    <string name="language_arabic" translatable="false">арабский</string>
+    <string name="language_spanish" translatable="false">испанский</string>
+    <string name="language_mandarin" translatable="false">Мандарин</string>
+    <string name="language_russian" translatable="false">Русский</string>
+    <string name="language_urdu" translatable="false">Урду</string>
+    <string name="language_french" translatable="false">Французский</string>
+    <string name="language_hindi" translatable="false">хинди</string>
+    <string name="language_japanese" translatable="false">японский</string>
+    <string name="waring_out_of_memory">Недостаточно памяти. Пожалуйста, удалите изображения, иначе ваша программа выйдет из строя.!!!</string>
+    <string name="hello_blank_fragment">Привет, пустой фрагмент</string>
+    <string name="border_size">Размер границы</string>
+    <string name="border_color">Цвет границы</string>
+    <string name="border_padding">Заполнение</string>
+    <string name="border_radius">Радиус</string>
+    <string name="frame_foreground">Передний план рамки</string>
+    <string name="save">Сохранять</string>
+    <string name="message">сообщение</string>
+    <string name="bg">БГ</string>
+    <string name="text">Текст</string>
+    <string name="write_text">Написать текст</string>
+    <string name="close">Закрывать</string>
+    <string name="replace">Заменять</string>
+    <string name="remove_watermark">Удалить водяной знак</string>
+    <string name="for_24_hours">На 24 часа</string>
+    <string name="for_life_time">На всю жизнь</string>
+    <string name="save_amp_continue"><![CDATA[Save & Continue]]></string>
+    <string name="processing_please_wait">Обработка, пожалуйста, подождите...</string>
+    <string name="share">Делиться</string>
+    <string name="home">Дом</string>
+    <string name="frame_background">КадрФон</string>
+    <string name="opacity">Непрозрачность</string>
+    <string name="blend">Смешивать</string>
+    <string name="_ad">ОБЪЯВЛЕНИЕ</string>
+    <string name="watch_video_ad_to_remove_watermark_for_or_go_premium">Посмотрите видеорекламу, чтобы удалить водяной знак или перейти на премиум-версию.</string>
+    <string name="go_premium">ПОЙДИТЕ ПРЕМИУМ</string>
+    <string name="trending_frames">Трендовые рамки</string>
+    <string name="blur">Размытие</string>
+    <string name="next">Следующий</string>
+    <string name="watch_ad">Посмотреть рекламу</string>
+    <string name="effect_opacity">Непрозрачность эффекта</string>
+    <string name="photo_editor_1">Редактор</string>
+    <string name="blending">Смешивание</string>
+
+    <string name="menu_featured">Рекомендуемые</string>
+    <string name="menu_home">Дом</string>
+    <string name="menu_templates">Шаблоны</string>
+    <string name="menu_styles">Художественные стили</string>
+    <string name="menu_files">Моя работа</string>
+    <string name="ad">ОБЪЯВЛЕНИЕ</string>
+    <string name="single_frames">Одиночные кадры</string>
+    <string name="double_frames">Пара кадров</string>
+    <string name="greetings">Привет</string>
+    <string name="collages">Коллажи</string>
+    <string name="collage">Коллаж</string>
+    <string name="shapes">Формы</string>
+    <string name="pips">Рамки для пипсов</string>
+    <string name="frames">Рамки</string>
+    <string name="frame">Рамка</string>
+    <string name="more">Более</string>
+    <string name="no_result_found">Результат не найден</string>
+    <string name="try_now">Попробуйте сейчас</string>
+    <string name="true_love_frames">РамМе</string>
+    <string name="true_love_frames_camelcase">РамМе</string>
+    <string name="tell_your_friend">РАССКАЖИТЕ СВОЕМУ ДРУГУ</string>
+    <string name="rate_us">Оцените нас</string>
+    <string name="send_mail">Отправить почту</string>
+    <string name="cancel_subscription_description">Вы можете управлять подпиской или отменить ее в любой момент в настройках Google Play.</string>
+    <string name="recommended_apps">Рекомендуемые приложения</string>
+    <string name="remove_ads">Удалить рекламу</string>
+    <string name="editor">Редактор</string>
+    <string name="effect">Эффект</string>
+    <string name="adjust">Регулировать</string>
+    <string name="stickers">Наклейки</string>
+    <string name="type">Тип</string>
+    <string name="font">Шрифт</string>
+    <string name="font_color">Цвет шрифта</string>
+    <string name="bg_color">Цвет фона</string>
+    <string name="opacity_value">Непрозрачность: %1$s %</string>
+    <string name="menu_pro">Про</string>
+    <string name="menu_favourite">Любимый</string>
+    <string name="for_you">Новый</string>
+    <string name="today_special">Вершина</string>
+    <string name="most_used">Тенденции</string>
+    <string name="more_features">Дополнительные возможности</string>
+    <string name="recently_used">Недавний</string>
+    <string name="saved">Сохранено</string>
+    <string name="mark_as_favorite_then_your_photo_nwill_appear_in_favorite_list">Отметьте кадр как избранный, и ваш кадр\nпоявится в списке избранных.</string>
+    <string name="search_by_keyword">Поиск по ключевому слову</string>
+    <string name="more_apps">Рекомендуемые приложения</string>
+    <string name="join_full_experience">Присоединяйтесь к полному опыту</string>
+    <string name="ads_free">Реклама бесплатно</string>
+    <string name="ads_free_experience">Бесплатная реклама</string>
+    <string name="all_premium_assets">Все премиум-активы</string>
+    <string name="each_plan_includes">Каждый план включает в себя:</string>
+    <string name="unlimited_frams_cards"><![CDATA[UNLIMITED FRAMES & CARDS]]></string>
+    <string name="get_100_stickers">ПОЛУЧИТЕ 100+ СТИКЕРОВ</string>
+    <string name="remove_ads_cap">УДАЛИТЬ РЕКЛАМУ</string>
+    <string name="continue_with_ads">Продолжить с рекламой</string>
+    <string name="weekly">Еженедельно</string>
+    <string name="plan">План</string>
+    <string name="yearly">Ежегодно</string>
+    <string name="life_time">Продолжительность жизни</string>
+    <string name="premium_features">Премиум-функции</string>
+    <string name="get_access_to_premium_features">Получите доступ к премиум-функциям</string>
+    <string name="text_effect">Текстовый эффект</string>
+
+    <string name="error_gif">Размер привязки x или y должен быть не менее %1$dpx, а размер файла не должен превышать %2$sM.</string>
+    <string name="album_name_all">Все СМИ</string>
+    <string name="error_type_conflict">Невозможно выбрать изображения и видео одновременно</string>
+    <string name="error_over_count_default">Вы достигли максимально возможного выбора</string>
+    <string name="error_over_original_size">Невозможно выбрать изображения размером более %1$d МБ.</string>
+    <string name="error_no_video_activity">Не найдено ни одного приложения, поддерживающего предварительный просмотр видео.</string>
+    <string name="button_ok">ХОРОШО</string>
+    <string name="error_file_type">Неподдерживаемый тип файла</string>
+    <string name="error_over_original_count">%1$d изображений более %2$d МБ. Оригинал будет снят с флажка</string>
+    <string name="fonts_bg">Шрифты BG</string>
+
+    <plurals name="error_over_count">
+        <item quantity="one">Вы можете выбрать не более %1$d медиафайлов.</item>
+        <item quantity="few">Вы можете выбрать не более %1$d медиафайлов.</item>
+        <item quantity="many">Вы можете выбрать не более %1$d медиафайлов.</item>
+        <item quantity="other">Вы можете выбрать не более %1$d медиафайлов.</item>
+    </plurals>
+    <string name="button_apply">Следующий</string>
+    <string name="button_apply_default">Следующий</string>
+    <string name="image_selection_limit_default">Выберите 2–9 фотографий</string>
+    <string name="image_selection_limit">Выберите 2–9 фотографий (%1$d)</string>
+    <string name="image_selection_limit_1">Выбрать фото</string>
+    <string name="brightness">Яркость</string>
+    <string name="contrast">Контраст</string>
+    <string name="hue">Хюэ</string>
+    <string name="exposure">Контакт</string>
+    <string name="saturation">Насыщенность</string>
+    <string name="tint">оттенок</string>
+    <string name="warmth">Тепло</string>
+    <string name="color">Цвет</string>
+    <string name="sharpen">Заточка</string>
+    <string name="vignette">Виньетка</string>
+    <string name="highlight">Выделять</string>
+    <string name="shadow">Тень</string>
+
+    <string name="facebook_app_id" translatable="false">1116803502100807</string>
+    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
+
+    <string name="layout_text">Макет</string>
+    <string name="button_preview">Предварительный просмотр</string>
+    <string name="button_original">Оригинал</string>
+    <string name="empty_text">Медиа пока нет</string>
+    <string name="button_back">Назад</string>
+    <string name="what_we_offer_in_discount_plan">Что мы предлагаем в плане скидок</string>
+    <string name="original">Оригинал</string>
+    <string name="tick">Галочка</string>
+    <string name="reset">Перезагрузить</string>
+    <string name="filter_opacity">Непрозрачность фильтра</string>
+    <string name="share_text">Откройте для себя новый интересный способ украсить свои фотографии с помощью этого замечательного приложения.</string>
+    <string name="pro_icon">pro_icon</string>
+    <string name="all_inclusive">Все включено</string>
+    <string name="do_you_have_any_thoughts_you_d_like_to_share">Есть ли у вас какие-либо мысли, которыми вы хотели бы поделиться?</string>
+    <string name="submit">Представлять на рассмотрение</string>
+    <string name="filters">Фильтры</string>
+    <string name="no_internet_connect_found_please_try_again">Что-то пошло не так с вашим подключением \n Подключитесь к Интернету.</string>
+    <string name="coming_soon">Вскоре</string>
+    <string name="pro_caps">ПРО</string>
+    <string name="apply_filter_on_all_images">Применить фильтр ко всем изображениям</string>
+    <string name="connect_internet_and_explore_fantastic_art_style">Подключитесь к Интернету и исследуйте фантастический художественный стиль.</string>
+    <string name="solo_frames">Одиночные рамки</string>
+    <string name="multiplex">Мультиплекс</string>
+    <string name="photo_editor">Фоторедактор</string>
+    <string name="image_resolution">Разрешение изображения</string>
+    <string name="good">Хороший</string>
+    <string name="enhanced">Улучшенный</string>
+    <string name="high">Высокий</string>
+    <string name="unlock_this_amazing_frame">Разблокируй эту удивительную рамку</string>
+    <string name="ad_start_in_3_second">Запуск рекламы через 3 секунды</string>
+    <string name="your_opinion_matters_to_us_we_d_ngreatly_appreciate_if_you_can_rate_us">Ваше мнение важно для нас. Мы будем очень признательны, если вы оцените нас.</string>
+    <string name="the_best_we_can_get">Лучшее, что мы можем получить</string>
+    <string name="rotate">Поворот</string>
+    <string name="image_quality">Качество изображения</string>
+    <string name="edit_text">Редактировать текст</string>
+    <string name="edit">Редактировать</string>
+
+    <string name="feedback">Обратная связь</string>
+    <string name="folder_name">Коллаж Рис.</string>
+    <string name="name">Коллаж Рис.</string>
+    <string name="app_name">Коллаж Рис.</string>
+
+
+    <string name="logo_image">изображение логотипа</string>
+    <string name="unlock_all_assets">Разблокировать все активы</string>
+    <string name="smoother_user_experience">Более плавный пользовательский опыт</string>
+    <string name="remove_obligatory_ads">Удалить обязательную рекламу</string>
+    <string name="monthly">Ежемесячно</string>
+
+    <string name="premium">PREMI</string>
+    <string name="basic">DASAR</string>
+
+    <string name="adjustment">Penyesuaian</string>
+    <string name="vertical">Vertikal</string>
+    <string name="horizontal">Horisontal</string>
+
+
+
+    <string name="camera_and_storage">Разрешение на камеру и хранилище</string>
+    <string name="collage_requires_camera_and_storage_access_for_optimal_performance">Для оптимальной работы приложению CollagePic необходим доступ к камере и хранилищу.</string>
+    <string name="allow">Разрешить</string>
+
+
+
+
+
+    <string name="enhance_detail_text">изображения выглядят четче и ярче после улучшения</string>
+    <string name="pro_enhance">Профессиональное улучшение</string>
+    <string name="better_effect_no_ads">Лучший эффект &amp; без рекламы</string>
+
+    <string name="photo_ready_message">Ваше фото готово! Сохраните его сейчас.</string>
+
+    <string name="processing_text_one">Обработка вашего шедевра... 🎨</string>
+    <string name="processing_text_two">Последние штрихи... ✨</string>
+    <string name="processing_text_three">Запуск... 🚀</string>
+
+    <string name="enhance">ИИ Усилитель</string>
+
+    <string name="edit_t_s">Редактировать изображение</string>
+    <string name="edit_d_s">Легко настраивайте свои фотографии.</string>
+    <string name="enhance_t_s">Улучшение с помощью ИИ</string>
+    <string name="enhance_d_s">Интеллектуально улучшайте качество изображения.</string>
+    <string name="blend_t_s">Слияние с ИИ</string>
+    <string name="blend_d_s">Бесшовно объединяйте изображения с помощью ИИ.</string>
+    <string name="collage_t_s">Фотоколлаж</string>
+    <string name="collage_d_s">Соединяйте изображения в потрясающие макеты.</string>
+    <string name="bg_art_t_s">Фоновое искусство</string>
+    <string name="bg_art_d_s">Создавайте впечатляющие фоны с легкостью.</string>
+    <string name="unleash">Развяжите своё творчество!</string>
+    <string name="unlimited_access">Неограниченный доступ</string>
+    <string name="smooth_ux">Более плавный UX</string>
+
+    <string name="enhance_watch_ad">Улучшитель \n Посмотрите рекламу</string>
+
+    <string name="what_do_you_want_for_your_photo">Что вы хотите для своей фотографии?</string>
+    <string name="templates">Шаблоны</string>
+    <string name="choose_an_answer">Выберите ответ</string>
+    <string name="select_2_9_photos">Выберите 2-9 фото</string>
+    <string name="select_1_1_photos">Выберите 1 фото</string>
+    <string name="maximum_images_selected">Выбрано максимальное количество изображений</string>
+    <string name="photo_edit">Редактировать фото</string>
+    <string name="ai_blend">Смешивание ИИ</string>
+    <string name="what_would_you_like_to_create">Что вы хотите создать?</string>
+    <string name="ai_enhance">Улучшение ИИ</string>
+
+    <string name="survery_detail">Ваш ответ поможет нам предоставить подходящий опыт для вас. (Выберите все подходящие ответы)</string>
+
+
+
+
+
+    <string name="define_your_role">Определите свою роль, откройте свои инструменты!</string>
+    <string name="pick_your_journey">Выберите свое творческое путешествие!</string>
+    <string name="help_us_bring_experiences">Ваш ответ поможет нам предложить вам подходящий опыт. (Выберите все подходящие варианты)</string>
+    <string name="where_publish_content">Где вы публикуете свой контент?</string>
+    <string name="how_did_you_find_us">Как вы нас нашли?</string>
+
+    <!-- User Information -->
+    <string name="personal_user">Личный пользователь</string>
+    <string name="student">Студент</string>
+    <string name="content_creator">Создатель контента</string>
+    <string name="design_teacher">Учитель дизайна</string>
+    <string name="business_owner">Владелец бизнеса</string>
+    <string name="employee">Сотрудник</string>
+    <string name="event_planner">Организатор мероприятий</string>
+
+    <!-- Categories -->
+    <string name="frame_templates">Шаблоны рамок</string>
+    <string name="bg_art">Фоновые изображения</string>
+    <string name="profile_pic">Фото профиля</string>
+    <string name="pip_template">Шаблон PIP</string>
+    <string name="other">Другое</string>
+
+    <!-- Content Types -->
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="tiktok">TikTok</string>
+    <string name="pinterest">Pinterest</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="reddit">Reddit</string>
+    <string name="dribbble">Dribbble</string>
+    <string name="behance">Behance</string>
+    <string name="twitter">Twitter</string>
+    <string name="youtube">YouTube</string>
+    <string name="discord">Discord</string>
+
+    <string name="skip">Пропустить</string>
+
+    <string name="button">Кнопка</string>
+    <string name="make_another">Создать еще</string>
+    <string name="share_to">Поделиться в</string>
+    <string name="failed_to_save_image">Не удалось сохранить изображение</string>
+    <string name="error_while_saving_image">Ошибка при сохранении изображения</string>
+    <string name="close_background_apps_try_again">Пожалуйста, закройте некоторые фоновые приложения и попробуйте снова</string>
+    <string name="failed_to_load_frame">Не удалось загрузить рамку, попробуйте снова</string>
+
+    <string name="error_while_applying_blend">Erro ao aplicar a mistura</string>
+    <string name="image_loading_failed">Falha ao carregar a imagem, tente novamente</string>
+    <string name="image_is_corrupt">A imagem está corrompida</string>
+    <string name="image_not_found">Imagem não encontrada</string>
+    <string name="image_saving_failed">Falha ao salvar a imagem</string>
+
+
+    <string name="full_screen_intent">Разрешение на полноэкранный режим отклонено</string>
+
+
+
+    <string name="notification_title_2">🎨 Создание коллажей проще простого!</string>
+    <string name="notification_description_2">Превратите любимые фотографии в потрясающие коллажи с легкостью.</string>
+
+    <string name="don_t_allow">Не разрешать</string>
+    <string name="full_screen_intent_message">Включите <b>Полноэкранный режим</b> для лучшего опыта работы с приложением и мгновенных обновлений.</string>
+    <string name="open">Открыть</string>
+    <string name="get_start">Начать</string>
+    <string name="intro_one">Помогает автоматически редактировать с помощью ИИ без усилий</string>
+    <string name="intro_two">Этот инструмент помогает быстро и идеально создавать фотографии.</string>
+    <string name="intro_two_first">Этот</string>
+    <string name="intro_three">Помогает выразить уникальный стиль и суть вашей фотографии.</string>
+    <string name="background_art">Фоновой арт</string>
+    <string name="use">Использовать</string>
+    <string name="intro_one_heading">ИИ-улучшение изображений</string>
+    <string name="intro_one_sub_heading">Легко улучшайте качество ваших фотографий.</string>
+    <string name="intro_two_heading">Создавайте потрясающие коллажи</string>
+    <string name="intro_two_sub_heading">Комбинируйте несколько фотографий с лёгкостью.</string>
+    <string name="intro_three_heading">Магическое редактирование фото</string>
+    <string name="intro_three_sub_heading">Легко настраивайте ваши фотографии.</string>
+
+    <string name="_4k_templates_quality">Качество шаблонов 4K</string>
+
+    <!-- Russian -->
+    <string name="then">затем</string>
+    <string name="per_week">/неделя</string>
+    <string name="after_trial">после бесплатного 3-дневного пробного периода</string>
+    <string name="subscription_auto_renew">Подписка автоматически продлевается. Отменить в любое время на</string>
+
+
+    <string name="shortcut_ai_blend">Искусственный интеллект Смешивание</string>
+    <string name="shortcut_ai_edit_photo">Редактирование фото с помощью ИИ</string>
+    <string name="uninstall">Удалить</string>
+    <string name="hey_there">Привет!!</string>
+
+    <string name="dont_want_to_uninstall">Не хочу удалять</string>
+    <string name="still_want_to_uninstall">Все равно хочу удалить</string>
+    <string name="problem_when_using_app">Проблема при использовании приложения</string>
+    <string name="you_are_a_great_partner">Вы отличный партнер!</string>
+    <string name="your_feedback_is">Ваш отзыв помогает нам улучшить функцию</string>
+    <string name="why_do_you_uninstall">Почему вы удаляете приложение?</string>
+    <string name="image_creation_feature">Функция создания изображения плохая</string>
+    <string name="generating_process_time">Процесс генерации занимает слишком много времени</string>
+    <string name="not_enough_features">Недостаточно функций, как ожидалось</string>
+    <string name="interface_is_difficult">Интерфейс сложен в использовании</string>
+    <string name="too_many_ads">Слишком много рекламы</string>
+    <string name="i_found_another_app">Я нашел другое приложение, которое более подходит</string>
+    <string name="please_enter_the_reason_why">Пожалуйста, введите причину, почему вы удаляете приложение</string>
+    <string name="type_your_feedback">Введите ваш отзыв здесь</string>
+
+
+    <string name="ai_blend_lacks">Функция коллажа ограничена</string>
+    <string name="gen_again">Попробуйте другой макет</string>
+    <string name="ai_edit_photo">Редактирование ИИ неточно</string>
+    <string name="enhance_again">Редактировать снова</string>
+    <string name="cannot_find_your">Улучшение ИИ недостаточно ясно</string>
+    <string name="zoom_again">Улучшить снова</string>
+
+    <string name="please_share_information">Пожалуйста, поделитесь своим отзывом, чтобы помочь нам улучшить ваш опыт</string>
+
+    <string name="do_you_want_to_discard">Вы хотите отменить</string>
+    <string name="let_s_go">Поехали</string>
+    <string name="blank">Пусто</string>
+    <string name="template">Шаблон</string>
+    <string name="app_name_new">AR Drawing Приложение</string>
+
+    <string name="boarding4_title">Сшивание</string>
+    <string name="boarding4_text_body">Соединяйте разные клипы без швов.</string>
+
+    <string name="upgrade_plan_now">Обновите план сейчас!</string>
+    <string name="enjoy_unlimited_benefits_amp_features">Наслаждайтесь безлимитными преимуществами и функциями</string>
+    <string name="generals">Общее</string>
+    <string name="supports">Поддержка</string>
+    <string name="seamless">Бесшовный</string>
+    <string name="story">История</string>
+    <string name="rewind">Перемотка</string>
+    <string name="paper">Бумага</string>
+    <string name="tape">Лента</string>
+    <string name="plastic">Пластик</string>
+    <string name="film">Пленка</string>
+    <string name="try_for_free">Попробовать бесплатно</string>
+    <string name="share_your_new_look_on_social_media_n_tap_below_to_post_it_on_instagram_n_or_tiktok">Поделитесь своим новым образом в соцсетях\n—нажмите ниже, чтобы опубликовать в Instagram или TikTok.</string>
+    <string name="open_instagram">Открыть Instagram</string>
+    <string name="open_tiktok">Открыть TikTok</string>
+    <string name="open_more">Открыть больше</string>
+
+
+    <string name="title_general_notification_without_fo">Не потеряйте свою незавершённую фотографию!</string>
+    <string name="sub_heading_general_notification_without_fo">Завершите редактирование сейчас</string>
+    <string name="title_general_notification_with_fo">Не пропустите редактирование фото!</string>
+    <string name="sub_heading_general_notification_with_fo">Откройте приложение, чтобы продолжить редактирование фото</string>
+    <string name="all_pro_materials">Все материалы Pro</string>
+    <string name="no_watermark_and_ads">Без водяных знаков и рекламы</string>
+    <string name="cancel_anytime_form_the_app">Отмените в любое время в приложении</string>
+    <string name="weekly_plan">Недельный план</string>
+
+    <string name="yearly_plan">Годовой план</string>
+    <string name="notification_title_1">✨ Поделитесь своим потрясающим каруселем!</string>
+    <string name="notification_description_1">Ваши фото готовы засиять. Опубликуйте свой карусель в Instagram прямо сейчас и вдохновляйте своим стилем! 🌿📸</string>
+
+
+    <string name="_7_day_free_trail">7-дневная бесплатная пробная версия</string>
+    <string name="_3_day_free_trail">3-дневная бесплатная пробная версия</string>
+
+
+    <string name="get_pro">Получить Pro</string>
+    <string name="unlock_this_premium_frame">Разблокировать эту Премиум Рамку</string>
+    <string name="choose_how_you_want_to_unlock_this_frame">Выберите, как вы хотите разблокировать эту рамку</string>
+    <string name="watch_ad_to_unlock">Посмотреть Рекламу для Разблокировки</string>
+    <string name="get_pro_for_unlimited_access">Получите Pro для Неограниченного Доступа</string>
+    <string name="unlock_all_premium_frames_forever">Разблокируйте все премиум рамки навсегда</string>
+
+
+    <string name="upgrade_to_premium">Перейти на Premium</string>
+    <string name="unlock_the_full_experience">Разблокируйте полный опыт</string>
+    <string name="unlock_all_premium_templates">Разблокируйте все премиум-шаблоны</string>
+    <string name="priority_access_to_new_features">Приоритетный доступ к новым функциям</string>
+    <string name="access_all_style_categories">Доступ ко всем категориям стилей</string>
+    <string name="one_tap_carousel_creator">Создатель карусели одним касанием</string>
+    <string name="quality_export_without_watermark">Качественный экспорт без водяного знака</string>
+    <string name="ad_free_creative_experience">Творческий опыт без рекламы</string>
+    <string name="_3_days_free_trial">3 дня бесплатного пробного периода</string>
+    <string name="trusted_by_2m_users_worldwide">Доверяют более 2 млн пользователей по всему миру</string>
+
+    <string name="grab_now">Получить сейчас</string>
+    <string name="unlock_your_premium_experience_today">Разблокируйте премиум-опыт сегодня!</string>
+    <string name="_7_days_free_trial">7 дней бесплатного пробного периода</string>
+    <string name="carousal">Карусель</string>
+
+
+
+    <string name="enjoy_50_off_on_weekly_premium">Наслаждайтесь скидкой 50% на Еженедельный Premium!</string>
+
+
+    <string name="crop">Обрезать</string>
+    <string name="are_you_want_to_discard">Вы хотите удалить?</string>
+    <string name="if_you_go_back_your_work_will_be_discarded">Если вы вернетесь назад, ваша работа будет удалена!</string>
+
+    <string name="apply">Применять</string>
+    <string name="preview">Предварительный просмотр</string>
+    <string name="projects">Проекты</string>
+    <string name="see_all">Посмотреть все</string>
+    <string name="with_ad">С рекламой</string>
+
+    <string name="_3_day_free_trial">3-дневная бесплатная пробная версия</string>
+    <string name="join_crsl_premium">Присоединяйтесь к CRSL Premium</string>
+
+
+    <string name="boarding1_title">Легко рисовать</string>
+    <string name="boarding1_text_body">Положите на телефон лист пергаментной бумаги и нарисуйте на нём что-нибудь.</string>
+    <string name="boarding2_title">Рисуйте камерой</string>
+    <string name="boarding2_text_body">Для удобства рисования держите или ставьте телефон вертикально.</string>
+    <string name="boarding3_title">Нарисуй свою собственную картинку</string>
+    <string name="boarding3_text_body">Рисуйте, обводите контуры и раскрашивайте любые фотографии, которые вам нравятся!</string>
+    <string name="let_s_draw">Давайте рисовать</string>
+    <string name="create_draw_and_have_fun">Творите, рисуйте и получайте удовольствие!</string>
+    <string name="ar_drawing">Рисунок дополненной реальности</string>
+    <string name="import_gallery">Импорт галереи</string>
+    <string name="photo_to_sketch">Фото в эскиз</string>
+    <string name="learn_to_draw">Научитесь рисовать</string>
+    <string name="my_art">Моё искусство</string>
+
+    <string name="s_home_h1"><![CDATA[Learning &]]></string>
+    <string name="s_home_h1_sub">Упражняться</string>
+    <string name="s_home_h1_detail">Простые уроки для улучшения навыков рисования.</string>
+
+    <string name="s_home_h2"><![CDATA[Drawing &]]></string>
+    <string name="s_home_h2_sub">Креативность</string>
+    <string name="s_home_h2_detail">Увлекательные пошаговые уроки рисования</string>
+
+    <string name="s_home_h3"><![CDATA[Categories &]]></string>
+    <string name="s_home_h3_sub">Темы</string>
+    <string name="s_home_h3_detail">Изучите рисунки по темам и стилям.</string>
+
+    <string name="s_home_h4">Фото к</string>
+    <string name="s_home_h4_sub">Эскиз</string>
+    <string name="s_home_h4_detail">Преобразуйте изображения в художественные карандашные эскизы.</string>
+
+    <string name="start">Начинать</string>
+    <string name="settings">Настройки</string>
+    <string name="unlock_premium_features">Разблокируйте премиум-функции</string>
+    <string name="terms_and_conditions">Условия и положения</string>
+
+    <string name="watch_an_ad">Посмотреть рекламу</string>
+    <string name="pro_face_swap">Профессиональная замена лица</string>
+    <string name="swap">Менять</string>
+    <string name="upload_image_template">Загрузить шаблон изображения</string>
+    <string name="upload_or_take_your_image_please_clear_face">Загрузите или сделайте снимок. Пожалуйста, убедитесь, что лицо четкое.</string>
+    <string name="upload_your_face">Загрузите своё лицо</string>
+    <string name="create">Создавать</string>
+    <string name="saving_your_image">Сохранение изображения</string>
+    <string name="processing_your_masterpiece">Обработка вашего шедевра… 🎨</string>
+    <string name="face_swap">Замена лица</string>
+    <string name="edit_more">Редактировать больше</string>
+    <string name="please_crop">Пожалуйста, обрежьте изображение, сохранив то же соотношение сторон, для достижения лучших результатов.</string>
+    <string name="stay_with_us">Оставайтесь с нами, ваше приключение вот-вот начнётся!</string>
+    <string name="got_it">Понятно</string>
+
+    <string name="pencil_sketch">Эскиз карандашом</string>
+    <string name="sketch_now">Нарисуй сейчас</string>
+    <string name="upgrade_to_pro">Перейти на Pro-версию</string>
+    <string name="enjoy_all_drawings">Наслаждайтесь всеми рисунками, инструментами и развлечениями.</string>
+    <string name="sketch_loading">Набросок вашей фотографии — линии оживают…</string>
+    <string name="sketch_ready">Ваш эскиз обретает форму!</string>
+    <string name="memory_sketching">Превратите свои воспоминания в рисунки карандашом…</string>
+    <string name="sketch_details_fit">Линии и тени встают на свои места!</string>
+    <string name="sketch_progress">Мастер-класс по созданию скетчей в процессе…</string>
+    <string name="sketch_placing_details">Прорисовывая каждую мельчайшую деталь…</string>
+    <string name="sketch_looking_timeless">Классический образ — теперь в виде эскиза!</string>
+    <string name="sketch_you_brought_it_back">Ух ты! Этот эскиз выглядит живым!</string>
+    <string name="sketch_healing_memories">Запечатлевая воспоминания с заботой…</string>
+    <string name="sketch_almost">Почти готово — остались последние мазки!</string>
+    <string name="sketch_damage_detected">Коррекция кромок — уточнение линий!</string>
+    <string name="sketch_transforming">Превращение фотографии в рисунок, выполненный от руки…</string>
+    <string name="sketch_uploading">Отправка вашей фотографии художнику-криминалисту…</string>
+    <string name="sketch_final_touch">Финальная штриховка — это требует мастерства!</string>
+    <string name="sketch_blast">Этот скетч производит совершенно другое впечатление!</string>
+    <string name="sketch_new_life">Включаем новые скетчи!</string>
+    <string name="sketch_details_locked">Подробности скрыты — рисую как профессионал!</string>
+    <string name="sketch_wait">Подождите... начинается волшебство карандаша!</string>
+    <string name="sketch_alignment">Идеальное выравнивание мазков…</string>
+    <string name="sketch_memory_repairing">Ваш эскиз дорабатывается…</string>
+    <string name="sketch_about_to_shine">Приготовьтесь — ваш эскиз засияет!</string>
+    <string name="sketch_epic">Процесс создания эпического эскиза в разгаре!</string>
+    <string name="sketch_ready_to_reveal">Практически готово — скоро покажем эскиз!</string>
+    <string name="sketch_restoring_clarity">Усиление линий и контраста…</string>
+    <string name="sketch_scratches_fading">Шероховатости сглаживаются…</string>
+    <string name="sketch_time_travel_mode">Режим эскизирования: ВКЛ. ✏️</string>
+    <string name="sketch_magic_at_work">Волшебные скетчи в действии — следите за обновлениями!</string>
+    <string name="save_colored_text"><![CDATA[ All done! <font color="#FF1BA6"><b>Save</b></font> your photo now.]]></string>
+    <string name="cancel_underline"><u>Cancel</u></string>
+    <string name="do_you_like_our_app">Вам нравится наше приложение?</string>
+    <string name="sketch">Эскиз</string>
+    <string name="trace">След</string>
+    <string name="drawing_now">Рисование сейчас</string>
+    <string name="how_to_draw">Как рисовать</string>
+    <string name="picture">Картина</string>
+    <string name="camera">Камера</string>
+    <string name="stop_drawing">Перестать рисовать?</string>
+    <string name="you_want_to_stop_drawing">Вы хотите перестать рисовать?</string>
+    <string name="yes_discard">Нет, не надо.</string>
+    <string name="yes_stop_it"><u>Yes, Stop it</u></string>
+    <string name="with_camera">Продолжить с камерой</string>
+    <string name="with_cam">С камерой</string>
+    <string name="without_camera">Продолжайте без камеры.</string>
+    <string name="without_cam">Без камеры</string>
+
+    <string name="unlock_the_magic">Откройте Pro-креативность 🌟</string>
+    <string name="unlimited_drawing">Уберите рекламу и наслаждайтесь безлимитными творческими инструментами</string>
+    <string name="standard">Стандарт</string>
+    <string name="unlock_all_sketch">Разблокировать все эскизы</string>
+    <string name="draw_from_gallery">Рисовать из галереи</string>
+    <string name="offline_drawing_mode">Офлайн-режим рисования</string>
+    <string name="photo_to_sketch_convertor">Конвертер фото в эскиз</string>
+    <string name="draw_learning_lessons">Уроки обучения рисованию</string>
+    <string name="share_with_friends">Поделиться с друзьями</string>
+    <string name="my_drawing">Мои рисунки</string>
+    <string name="there_s_no_any_saved_data">Нет сохранённых данных!</string>
+    <string name="go_to_drawings">Перейти к рисункам</string>
+
+</resources>

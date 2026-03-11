@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="downloading">Herunterladen...</string>
+    <string name="exit_title">Sind Sie sicher, dass Sie den Vorgang beenden möchten?</string>
+    <string name="discard">Verwerfen</string>
+    <string name="exit">Ausfahrt</string>
+    <string name="cancel">Stornieren</string>
+    <string name="edit_photo">Foto bearbeiten</string>
+    <string name="try_again">Versuchen Sie es erneut</string>
+    <string name="select_language">Sprache auswählen</string>
+    <string name="term_of_use">Nutzungsdauer</string>
+    <string name="privacy_policy">Datenschutzrichtlinie</string>
+    <string name="welcome_to_collagepic">Willkommen bei CollagePic</string>
+    <string name="what_do_you_want_to_do_in_this_app">Was möchten Sie in dieser App tun?</string>
+
+    <string name="unlock_all_features">Alle Funktionen freischalten</string>
+    <string name="start_free_trail">Kostenlose Testversion starten</string>
+    <string name="start_now">Jetzt starten</string>
+
+
+    <string name="quick_tutorial">Schnelles Tutorial</string>
+    <string name="shortcut_template">Vorlage</string>
+    <string name="use_this_template">Diese Vorlage verwenden</string>
+    <string name="tap_to_apply">Zum Anwenden tippen</string>
+    <string name="great_work">Großartige Arbeit</string>
+    <string name="getting_ready">Wird vorbereitet</string>
+    <string name="change_photos_with_just_one_touch">Fotos mit nur einer Berührung ändern</string>
+    <string name="show_me">Zeig mir</string>
+    <string name="create_stunning_designs_in_a_single_tap">Erstellen Sie beeindruckende Designs mit nur einem Tippen</string>
+
+
+    <string name="cancel_subscription">Abonnement kündigen</string>
+    <string name="subscription_detail">Nach Abschluss wird die Testversion automatisch in ein Abonnement umgewandelt. Das Abonnement verlängert sich automatisch. Jederzeit im Google Play Store kündigen.</string>
+    <string name="continue_text">Weitermachen</string>
+    <string name="no_watermark">Kein Wasserzeichen</string>
+    <string name="no_obligatory_ads">Keine obligatorischen Anzeigen</string>
+    <string name="smoother_experience">Reibungsloseres Erlebnis</string>
+    <string name="access_to_all_features">Zugriff auf alle Funktionen</string>
+    <string name="pro">PRO</string>
+    <string name="say_goodbye_to_watermark">Verabschieden Sie sich vom Wasserzeichen</string>
+    <string name="draft">Entwurf</string>
+    <string name="maximum_images_selected">Maximale Anzahl von Bildern ausgewählt</string>
+
+    <string name="language_indo" translatable="false">Indonesisch</string>
+    <string name="language_english" translatable="false">Englisch</string>
+    <string name="language_bengali" translatable="false">Bengali</string>
+    <string name="language_german" translatable="false">Deutsch</string>
+    <string name="language_portuguese" translatable="false">Portugiesisch</string>
+    <string name="language_arabic" translatable="false">Arabisch</string>
+    <string name="language_spanish" translatable="false">Spanisch</string>
+    <string name="language_mandarin" translatable="false">Mandarin</string>
+    <string name="language_russian" translatable="false">Russisch</string>
+    <string name="language_urdu" translatable="false">Urdu</string>
+    <string name="language_french" translatable="false">Französisch</string>
+    <string name="language_hindi" translatable="false">Hindi</string>
+    <string name="language_japanese" translatable="false">japanisch</string>
+    <string name="waring_out_of_memory">Nicht genügend Speicher. Bitte entfernen Sie Bilder, sonst stürzt Ihr Programm ab.!!!</string>
+    <string name="hello_blank_fragment">Hallo leeres Fragment</string>
+    <string name="border_size">Randgröße</string>
+    <string name="border_color">Randfarbe</string>
+    <string name="border_padding">Polsterung</string>
+    <string name="border_radius">Radius</string>
+    <string name="frame_foreground">Rahmenvordergrund</string>
+    <string name="save">Speichern</string>
+    <string name="message">Nachricht</string>
+    <string name="bg">BG</string>
+    <string name="text">Text</string>
+    <string name="write_text">Text schreiben</string>
+    <string name="close">Schließen</string>
+    <string name="replace">Ersetzen</string>
+    <string name="remove_watermark">Wasserzeichen entfernen</string>
+    <string name="for_24_hours">Für 24 Stunden</string>
+    <string name="for_life_time">Ein Leben lang</string>
+    <string name="save_amp_continue"><![CDATA[Save & Continue]]></string>
+    <string name="processing_please_wait">Bearbeitung, bitte warten...</string>
+    <string name="share">Aktie</string>
+    <string name="home">Heim</string>
+    <string name="frame_background">FrameBackground</string>
+    <string name="opacity">Opazität</string>
+    <string name="blend">Mischung</string>
+    <string name="_ad">ANZEIGE</string>
+    <string name="watch_video_ad_to_remove_watermark_for_or_go_premium">Sehen Sie sich die Videoanzeige zum Entfernen des Wasserzeichens an oder wechseln Sie zu Premium.</string>
+    <string name="go_premium">WERDEN SIE PREMIUM</string>
+    <string name="trending_frames">Trendige Rahmen</string>
+    <string name="blur">Verwischen</string>
+    <string name="next">Nächste</string>
+    <string name="watch_ad">Anzeige ansehen</string>
+    <string name="effect_opacity">Effekt-Deckkraft</string>
+    <string name="photo_editor_1">Editor</string>
+    <string name="blending">Mischen</string>
+
+
+    <!--    <string name="boarding3_title">Bearbeiten wie nie zuvor</string>-->
+    <!--    <string name="boarding3_text_body">Schnelle und einfache Fotobearbeitung mit Effekten</string>-->
+
+
+
+
+
+    <string name="menu_featured">Hervorgehoben</string>
+    <string name="menu_home">Heim</string>
+    <string name="menu_templates">Vorlagen</string>
+    <string name="menu_styles">Kunststile</string>
+    <string name="menu_files">Meine Arbeit</string>
+    <string name="ad">ANZEIGE</string>
+    <string name="single_frames">Einzelbilder</string>
+    <string name="double_frames">Paarrahmen</string>
+    <string name="greetings">Grüße</string>
+    <string name="collages">Collagen</string>
+    <string name="collage">Collage</string>
+    <string name="shapes">Formen</string>
+    <string name="pips">Pips-Rahmen</string>
+    <string name="frames">Rahmen</string>
+    <string name="frame">Rahmen</string>
+    <string name="more">Mehr</string>
+    <string name="no_result_found">Kein Ergebnis gefunden</string>
+    <string name="try_now">Versuchen Sie es jetzt</string>
+    <string name="true_love_frames">FramMe</string>
+    <string name="true_love_frames_camelcase">FramMe</string>
+    <string name="tell_your_friend">SAGEN SIE ES IHREM FREUND</string>
+    <string name="rate_us">Bewerten Sie uns</string>
+    <string name="send_mail">Mail senden</string>
+    <string name="cancel_subscription_description">Sie können das Abonnement jederzeit in den Einstellungen von Google Play verwalten oder kündigen.</string>
+    <string name="recommended_apps">Empfohlene Apps</string>
+    <string name="remove_ads">Werbung entfernen</string>
+    <string name="editor">Editor</string>
+    <string name="effect">Wirkung</string>
+    <string name="adjust">Anpassen</string>
+    <string name="stickers">Aufkleber</string>
+    <string name="type">Typ</string>
+    <string name="font">Schriftart</string>
+    <string name="font_color">Schriftfarbe</string>
+    <string name="bg_color">BG-Farbe</string>
+    <string name="opacity_value">Deckkraft: %1$s %</string>
+    <string name="menu_pro">Profi</string>
+    <string name="menu_favourite">Favorit</string>
+    <string name="for_you">Neu</string>
+    <string name="today_special">Spitze</string>
+    <string name="most_used">Im Trend</string>
+    <string name="more_features">Weitere Funktionen</string>
+    <string name="recently_used">Jüngste</string>
+    <string name="saved">Gespeichert</string>
+    <string name="mark_as_favorite_then_your_photo_nwill_appear_in_favorite_list">Markieren Sie den Rahmen als Favorit, dann wird Ihr Rahmen\nin der Favoritenliste angezeigt</string>
+    <string name="search_by_keyword">Suche nach Schlüsselwort</string>
+    <string name="more_apps">Empfohlene Apps</string>
+    <string name="join_full_experience">Treten Sie der Full Experience bei</string>
+    <string name="ads_free">Werbefrei</string>
+    <string name="ads_free_experience">Werbefreie Erfahrung</string>
+    <string name="all_premium_assets">Alle Premium-Assets</string>
+    <string name="each_plan_includes">Jeder Plan beinhaltet:</string>
+    <string name="unlimited_frams_cards"><![CDATA[UNLIMITED FRAMES & CARDS]]></string>
+    <string name="get_100_stickers">ERHALTEN SIE ÜBER 100 AUFKLEBER</string>
+    <string name="remove_ads_cap">WERBUNG ENTFERNEN</string>
+    <string name="continue_with_ads">Fahren Sie mit Anzeigen fort</string>
+    <string name="weekly">Wöchentlich</string>
+    <string name="plan">Planen</string>
+    <string name="yearly">Jährlich</string>
+    <string name="life_time">Lebensdauer</string>
+    <string name="premium_features">Premium-Funktionen</string>
+    <string name="get_access_to_premium_features">Erhalten Sie Zugriff auf Premium-Funktionen</string>
+    <string name="text_effect">Texteffekt</string>
+
+    <string name="error_gif">Die x- oder y-gebundene Größe sollte mindestens %1$dpx betragen und die Dateigröße sollte nicht mehr als %2$sM betragen</string>
+    <string name="album_name_all">Alle Medien</string>
+    <string name="error_type_conflict">Bilder und Videos können nicht gleichzeitig ausgewählt werden</string>
+    <string name="error_over_count_default">Sie haben die maximale Auswahl erreicht</string>
+    <string name="error_over_original_size">Es können keine Bilder ausgewählt werden, die größer als %1$d MB sind</string>
+    <string name="error_no_video_activity">Es wurde keine App gefunden, die die Videovorschau unterstützt</string>
+    <string name="button_ok">OK</string>
+    <string name="error_file_type">Nicht unterstützter Dateityp</string>
+    <string name="error_over_original_count">%1$d Bilder über %2$d MB. Das Original wird deaktiviert</string>
+    <string name="fonts_bg">Schriftarten BG</string>
+
+    <plurals name="error_over_count">
+        <item quantity="one">Sie können nur bis zu %1$d Mediendateien auswählen</item>
+        <item quantity="few">Sie können nur bis zu %1$d Mediendateien auswählen</item>
+        <item quantity="many">Sie können nur bis zu %1$d Mediendateien auswählen</item>
+        <item quantity="other">Sie können nur bis zu %1$d Mediendateien auswählen</item>
+    </plurals>
+    <string name="button_apply">Nächste</string>
+    <string name="button_apply_default">Nächste</string>
+    <string name="image_selection_limit_default">Wählen Sie 2–9 Fotos</string>
+    <string name="image_selection_limit">Wählen Sie 2–9 Fotos aus(%1$d)</string>
+    <string name="image_selection_limit_1">Wählen Sie Foto</string>
+    <string name="brightness">Helligkeit</string>
+    <string name="contrast">Kontrast</string>
+    <string name="hue">Farbton</string>
+    <string name="exposure">Belichtung</string>
+    <string name="saturation">Sättigung</string>
+    <string name="tint">Farbton</string>
+    <string name="warmth">Wärme</string>
+    <string name="color">Farbe</string>
+    <string name="sharpen">Schärfen</string>
+    <string name="vignette">Vignette</string>
+    <string name="highlight">Hervorheben</string>
+    <string name="shadow">Schatten</string>
+
+    <string name="facebook_app_id" translatable="false">1116803502100807</string>
+    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
+
+    <string name="layout_text">Layout</string>
+    <string name="button_preview">Vorschau</string>
+    <string name="button_original">Original</string>
+    <string name="empty_text">Noch keine Medien</string>
+    <string name="button_back">Zurück</string>
+    <string name="what_we_offer_in_discount_plan">Was wir im Rabattplan anbieten</string>
+    <string name="original">Original</string>
+    <string name="tick">Tick</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="filter_opacity">Filterdeckkraft</string>
+    <string name="share_text">Entdecken Sie mit dieser tollen App eine unterhaltsame neue Möglichkeit, Ihre Fotos zu verschönern.</string>
+    <string name="pro_icon">pro_icon</string>
+    <string name="all_inclusive">Alles inklusive</string>
+    <string name="do_you_have_any_thoughts_you_d_like_to_share">Haben Sie irgendwelche Gedanken, die Sie mitteilen möchten?</string>
+    <string name="submit">Einreichen</string>
+    <string name="filters">Filter</string>
+    <string name="no_internet_connect_found_please_try_again">Bei Ihrer Verbindung ist ein Fehler aufgetreten. \n Stellen Sie eine Verbindung zum Internet her.</string>
+    <string name="coming_soon">Demnächst verfügbar</string>
+    <string name="pro_caps">PRO</string>
+    <string name="apply_filter_on_all_images">Filter auf alle Bilder anwenden</string>
+    <string name="connect_internet_and_explore_fantastic_art_style">Verbinden Sie das Internet und entdecken Sie den fantastischen Kunststil.</string>
+    <string name="solo_frames">Einzelbilder</string>
+    <string name="multiplex">Multiplex</string>
+    <string name="photo_editor">Fotoeditor</string>
+    <string name="image_resolution">Bildauflösung</string>
+    <string name="good">Gut</string>
+    <string name="enhanced">Erweitert</string>
+    <string name="high">Hoch</string>
+    <string name="unlock_this_amazing_frame">Schalte diesen erstaunlichen Rahmen frei</string>
+    <string name="ad_start_in_3_second">Anzeigenstart in 3 Sekunden</string>
+    <string name="your_opinion_matters_to_us_we_d_ngreatly_appreciate_if_you_can_rate_us">Ihre Meinung ist uns wichtig. Wir würden uns sehr freuen, wenn Sie uns bewerten könnten.</string>
+    <string name="the_best_we_can_get">Das Beste, was wir bekommen können</string>
+    <string name="rotate">Drehen</string>
+    <string name="image_quality">Bildqualität</string>
+    <string name="edit_text">Text bearbeiten</string>
+    <string name="edit">Bearbeiten</string>
+
+    <string name="feedback">Rückmeldung</string>
+    <string name="folder_name">Collagenbild</string>
+    <string name="name">Collagenbild</string>
+    <string name="app_name">Collagenbild</string>
+    <!--    <string name="next">Nächste</string>-->
+
+
+
+    <string name="logo_image">Logo-Bild</string>
+    <string name="unlock_all_assets">Alle Inhalte Freischalten</string>
+    <string name="smoother_user_experience">Reibungslosere Benutzererfahrung</string>
+    <string name="remove_obligatory_ads">Pflichtanzeigen Entfernen</string>
+    <string name="monthly">Monatlich</string>
+
+
+
+    <string name="premium">PRÄMIE</string>
+    <string name="basic">BASIC</string>
+
+
+    <string name="select_2_9_photos">Wähle 2–9 Fotos aus</string>
+    <string name="select_1_1_photos">Wähle 1 Foto aus</string>
+
+
+
+    <string name="camera_and_storage">Kamera- und Speicherberechtigung</string>
+    <string name="collage_requires_camera_and_storage_access_for_optimal_performance">CollagePic benötigt Zugriff auf Kamera und Speicher für optimale Leistung.</string>
+    <string name="allow">Erlauben</string>
+    <string name="enhance">KI-Enhancer</string>
+
+    <string name="enhance_detail_text">Bilder sehen nach der Verbesserung schärfer und lebendiger aus</string>
+    <string name="pro_enhance">Pro Verbessern</string>
+    <string name="better_effect_no_ads">Bessere Effekte &amp; keine Werbung</string>
+
+    <string name="photo_ready_message">Ihr Foto ist fertig! Speichern Sie es jetzt.</string>
+
+    <string name="processing_text_one">Verarbeite dein Meisterwerk... 🎨</string>
+    <string name="processing_text_two">Letzte Feinheiten... ✨</string>
+    <string name="processing_text_three">Starte... 🚀</string>
+
+    <string name="edit_t_s">Bild bearbeiten</string>
+    <string name="edit_d_s">Passen Sie Ihre Fotos mühelos an.</string>
+    <string name="enhance_t_s">KI-Verbesserung</string>
+    <string name="enhance_d_s">Verbessern Sie die Bildqualität intelligent.</string>
+    <string name="blend_t_s">KI-Mischung</string>
+    <string name="blend_d_s">Bilder nahtlos mit KI zusammenfügen.</string>
+    <string name="collage_t_s">Foto-Collage</string>
+    <string name="collage_d_s">Kombinieren Sie Bilder zu atemberaubenden Layouts.</string>
+    <string name="bg_art_t_s">Hintergrundkunst</string>
+    <string name="bg_art_d_s">Erstellen Sie mühelos beeindruckende Hintergründe.</string>
+    <string name="unleash">Entfesseln Sie Ihre Kreativität!</string>
+    <string name="unlimited_access">Unbegrenzter Zugriff</string>
+    <string name="smooth_ux">Reibungslosere Benutzererfahrung</string>
+
+
+    <string name="enhance_watch_ad">Verbesserer \n Sieh dir eine Werbung an</string>
+
+    <string name="what_do_you_want_for_your_photo">Was möchten Sie für Ihr Foto?</string>
+    <string name="templates">Vorlagen</string>
+    <string name="choose_an_answer">Wählen Sie eine Antwort</string>
+    <string name="photo_edit">Foto bearbeiten</string>
+    <string name="ai_blend">KI-Mischung</string>
+    <string name="what_would_you_like_to_create">Was möchten Sie erstellen?</string>
+    <string name="ai_enhance">KI verbessern</string>
+
+    <string name="survery_detail">Ihre Antwort hilft uns, die passenden Erfahrungen für Sie bereitzustellen. (Wählen Sie alle passenden Antworten aus)</string>
+
+
+    <string name="define_your_role">Bestimmen Sie Ihre Rolle, entdecken Sie Ihre Werkzeuge!</string>
+    <string name="pick_your_journey">Wählen Sie Ihre kreative Reise!</string>
+    <string name="help_us_bring_experiences">Ihre Antwort hilft uns, die passenden Erlebnisse für Sie bereitzustellen. (Wählen Sie alle zutreffenden Antworten)</string>
+    <string name="where_publish_content">Wo veröffentlichen Sie Ihre Inhalte?</string>
+    <string name="how_did_you_find_us">Wie haben Sie uns gefunden?</string>
+
+    <!-- User Information -->
+    <string name="personal_user">Privatnutzer</string>
+    <string name="student">Student</string>
+    <string name="content_creator">Content Creator</string>
+    <string name="design_teacher">Design-Lehrer</string>
+    <string name="business_owner">Geschäftsinhaber</string>
+    <string name="employee">Angestellter</string>
+    <string name="event_planner">Eventplaner</string>
+
+    <!-- Categories -->
+    <string name="frame_templates">Rahmenschablonen</string>
+    <string name="bg_art">Hintergrundkunst</string>
+    <string name="profile_pic">Profilbild</string>
+    <string name="pip_template">PIP-Vorlage</string>
+    <string name="other">Andere</string>
+
+    <!-- Content Types -->
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="tiktok">TikTok</string>
+    <string name="pinterest">Pinterest</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="reddit">Reddit</string>
+    <string name="dribbble">Dribbble</string>
+    <string name="behance">Behance</string>
+    <string name="twitter">Twitter</string>
+    <string name="youtube">YouTube</string>
+    <string name="discord">Discord</string>
+
+    <string name="skip">Überspringen</string>
+
+    <string name="button">Taste</string>
+    <string name="make_another">Noch eine machen</string>
+    <string name="share_to">Teilen mit</string>
+    <string name="failed_to_save_image">Bild konnte nicht gespeichert werden</string>
+    <string name="error_while_saving_image">Fehler beim Speichern des Bildes</string>
+    <string name="close_background_apps_try_again">Bitte schließen Sie einige Hintergrund-Apps und versuchen Sie es erneut</string>
+    <string name="failed_to_load_frame">Rahmen konnte nicht geladen werden, bitte versuchen Sie es erneut</string>
+
+    <string name="error_while_applying_blend">Fehler beim Anwenden der Mischung</string>
+    <string name="image_loading_failed">Bild konnte nicht geladen werden, bitte versuchen Sie es erneut</string>
+    <string name="image_is_corrupt">Bild ist beschädigt</string>
+    <string name="image_not_found">Bild nicht gefunden</string>
+    <string name="image_saving_failed">Bild konnte nicht gespeichert werden</string>
+
+    <string name="notification_title_2">🎨 Collagen leicht gemacht!</string>
+    <string name="notification_description_2">Verwandeln Sie Ihre Lieblingsfotos mühelos in atemberaubende Collagen.</string>
+
+    <string name="don_t_allow">Nicht zulassen</string>
+
+    <string name="full_screen_intent">Vollbild-Berechtigung verweigert</string>
+    <string name="full_screen_intent_message">Aktivieren Sie <b>Vollbildmodus</b>, um die beste App-Erfahrung und sofortige Updates zu erhalten.</string>
+    <string name="open">Öffnen</string>
+    <string name="get_start">Loslegen</string>
+    <string name="intro_one">Hilft beim automatischen Bearbeiten mit KI mühelos</string>
+    <string name="intro_two">Dieses Tool hilft Ihnen, schnell und perfekt Fotos zu erstellen.</string>
+    <string name="intro_two_first">The</string>
+    <string name="intro_three">Hilft Ihnen, den einzigartigen Stil und die Essenz Ihres Fotos auszudrücken.</string>
+    <string name="background_art">Hintergrundkunst</string>
+    <string name="use">Verwenden</string>
+    <string name="intro_one_heading">KI-Bildverbesserer</string>
+    <string name="intro_one_sub_heading">Verbessern Sie die Qualität Ihrer Fotos mühelos.</string>
+    <string name="intro_two_heading">Erstellen Sie beeindruckende Collagen</string>
+    <string name="intro_two_sub_heading">Kombinieren Sie mühelos mehrere Fotos.</string>
+    <string name="intro_three_heading">Magische Fotobearbeitung</string>
+    <string name="intro_three_sub_heading">Passen Sie Ihre Fotos mühelos an.</string>
+    <string name="_4k_templates_quality">4K-Vorlagenqualität</string>
+
+
+    <!-- German -->
+    <string name="then">dann</string>
+    <string name="per_week">/Woche</string>
+    <string name="after_trial">nach kostenloser 3-tägiger Testphase</string>
+    <string name="subscription_auto_renew">Abonnement verlängert sich automatisch. Jederzeit kündbar unter</string>
+
+
+
+    <string name="shortcut_ai_blend">KI-Mischung</string>
+    <string name="shortcut_ai_edit_photo">KI-Foto bearbeiten</string>
+    <string name="uninstall">Deinstallieren</string>
+    <string name="hey_there">Hallo!!</string>
+
+
+    <string name="dont_want_to_uninstall">Möchte nicht deinstallieren</string>
+    <string name="still_want_to_uninstall">Möchte trotzdem deinstallieren</string>
+    <string name="problem_when_using_app">Problem bei der Nutzung der App</string>
+    <string name="you_are_a_great_partner">Sie sind ein großartiger Partner!</string>
+    <string name="your_feedback_is">Ihr Feedback hilft uns, die Funktion zu verbessern</string>
+    <string name="why_do_you_uninstall">Warum deinstallieren Sie?</string>
+    <string name="image_creation_feature">Bild-Erstellungsfunktion ist schlecht</string>
+    <string name="generating_process_time">Generierungsprozess dauert sehr lange</string>
+    <string name="not_enough_features">Nicht genügend Funktionen wie erwartet</string>
+    <string name="interface_is_difficult">Benutzeroberfläche ist schwer zu bedienen</string>
+    <string name="too_many_ads">Zu viele Anzeigen</string>
+    <string name="i_found_another_app">Ich habe eine passendere App gefunden</string>
+    <string name="please_enter_the_reason_why">Bitte geben Sie den Grund für die Deinstallation ein</string>
+    <string name="type_your_feedback">Geben Sie hier Ihr Feedback ein</string>
+
+    <string name="ai_blend_lacks">Collage-Funktion ist eingeschränkt</string>
+    <string name="gen_again">Versuchen Sie ein anderes Layout</string>
+    <string name="ai_edit_photo">KI-Bearbeitung ist nicht genau</string>
+    <string name="enhance_again">Erneut bearbeiten</string>
+    <string name="cannot_find_your">KI-Verbesserung fehlt es an Klarheit</string>
+    <string name="zoom_again">Erneut verbessern</string>
+
+    <string name="please_share_information">Bitte teilen Sie uns Ihr Feedback mit, damit wir Ihre Erfahrung verbessern können</string>
+
+
+
+
+    <string name="adjustment">Anpassungen</string>
+    <string name="vertical">Vertikal</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="add_image">add_image</string>
+    <string name="done">Erledigt</string>
+    <string name="ratio">Verhältnis</string>
+    <string name="select_1_10_photos">Wählen Sie 1–10 Fotos aus</string>
+    <string name="select_1_9_photos">Wählen Sie 1–9 Fotos aus </string>
+    <string name="background">Hintergrund</string>
+    <string name="filter">Filter</string>
+    <string name="add">Hinzufügen</string>
+    <string name="stitch">Stich</string>
+    <string name="demandMessage">„Sie können nur %d Bild auswählen“</string>
+    <string name="requestMessage">„Bitte wählen Sie mindestens %d Bild aus“</string>
+    <string name="requestMessageCollage">„Bitte wählen Sie mindestens %d Bild aus“</string>
+    <string name="noImage">Kein Bild gefunden</string>
+    <string name="multi_fit">Multi-Fit</string>
+    <string name="_continue">Weitermachen</string>
+    <string name="square">Quadrat</string>
+    <string name="options">Optionen\n</string>
+    <string name="stay">Bleiben</string>
+
+    <string name="do_you_want_to_discard">Möchten Sie verwerfen</string>
+    <string name="let_s_go">Los geht\'s</string>
+    <string name="blank">Leer</string>
+    <string name="template">Vorlage</string>
+    <string name="app_name_new">AR Drawing</string>
+
+    <string name="boarding4_title">Zusammenfügen</string>
+    <string name="boarding4_text_body">Verschiedene Clips nahtlos verbinden.</string>
+
+    <string name="upgrade_plan_now">Plan jetzt upgraden!</string>
+    <string name="enjoy_unlimited_benefits_amp_features">Genießen Sie unbegrenzte Vorteile &amp; Funktionen</string>
+    <string name="generals">Allgemein</string>
+    <string name="supports">Unterstützung</string>
+    <string name="seamless">Nahtlos</string>
+    <string name="story">Story</string>
+    <string name="rewind">Zurückspulen</string>
+    <string name="paper">Papier</string>
+    <string name="tape">Band</string>
+    <string name="plastic">Kunststoff</string>
+    <string name="film">Film</string>
+    <string name="try_for_free">Kostenlos testen</string>
+
+    <string name="share_your_new_look_on_social_media_n_tap_below_to_post_it_on_instagram_n_or_tiktok">Teile deinen neuen Look in sozialen Medien\n—tippe unten, um ihn auf Instagram oder TikTok zu posten.</string>
+    <string name="open_instagram">Instagram öffnen</string>
+    <string name="open_tiktok">TikTok öffnen</string>
+    <string name="open_more">Mehr öffnen</string>
+
+    <string name="title_general_notification_without_fo">Verliere dein laufendes Foto nicht!</string>
+    <string name="sub_heading_general_notification_without_fo">Bearbeitung jetzt beenden</string>
+    <string name="title_general_notification_with_fo">Verpasse das Fotobearbeiten nicht!</string>
+    <string name="sub_heading_general_notification_with_fo">Öffne die App, um deine Fotos jetzt weiterzubearbeiten</string>
+    <string name="all_pro_materials">Alle Pro-Materialien</string>
+    <string name="no_watermark_and_ads">Kein Wasserzeichen und keine Werbung</string>
+    <string name="cancel_anytime_form_the_app">Jederzeit in der App kündigen</string>
+    <string name="weekly_plan">Wochenplan</string>
+    <string name="yearly_plan">Jahresplan</string>
+    <string name="notification_title_1">✨ Teile dein atemberaubendes Karussell!</string>
+    <string name="notification_description_1">Deine Fotos sind bereit zu glänzen. Poste dein Karussell jetzt auf Instagram und inspiriere mit deinem Stil! 🌿📸</string>
+
+
+    <string name="_7_day_free_trail">7-Tage-Testversion</string>
+    <string name="_3_day_free_trail">3-Tage-Testversion</string>
+
+    <string name="get_pro">Pro holen</string>
+    <string name="unlock_this_premium_frame">Diesen Premium-Rahmen freischalten</string>
+    <string name="choose_how_you_want_to_unlock_this_frame">Wähle, wie du diesen Rahmen freischalten möchtest</string>
+    <string name="watch_ad_to_unlock">Werbung ansehen zum Freischalten</string>
+    <string name="get_pro_for_unlimited_access">Hol dir Pro für unbegrenzten Zugang</string>
+    <string name="unlock_all_premium_frames_forever">Alle Premium-Rahmen für immer freischalten</string>
+    <string name="upgrade_to_premium">Auf Premium upgraden</string>
+    <string name="unlock_the_full_experience">Das volle Erlebnis freischalten</string>
+    <string name="unlock_all_premium_templates">Alle Premium-Vorlagen freischalten</string>
+    <string name="priority_access_to_new_features">Prioritätszugang zu neuen Funktionen</string>
+    <string name="access_all_style_categories">Zugriff auf alle Stilkategorien</string>
+    <string name="one_tap_carousel_creator">Karussell-Ersteller mit einem Tippen</string>
+    <string name="quality_export_without_watermark">Qualitätsexport ohne Wasserzeichen</string>
+    <string name="ad_free_creative_experience">Werbefreies kreatives Erlebnis</string>
+    <string name="_3_days_free_trial">3 Tage kostenlose Testversion</string>
+    <string name="trusted_by_2m_users_worldwide">Von über 2 Millionen Nutzern weltweit vertraut</string>
+
+    <string name="grab_now">Jetzt sichern</string>
+    <string name="unlock_your_premium_experience_today">Schalten Sie heute Ihr Premium-Erlebnis frei!</string>
+    <string name="_7_days_free_trial">7 Tage kostenlose Testversion</string>
+    <string name="carousal">Karussell</string>
+    <string name="enjoy_50_off_on_weekly_premium">Genießen Sie 50% Rabatt auf Wöchentliches Premium!</string>
+
+    <string name="crop">Ernte</string>
+    <string name="are_you_want_to_discard">Möchten Sie die Datei verwerfen?</string>
+    <string name="if_you_go_back_your_work_will_be_discarded">Wenn Sie zurückgehen, wird Ihre Arbeit verworfen!</string>
+
+    <string name="apply">Anwenden</string>
+    <string name="preview">Vorschau</string>
+    <string name="projects">Projekte</string>
+    <string name="see_all">Alle anzeigen</string>
+    <string name="with_ad">Mit Werbung</string>
+
+    <string name="_3_day_free_trial">3 Tage kostenlos testen</string>
+    <string name="join_crsl_premium">Werden Sie CRSL Premium-Mitglied.</string>
+
+
+    <string name="boarding1_title">Einfach zu zeichnen</string>
+    <string name="boarding1_text_body">Lege ein Stück Butterpapier auf dein Handy und zeichne es.</string>
+    <string name="boarding2_title">Zeichnen mit der Kamera</string>
+    <string name="boarding2_text_body">Halten oder stellen Sie Ihr Handy auf, um es leichter zeichnen zu können.</string>
+    <string name="boarding3_title">Zeichne dein eigenes Bild</string>
+    <string name="boarding3_text_body">Zeichne, pausiere und male auf jedem Foto, das dir gefällt!</string>
+    <string name="let_s_draw">Lass uns zeichnen</string>
+    <string name="create_draw_and_have_fun">Kreativ sein, zeichnen und Spaß haben!</string>
+    <string name="ar_drawing">AR-Zeichnung</string>
+    <string name="import_gallery">Importgalerie</string>
+    <string name="photo_to_sketch">Foto zu Skizze</string>
+    <string name="learn_to_draw">Zeichnen lernen</string>
+    <string name="my_art">Meine Kunst</string>
+
+    <string name="s_home_h1"><![CDATA[Learning &]]></string>
+    <string name="s_home_h1_sub">Üben</string>
+    <string name="s_home_h1_detail">Einfache Lektionen zur Verbesserung der Zeichenfähigkeiten</string>
+
+    <string name="s_home_h2"><![CDATA[Drawing &]]></string>
+    <string name="s_home_h2_sub">Kreativität</string>
+    <string name="s_home_h2_detail">Unterhaltsame Zeichenkurse mit Schritt-für-Schritt-Anleitung</string>
+
+    <string name="s_home_h3"><![CDATA[Categories &]]></string>
+    <string name="s_home_h3_sub">Themen</string>
+    <string name="s_home_h3_detail">Entdecke Zeichnungen nach Themen und Stilen</string>
+
+    <string name="s_home_h4">Foto an</string>
+    <string name="s_home_h4_sub">Skizzieren</string>
+    <string name="s_home_h4_detail">Bilder in künstlerische Bleistiftskizzen umwandeln.</string>
+
+    <string name="start">Start</string>
+    <string name="settings">Einstellungen</string>
+    <string name="unlock_premium_features">Premium-Funktionen freischalten</string>
+    <string name="terms_and_conditions">Geschäftsbedingungen</string>
+
+    <string name="watch_an_ad">Werbung ansehen</string>
+    <string name="pro_face_swap">Pro Face Swap</string>
+    <string name="swap">Tauschen</string>
+    <string name="upload_image_template">Bildvorlage hochladen</string>
+    <string name="upload_or_take_your_image_please_clear_face">Laden Sie ein Bild hoch oder machen Sie ein Foto davon. Bitte achten Sie darauf, dass Ihr Gesicht nicht sichtbar ist.</string>
+    <string name="upload_your_face">Laden Sie Ihr Gesicht hoch</string>
+    <string name="create">Erstellen</string>
+    <string name="saving_your_image">Speichern Ihres Bildes</string>
+    <string name="processing_your_masterpiece">Wir verarbeiten dein Meisterwerk… 🎨</string>
+    <string name="face_swap">Gesichtstausch</string>
+    <string name="edit_more">Bearbeiten Sie mehr</string>
+    <string name="please_crop">Bitte schneiden Sie das Bild auf das gleiche Seitenverhältnis zu, um bessere Ergebnisse zu erzielen.</string>
+    <string name="stay_with_us">Bleiben Sie bei uns, Ihr Erlebnis beginnt jetzt!</string>
+    <string name="got_it">Habe es</string>
+
+    <string name="pencil_sketch">Bleistiftskizze</string>
+    <string name="sketch_now">Jetzt skizzieren</string>
+    <string name="upgrade_to_pro">Upgrade auf Pro</string>
+    <string name="enjoy_all_drawings">Viel Spaß mit allen Zeichnungen, Werkzeugen und dem ganzen Spaß!</string>
+    <string name="sketch_loading">Skizzieren Sie Ihr Foto – Linien erwachen zum Leben…</string>
+    <string name="sketch_ready">Ihre Skizze nimmt Gestalt an!</string>
+    <string name="memory_sketching">Erinnerungen in Bleistiftzeichnungen verwandeln…</string>
+    <string name="sketch_details_fit">Linien und Schattierungen fügen sich zusammen!</string>
+    <string name="sketch_progress">Skizzenmagie in Arbeit…</string>
+    <string name="sketch_placing_details">Jedes noch so kleine Detail zeichnen…</string>
+    <string name="sketch_looking_timeless">Klassischer Look – jetzt als Skizze!</string>
+    <string name="sketch_you_brought_it_back">Wow! Die Skizze sieht ja lebendig aus!</string>
+    <string name="sketch_healing_memories">Erinnerungen mit Sorgfalt skizzieren…</string>
+    <string name="sketch_almost">Fast geschafft – nur noch die letzten Striche!</string>
+    <string name="sketch_damage_detected">Kanten anpassen – Linien verfeinern!</string>
+    <string name="sketch_transforming">Aus Fotos handgezeichnete Kunstwerke machen…</string>
+    <string name="sketch_uploading">Senden Sie Ihr Foto an den Zeichner…</string>
+    <string name="sketch_final_touch">Die abschließende Schattierung – das erfordert Geschick!</string>
+    <string name="sketch_blast">Diese Skizze ist etwas ganz Besonderes!</string>
+    <string name="sketch_new_life">Frische Skizzen-Vibes machen sich breit!</string>
+    <string name="sketch_details_locked">Details abgeschlossen – Skizzieren wie ein Profi!</string>
+    <string name="sketch_wait">Warten Sie ab… die magische Stiftmagie wird geladen!</string>
+    <string name="sketch_alignment">Striche perfekt ausrichten…</string>
+    <string name="sketch_memory_repairing">Ihre Skizze wird verfeinert…</string>
+    <string name="sketch_about_to_shine">Mach dich bereit – deine Skizze wird glänzen!</string>
+    <string name="sketch_epic">Epische Skizzenerstellung in vollem Gange!</string>
+    <string name="sketch_ready_to_reveal">Fast fertig – die Skizze wird bald enthüllt!</string>
+    <string name="sketch_restoring_clarity">Linienführung und Kontraste verstärken…</string>
+    <string name="sketch_scratches_fading">Raue Kanten werden geglättet…</string>
+    <string name="sketch_time_travel_mode">Skizzenmodus: EIN ✏️</string>
+    <string name="sketch_magic_at_work">Skizzenmagie in Aktion – bleiben Sie dran!</string>
+    <string name="save_colored_text"><![CDATA[ All done! <font color="#FF1BA6"><b>Save</b></font> your photo now.]]></string>
+    <string name="cancel_underline"><u>Cancel</u></string>
+    <string name="do_you_like_our_app">Gefällt Ihnen unsere App?</string>
+    <string name="sketch">Skizzieren</string>
+    <string name="trace">Verfolgen</string>
+    <string name="drawing_now">Jetzt zeichnen</string>
+    <string name="how_to_draw">Wie man zeichnet</string>
+    <string name="picture">Bild</string>
+    <string name="camera">Kamera</string>
+    <string name="stop_drawing">Mit dem Zeichnen aufhören?</string>
+    <string name="you_want_to_stop_drawing">Du willst aufhören zu zeichnen</string>
+    <string name="yes_discard">Nein, tu es nicht.</string>
+    <string name="yes_stop_it"><u>Yes, Stop it</u></string>
+    <string name="with_camera">Weiter mit der Kamera</string>
+    <string name="with_cam">Mit Kamera</string>
+    <string name="without_camera">Ohne Kamera fortfahren</string>
+    <string name="without_cam">Ohne Kamera</string>
+
+    <string name="unlock_the_magic">Pro-Kreativität freischalten 🌟</string>
+    <string name="unlimited_drawing">Entferne Werbung und genieße unbegrenzte Kreativ-Tools</string>
+    <string name="standard">Standard</string>
+    <string name="unlock_all_sketch">Alle Skizzen freischalten</string>
+    <string name="draw_from_gallery">Aus der Galerie zeichnen</string>
+    <string name="offline_drawing_mode">Offline-Zeichenmodus</string>
+    <string name="photo_to_sketch_convertor">Foto-zu-Skizze-Konverter</string>
+    <string name="draw_learning_lessons">Lernlektionen zum Zeichnen</string>
+    <string name="share_with_friends">Mit Freunden teilen</string>
+    <string name="my_drawing">Meine Zeichnung</string>
+    <string name="there_s_no_any_saved_data">Keine gespeicherten Daten vorhanden!</string>
+    <string name="go_to_drawings">Zu Zeichnungen</string>
+
+</resources>

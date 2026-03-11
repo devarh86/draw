@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_screen_navigation"
+    app:startDestination="@id/homeForYouFragment">
+
+    <fragment
+        android:id="@+id/nav_favourite_menu"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.favourite.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" />
+    <fragment
+        android:id="@+id/nav_favourite"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.favourite.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite" />
+    <action
+        android:id="@+id/action_global_nav_favourite"
+        app:destination="@id/nav_favourite" />
+
+    <dialog
+        android:id="@+id/nav_rating"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.dialogs.RatingDialog"
+        android:label="fragment_rating_dialog"
+        tools:layout="@layout/fragment_rating_dialog" />
+    <action
+        android:id="@+id/action_global_nav_rating"
+        app:destination="@id/nav_rating" />
+    <fragment
+        android:id="@+id/nav_mywork"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.mywork.MyWorkFragment"
+        android:label="fragment_my_work"
+        tools:layout="@layout/fragment_my_work">
+
+        <action
+            android:id="@+id/nav_work_to_setting_fragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/nav_coming_soon"
+        android:name="com.fahad.newtruelovebyfahad.ui.activities.pro.coming_soon.ComingSoonFragment"
+        android:label="fragment_comming_soon"
+        tools:layout="@layout/fragment_comming_soon" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.settings.SettingsFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/homeForYouFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.home.HomeForYouFragment"
+        android:label="HomeForYouFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeForYouFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_homeForYouFragment_to_drawingFramesFragment"
+            app:destination="@id/drawingFramesFragment" />
+        <action
+            android:id="@+id/action_homeForYouFragment_to_howToDrawFragment"
+            app:destination="@id/howToDrawFragment" />
+        <action
+            android:id="@+id/action_homeForYouFragment_to_learningFramesFragment"
+            app:destination="@id/learningFramesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drawingFramesFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.drawing.DrawingFramesFragment"
+        android:label="fragment_drawing_frames"
+        tools:layout="@layout/fragment_drawing_frames">
+        <argument
+            android:name="main_screen_menu"
+            app:argType="string" />
+        <argument
+            android:name="sub_screen_menu"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_drawingFramesFragment_to_howToDrawFragment"
+            app:destination="@id/howToDrawFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/howToDrawFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.drawing.HowToDrawFragment"
+        android:label="HowToDrawFragment"
+        tools:layout="@layout/fragment_how_to_draw">
+        <argument
+            android:name="path"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.mywork.pager.childs.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" />
+    <action
+        android:id="@+id/action_global_savedFragment"
+        app:destination="@id/savedFragment" />
+
+    <fragment
+        tools:layout="@layout/fragment_learning_frames"
+        android:id="@+id/learningFramesFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.learning.LearningFramesFragment"
+        android:label="LearningFramesFragment" >
+        <action
+            android:id="@+id/action_learningFramesFragment_to_subFramesFragment"
+            app:destination="@id/subFramesFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_sub_frames"
+        android:id="@+id/subFramesFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.learning.SubFramesFragment"
+        android:label="SubFramesFragment" >
+        <action
+            android:id="@+id/action_subFramesFragment_to_drawFragment"
+            app:destination="@id/drawFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_draw"
+        android:id="@+id/drawFragment"
+        android:name="com.fahad.newtruelovebyfahad.ui.fragments.learning.DrawFragment"
+        android:label="DrawFragment" />
+
+</navigation>

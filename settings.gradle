@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs("libs")
+        }
+    }
+}
+rootProject.name = "Drawing"
+include ':app'
+include ':ads'
+include ':crop'
+include ':common'
+include ':inapp'
+include ':analytics'
+include ':appOnBoarding'
+include ':questions_intro'
+include ':event_notifications'
+include ':gallery'
+include ':pencil_sketch'
+include ':darioscrollruler'

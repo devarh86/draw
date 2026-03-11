@@ -1,0 +1,164 @@
+{
+  "splash_screen": {
+    "banner": {
+      "is_enabled": true,
+      "reload_limit": 2,
+      "ad_unit_ids": [
+        "ca-app-pub-4276074242154795/1731053759"
+      ]
+    },
+    "app_open": {
+      "is_enabled": true,
+      "ad_unit_ids": [
+        "ca-app-pub-4276074242154795/5403673406",
+        "ca-app-pub-4276074242154795/1294690396",
+        "ca-app-pub-4276074242154795/7668527059"
+      ]
+    },
+    "timeout": 7000,
+    "time": 6000,
+    "splash_pro_home": true
+  },
+  "app_interstitial": {
+    "floor": 2,
+    "start_count": 1,
+    "after_start_count": 3,
+    "always_show": false,
+    "is_enabled": true,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/8591243404",
+      "ca-app-pub-4276074242154795/9369138450",
+      "ca-app-pub-4276074242154795/1832170033"
+    ]
+  },
+  "rewarded": {
+    "is_enabled": true,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/9493493043",
+      "ca-app-pub-4276074242154795/6867329705",
+      "ca-app-pub-4276074242154795/5554248034"
+    ]
+  },
+  "app_open_resume": {
+    "is_enabled": true,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/3974762424",
+      "ca-app-pub-4276074242154795/4732761587",
+      "ca-app-pub-4276074242154795/4981432777"
+    ]
+  },
+  "language_screen": {
+    "native_before_selection": {
+      "is_enabled": true,
+      "reload_limit": 2,
+      "ad_unit_ids": [
+        "ca-app-pub-4276074242154795/2355269438",
+        "ca-app-pub-4276074242154795/9553843423",
+        "ca-app-pub-4276074242154795/3891712383"
+      ]
+    },
+    "native_after_selection": {
+      "is_enabled": true,
+      "reload_limit": 2,
+      "ad_unit_ids": [
+        "ca-app-pub-4276074242154795/8729106095",
+        "ca-app-pub-4276074242154795/6409354074",
+        "ca-app-pub-4276074242154795/3419679911"
+      ]
+    },
+    "interstitial": {
+      "floor": 2,
+      "start_count": 1,
+      "after_start_count": 1,
+      "always_show": true,
+      "is_enabled": true,
+      "ad_unit_ids": [
+        "ca-app-pub-4276074242154795/8245179922"
+      ]
+    }
+  },
+  "onboarding_1_native": {
+    "is_enabled": true,
+    "reload_limit": 2,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/6026210694",
+      "ca-app-pub-4276074242154795/6592638165",
+      "ca-app-pub-4276074242154795/4206147974"
+    ]
+  },
+  "onboarding_2_native": {
+    "is_enabled": true,
+    "reload_limit": 2,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/9296082304",
+      "ca-app-pub-4276074242154795/2893066300",
+      "ca-app-pub-4276074242154795/1579984639"
+    ]
+  },
+  "onboarding_3_native": {
+    "is_enabled": true,
+    "reload_limit": 2,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/7983000630",
+      "ca-app-pub-4276074242154795/3255387759",
+      "ca-app-pub-4276074242154795/1299308257"
+    ]
+  },
+  "started_interstitial": {
+    "floor": 2,
+    "start_count": 1,
+    "after_start_count": 1,
+    "always_show": true,
+    "is_enabled": true,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/4376897731",
+      "ca-app-pub-4276074242154795/9862934809",
+      "ca-app-pub-4276074242154795/3311228076"
+    ]
+  },
+  "processing_native": {
+    "is_enabled": true,
+    "reload_limit": 2,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/4610608126",
+      "ca-app-pub-4276074242154795/5306836023",
+      "ca-app-pub-4276074242154795/3993754358"
+    ]
+  },
+  "exit_save_native": {
+    "is_enabled": true,
+    "reload_limit": 2,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/4610608126",
+      "ca-app-pub-4276074242154795/5306836023",
+      "ca-app-pub-4276074242154795/3993754358"
+    ]
+  },
+  "app_banner": {
+    "is_enabled": true,
+    "reload_limit": 2,
+    "ad_unit_ids": [
+      "ca-app-pub-4276074242154795/6171101804",
+      "ca-app-pub-4276074242154795/9918775128",
+      "ca-app-pub-4276074242154795/3110372936"
+    ]
+  },
+  "global_settings": {
+    "reward_ads": {
+      "all_reward": false,
+      "reward_time": 3000
+    },
+    "button_new_flow": true,
+    "show_valentine_pop_up": false,
+    "tutorial_scr": false,
+    "auto_scroll_time": 6000,
+    "native_on_resume": true,
+    "notification": {
+      "lockscreen": true,
+      "lockscreen_country": 1,
+      "status_bar_country": 1,
+      "time_push_1": 10,
+      "time_push_2": 9
+    }
+  }
+}

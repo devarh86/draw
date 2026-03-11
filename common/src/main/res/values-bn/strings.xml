@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="downloading">ডাউনলোড হচ্ছে...</string>
+    <string name="exit_title">আপনি কি নিশ্চিত আপনি প্রস্থান করতে চান?</string>
+    <string name="discard">বাতিল করুন</string>
+    <string name="exit">প্রস্থান করুন</string>
+    <string name="cancel">বাতিল করুন</string>
+    <string name="edit_photo">ছবি সম্পাদনা করুন</string>
+    <string name="are_you_want_to_discard">আপনি কি বাতিল করতে চান?</string>
+    <string name="if_you_go_back_your_work_will_be_discarded">ফিরে গেলে আপনার কাজ বাতিল হয়ে যাবে!</string>
+    <string name="try_again">আবার চেষ্টা করুন</string>
+    <string name="select_language">ভাষা নির্বাচন করুন</string>
+    <string name="term_of_use">ব্যবহারের মেয়াদ</string>
+    <string name="privacy_policy">গোপনীয়তা নীতি</string>
+    <string name="welcome_to_collagepic">CollagePic-এ স্বাগতম</string>
+    <string name="what_do_you_want_to_do_in_this_app">আপনি এই অ্যাপে কী করতে চান?</string>
+
+    <string name="unlock_all_features">সমস্ত বৈশিষ্ট্য আনলক করুন</string>
+    <string name="start_free_trail">ফ্রি ট্রায়াল শুরু করুন</string>
+    <string name="start_now">এখন শুরু করুন</string>
+
+    <string name="ratio">অনুপাত</string>
+    <string name="add_image">ছবি যোগ করুন</string>
+    <string name="select_1_10_photos">1–10টি ছবি নির্বাচন করুন</string>
+    <string name="select_1_9_photos">1–9টি ছবি নির্বাচন করুন</string>
+    <string name="background">পটভূমি</string>
+    <string name="filter">ফিল্টার</string>
+    <string name="add">যোগ করুন</string>
+    <string name="stitch">সেলাই</string>
+    <string name="demandMessage">আপনি শুধুমাত্র %dটি ছবি নির্বাচন করতে পারেন</string>
+    <string name="requestMessage">অনুগ্রহ করে কমপক্ষে %dটি ছবি নির্বাচন করুন</string>
+    <string name="requestMessageCollage">অনুগ্রহ করে কমপক্ষে %dটি ছবি নির্বাচন করুন</string>
+    <string name="noImage">কোনো ছবি পাওয়া যায়নি</string>
+    <string name="multi_fit">মাল্টি ফিট</string>
+    <string name="_continue">চালিয়ে যান</string>
+    <string name="square">বর্গ</string>
+    <string name="options">বিকল্পসমূহ\n</string>
+    <string name="stay">থাকুন</string>
+
+    <string name="quick_tutorial">দ্রুত টিউটোরিয়াল</string>
+    <string name="shortcut_template">টেমপ্লেট</string>
+    <string name="use_this_template">এই টেমপ্লেট ব্যবহার করুন</string>
+    <string name="tap_to_apply">প্রয়োগ করতে ট্যাপ করুন</string>
+    <string name="great_work">দারুণ কাজ</string>
+    <string name="done">সম্পন্ন</string>
+    <string name="getting_ready">প্রস্তুতি নিচ্ছে</string>
+    <string name="change_photos_with_just_one_touch">শুধু এক স্পর্শে ফটো পরিবর্তন করুন</string>
+    <string name="show_me">আমাকে দেখাও</string>
+    <string name="create_stunning_designs_in_a_single_tap">একটি ট্যাপে চমৎকার ডিজাইন তৈরি করুন</string>
+
+    <string name="cancel_subscription">সদস্যতা বাতিল করুন</string>
+    <string name="subscription_detail">সম্পূর্ণ হলে, ট্রায়াল স্বয়ংক্রিয়ভাবে সদস্যতায় রূপান্তরিত হবে। সদস্যতা স্বয়ংক্রিয় পুনর্নবীকরণ. Google Play Store থেকে যেকোনও সময় বাতিল করুন।</string>
+    <string name="continue_text">চালিয়ে যান</string>
+    <string name="no_watermark">জলছাপ নেই</string>
+    <string name="no_obligatory_ads">কোনো বাধ্যতামূলক বিজ্ঞাপন নেই</string>
+    <string name="smoother_experience">মসৃণ অভিজ্ঞতা</string>
+    <string name="access_to_all_features">সমস্ত বৈশিষ্ট্য অ্যাক্সেস</string>
+    <string name="pro">PRO</string>
+    <string name="say_goodbye_to_watermark">ওয়াটারমার্ককে বিদায় বলুন</string>
+    <string name="draft">খসড়া</string>
+    <string name="language_indo" translatable="false">ইন্দোনেশিয়ান</string>
+    <string name="language_english" translatable="false">ইংরেজি</string>
+    <string name="language_bengali" translatable="false">বাংলা</string>
+    <string name="language_german" translatable="false">জার্মান</string>
+    <string name="language_portuguese" translatable="false">পর্তুগিজ</string>
+    <string name="language_arabic" translatable="false">আরবি</string>
+    <string name="language_spanish" translatable="false">স্প্যানিশ</string>
+    <string name="language_mandarin" translatable="false">ম্যান্ডারিন</string>
+    <string name="language_russian" translatable="false">রাশিয়ান</string>
+    <string name="language_urdu" translatable="false">উর্দু</string>
+    <string name="language_french" translatable="false">ফরাসি</string>
+    <string name="language_hindi" translatable="false">হিন্দি</string>
+    <string name="language_japanese" translatable="false">জাপানিজ</string>
+    <string name="waring_out_of_memory">যথেষ্ট মেমরি নেই। অনুগ্রহ করে ইমেজ মুছে ফেলুন বা আপনার প্রোগ্রাম ক্র্যাশ হবে.!!!</string>
+    <string name="hello_blank_fragment">হ্যালো ফাঁকা টুকরা</string>
+    <string name="border_size">বর্ডার সাইজ</string>
+    <string name="border_color">বর্ডার কালার</string>
+    <string name="border_padding">প্যাডিং</string>
+    <string name="border_radius">ব্যাসার্ধ</string>
+    <string name="frame_foreground">ফ্রেম ফোরগ্রাউন্ড</string>
+    <string name="save">সংরক্ষণ করুন</string>
+    <string name="message">বার্তা</string>
+    <string name="bg">বিজি</string>
+    <string name="text">পাঠ্য</string>
+    <string name="write_text">টেক্সট লিখুন</string>
+    <string name="close">বন্ধ</string>
+    <string name="replace">প্রতিস্থাপন করুন</string>
+    <string name="crop">ফসল</string>
+    <string name="remove_watermark">ওয়াটারমার্ক সরান</string>
+    <string name="for_24_hours">24 ঘন্টার জন্য</string>
+    <string name="for_life_time">সারাজীবনের জন্য</string>
+    <string name="save_amp_continue"><![CDATA[Save & Continue]]></string>
+    <string name="processing_please_wait">প্রক্রিয়া হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...</string>
+    <string name="share">শেয়ার করুন</string>
+    <string name="home">বাড়ি</string>
+    <string name="frame_background">ফ্রেমব্যাকগ্রাউন্ড</string>
+    <string name="opacity">অস্বচ্ছতা</string>
+    <string name="blend">মিশ্রিত করুন</string>
+    <string name="_ad">খ্রি</string>
+    <string name="watch_video_ad_to_remove_watermark_for_or_go_premium">প্রিমিয়ামের জন্য ওয়াটারমার্ক অপসারণ করতে ভিডিও বিজ্ঞাপন দেখুন।</string>
+    <string name="go_premium">প্রিমিয়াম যান</string>
+    <string name="trending_frames">ট্রেন্ডিং ফ্রেম</string>
+    <string name="blur">ঝাপসা</string>
+    <string name="next">পরবর্তী</string>
+    <string name="watch_ad">বিজ্ঞাপন দেখুন</string>
+    <string name="effect_opacity">প্রভাব অস্বচ্ছতা</string>
+    <string name="photo_editor_1">সম্পাদক</string>
+    <string name="blending">ব্লেন্ডিং</string>
+
+
+
+
+
+
+
+
+
+    <string name="menu_featured">বৈশিষ্ট্যযুক্ত</string>
+    <string name="menu_home">বাড়ি</string>
+    <string name="menu_templates">টেমপ্লেট</string>
+    <string name="menu_styles">শিল্প শৈলী</string>
+    <string name="menu_files">আমার কাজ</string>
+    <string name="ad">খ্রি</string>
+    <string name="single_frames">একক ফ্রেম</string>
+    <string name="double_frames">দম্পতি ফ্রেম</string>
+    <string name="greetings">শুভেচ্ছা</string>
+    <string name="collages">কোলাজ</string>
+    <string name="collage">কোলাজ</string>
+    <string name="shapes">আকৃতি</string>
+    <string name="pips">পিপস ফ্রেম</string>
+    <string name="frames">ফ্রেম</string>
+    <string name="frame">ফ্রেম</string>
+    <string name="more">আরও</string>
+    <string name="no_result_found">কোন ফলাফল পাওয়া যায়নি</string>
+    <string name="try_now">এখন চেষ্টা করুন</string>
+    <string name="true_love_frames">ফ্রেমমি</string>
+    <string name="true_love_frames_camelcase">ফ্রেমমি</string>
+    <string name="tell_your_friend">আপনার বন্ধুকে বলুন</string>
+    <string name="rate_us">আমাদের রেট</string>
+    <string name="send_mail">মেইল পাঠান</string>
+    <string name="cancel_subscription_description">আপনি Google Play-এর সেটিংসে যেকোনও সময় সাবস্ক্রিপশন পরিচালনা বা বাতিল করতে পারেন।</string>
+    <string name="recommended_apps">প্রস্তাবিত অ্যাপস</string>
+    <string name="remove_ads">বিজ্ঞাপনগুলি সরান</string>
+    <string name="editor">সম্পাদক</string>
+    <string name="effect">প্রভাব</string>
+    <string name="adjust">সামঞ্জস্য করুন</string>
+    <string name="stickers">স্টিকার</string>
+    <string name="type">টাইপ</string>
+    <string name="font">হরফ</string>
+    <string name="font_color">হরফের রঙ</string>
+    <string name="bg_color">বিজি কালার</string>
+    <string name="opacity_value">অস্বচ্ছতা: %1$s %</string>
+    <string name="menu_pro">প্রো</string>
+    <string name="menu_favourite">প্রিয়</string>
+    <string name="for_you">নতুন</string>
+    <string name="today_special">শীর্ষ</string>
+    <string name="most_used">প্রবণতা</string>
+    <string name="more_features">আরো বৈশিষ্ট্য</string>
+    <string name="recently_used">সাম্প্রতিক</string>
+    <string name="saved">সংরক্ষিত</string>
+    <string name="mark_as_favorite_then_your_photo_nwill_appear_in_favorite_list">ফ্রেম পছন্দসই হিসেবে চিহ্নিত করুন, তারপর আপনার ফ্রেম\nপ্রিয় তালিকায় প্রদর্শিত হবে</string>
+    <string name="search_by_keyword">কীওয়ার্ড দ্বারা অনুসন্ধান করুন</string>
+    <string name="more_apps">প্রস্তাবিত অ্যাপস</string>
+    <string name="join_full_experience">সম্পূর্ণ অভিজ্ঞতা যোগদান</string>
+    <string name="ads_free">বিজ্ঞাপন বিনামূল্যে</string>
+    <string name="ads_free_experience">বিজ্ঞাপন বিনামূল্যে অভিজ্ঞতা</string>
+    <string name="all_premium_assets">সমস্ত প্রিমিয়াম সম্পদ</string>
+    <string name="each_plan_includes">প্রতিটি পরিকল্পনা অন্তর্ভুক্ত:</string>
+    <string name="unlimited_frams_cards"><![CDATA[UNLIMITED FRAMES & CARDS]]></string>
+    <string name="get_100_stickers">100+ স্টিকার পান</string>
+    <string name="remove_ads_cap">বিজ্ঞাপনগুলি সরান৷</string>
+    <string name="continue_with_ads">বিজ্ঞাপন দিয়ে চালিয়ে যান</string>
+    <string name="weekly">সাপ্তাহিক</string>
+    <string name="plan">পরিকল্পনা</string>
+    <string name="yearly">বার্ষিক</string>
+    <string name="life_time">আজীবন</string>
+    <string name="premium_features">প্রিমিয়াম বৈশিষ্ট্য</string>
+    <string name="get_access_to_premium_features">প্রিমিয়াম বৈশিষ্ট্য অ্যাক্সেস পান</string>
+    <string name="text_effect">টেক্সট ইফেক্ট</string>
+
+    <string name="error_gif">x বা y আবদ্ধ আকার কমপক্ষে %1$dpx হওয়া উচিত এবং ফাইলের আকার %2$sM এর বেশি হওয়া উচিত নয়</string>
+    <string name="album_name_all">সমস্ত মিডিয়া</string>
+    <string name="error_type_conflict">একই সময়ে ছবি এবং ভিডিও নির্বাচন করতে পারবেন না</string>
+    <string name="error_over_count_default">আপনি সর্বাধিক নির্বাচনযোগ্য পর্যায়ে পৌঁছেছেন</string>
+    <string name="error_over_original_size">%1$d MB এর চেয়ে বড় ছবি নির্বাচন করা যাবে না৷</string>
+    <string name="error_no_video_activity">ভিডিও প্রিভিউ সমর্থন করে এমন কোনো অ্যাপ পাওয়া যায়নি</string>
+    <string name="button_ok">ঠিক আছে</string>
+    <string name="error_file_type">অসমর্থিত ফাইল প্রকার</string>
+    <string name="error_over_original_count">%1$dটি ছবি %2$d MB এর বেশি। আসল আনচেক করা হবে</string>
+    <string name="fonts_bg">হরফ BG</string>
+
+    <plurals name="error_over_count">
+        <item quantity="one">আপনি শুধুমাত্র %1$dটি মিডিয়া ফাইল নির্বাচন করতে পারেন৷</item>
+        <item quantity="few">আপনি শুধুমাত্র %1$dটি মিডিয়া ফাইল নির্বাচন করতে পারেন৷</item>
+        <item quantity="many">আপনি শুধুমাত্র %1$dটি মিডিয়া ফাইল নির্বাচন করতে পারেন৷</item>
+        <item quantity="other">আপনি শুধুমাত্র %1$dটি মিডিয়া ফাইল নির্বাচন করতে পারেন৷</item>
+    </plurals>
+    <string name="button_apply">পরবর্তী</string>
+    <string name="button_apply_default">পরবর্তী</string>
+    <string name="image_selection_limit_default">2-9টি ফটো নির্বাচন করুন</string>
+    <string name="image_selection_limit">2-9টি ফটো নির্বাচন করুন(%1$d)</string>
+    <string name="image_selection_limit_1">ফটো নির্বাচন করুন</string>
+    <string name="brightness">উজ্জ্বলতা</string>
+    <string name="contrast">বৈপরীত্য</string>
+    <string name="hue">হিউ</string>
+    <string name="exposure">প্রকাশ</string>
+    <string name="saturation">স্যাচুরেশন</string>
+    <string name="tint">আভা</string>
+    <string name="warmth">উষ্ণতা</string>
+    <string name="color">রঙ</string>
+    <string name="sharpen">ধারালো</string>
+    <string name="vignette">ভিগনেট</string>
+    <string name="highlight">হাইলাইট করুন</string>
+    <string name="shadow">ছায়া</string>
+
+    <string name="facebook_app_id" translatable="false">1116803502100807</string>
+    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
+
+    <string name="layout_text">লেআউট</string>
+    <string name="button_preview">পূর্বরূপ</string>
+    <string name="button_original">আসল</string>
+    <string name="empty_text">এখনো কোনো মিডিয়া নেই</string>
+    <string name="button_back">ফিরে</string>
+    <string name="what_we_offer_in_discount_plan">আমরা ডিসকাউন্ট প্ল্যানে যা অফার করি</string>
+    <string name="original">আসল</string>
+    <string name="tick">টিক</string>
+    <string name="reset">রিসেট করুন</string>
+    <string name="filter_opacity">ফিল্টার অস্বচ্ছতা</string>
+    <string name="share_text">এই দুর্দান্ত অ্যাপের মাধ্যমে আপনার ফটোগুলিকে সুন্দর করার জন্য একটি মজার নতুন উপায় আবিষ্কার করুন৷</string>
+    <string name="pro_icon">pro_icon</string>
+    <string name="all_inclusive">সব অন্তর্ভুক্ত</string>
+    <string name="do_you_have_any_thoughts_you_d_like_to_share">আপনি শেয়ার করতে চান কোনো চিন্তা আছে?</string>
+    <string name="submit">জমা দিন</string>
+    <string name="filters">ফিল্টার</string>
+    <string name="no_internet_connect_found_please_try_again">আপনার সংযোগে কিছু সমস্যা হয়েছে \n ইন্টারনেটে সংযোগ করুন।</string>
+    <string name="coming_soon">শীঘ্রই আসছে</string>
+    <string name="pro_caps">PRO</string>
+    <string name="apply_filter_on_all_images">সমস্ত ছবিতে ফিল্টার প্রয়োগ করুন</string>
+    <string name="connect_internet_and_explore_fantastic_art_style">ইন্টারনেট সংযোগ করুন এবং চমত্কার শিল্প শৈলী অন্বেষণ করুন.</string>
+    <string name="solo_frames">গাওয়ার ফ্রেম</string>
+    <string name="multiplex">মাল্টিপ্লেক্স</string>
+    <string name="photo_editor">ফটো এডিটর</string>
+    <string name="image_resolution">ইমেজ রেজোলিউশন</string>
+    <string name="good">ভাল</string>
+    <string name="enhanced">উন্নত</string>
+    <string name="high">উচ্চ</string>
+    <string name="unlock_this_amazing_frame">এই আশ্চর্যজনক ফ্রেম আনলক</string>
+    <string name="ad_start_in_3_second">বিজ্ঞাপন 3 সেকেন্ডের মধ্যে শুরু করুন</string>
+    <string name="your_opinion_matters_to_us_we_d_ngreatly_appreciate_if_you_can_rate_us">আপনার মতামত আমাদের জন্য গুরুত্বপূর্ণ. আপনি যদি আমাদের রেট দিতে পারেন তাহলে আমরা খুবই কৃতজ্ঞ।</string>
+    <string name="the_best_we_can_get">আমরা পেতে পারি সেরা</string>
+    <string name="rotate">ঘোরান</string>
+    <string name="image_quality">ছবির গুণমান</string>
+    <string name="edit_text">পাঠ্য সম্পাদনা করুন</string>
+    <string name="edit">সম্পাদনা করুন</string>
+
+    <string name="feedback">প্রতিক্রিয়া</string>
+    <string name="folder_name">কোলাজ ছবি</string>
+    <string name="name">কোলাজ ছবি</string>
+    <string name="app_name">কোলাজ ছবি</string>
+
+    <string name="logo_image">লোগো ছবি</string>
+    <string name="unlock_all_assets">সমস্ত সম্পদ আনলক করুন</string>
+    <string name="smoother_user_experience">মসৃণ ব্যবহারকারীর অভিজ্ঞতা</string>
+
+    <string name="remove_obligatory_ads">বাধ্যতামূলক বিজ্ঞাপন সরান</string>
+
+
+
+    <string name="monthly">মাসিক</string>
+
+    <string name="premium">প্রিমিয়াম</string>
+    <string name="basic">বেসিক</string>
+
+    <string name="adjustment">সমন্বয়</string>
+    <string name="vertical">উল্লম্ব</string>
+    <string name="horizontal">অনুভূমিক</string>
+
+
+
+
+
+    <string name="camera_and_storage">ক্যামেরা এবং স্টোরেজ অনুমতি</string>
+    <string name="collage_requires_camera_and_storage_access_for_optimal_performance">CollagePic এর সর্বোত্তম পারফরম্যান্সের জন্য ক্যামেরা এবং স্টোরেজ অ্যাক্সেস প্রয়োজন।</string>
+    <string name="allow">অনুমতি দিন</string>
+    <string name="enhance">এআই উন্নতকারী</string>
+
+    <string name="enhance_detail_text">ছবিগুলি উন্নতির পরে আরও তীক্ষ্ণ এবং প্রাণবন্ত দেখায়</string>
+    <string name="pro_enhance">প্রো উন্নতি</string>
+    <string name="better_effect_no_ads">ভালো প্রভাব &amp; বিজ্ঞাপন নেই</string>
+
+    <string name="photo_ready_message">আপনার ছবি প্রস্তুত! এখনই সংরক্ষণ করুন।</string>
+
+    <string name="processing_text_one">আপনার মাস্টারপিস প্রক্রিয়াকরণ... 🎨</string>
+    <string name="processing_text_two">চূড়ান্ত স্পর্শ... ✨</string>
+    <string name="processing_text_three">শুরু হচ্ছে... 🚀</string>
+
+
+    <string name="edit_t_s">ছবি সম্পাদনা</string>
+    <string name="edit_d_s">সহজেই আপনার ছবিগুলো কাস্টমাইজ করুন।</string>
+    <string name="enhance_t_s">এআই উন্নতি</string>
+    <string name="enhance_d_s">বুদ্ধিমত্তার সাথে ছবির গুণমান বাড়ান।</string>
+    <string name="blend_t_s">এআই মিশ্রণ</string>
+    <string name="blend_d_s">এআই ব্যবহার করে ছবিগুলো মসৃণভাবে মিশ্রিত করুন।</string>
+    <string name="collage_t_s">ছবি কোলাজ</string>
+    <string name="collage_d_s">ছবিগুলো চমৎকার বিন্যাসে সংযুক্ত করুন।</string>
+    <string name="bg_art_t_s">পটভূমি শিল্প</string>
+    <string name="bg_art_d_s">সহজেই চমৎকার পটভূমি তৈরি করুন।</string>
+    <string name="unleash">আপনার সৃজনশীলতাকে উন্মোচন করুন!</string>
+    <string name="unlimited_access">সীমাহীন প্রবেশ</string>
+    <string name="smooth_ux">মসৃণ অভিজ্ঞতা</string>
+
+    <string name="enhance_watch_ad">এনহ্যান্সার \n একটি বিজ্ঞাপন দেখুন</string>
+
+    <string name="what_do_you_want_for_your_photo">আপনার ছবির জন্য আপনি কী চান?</string>
+    <string name="templates">টেমপ্লেট</string>
+    <string name="choose_an_answer">একটি উত্তর চয়ন করুন</string>
+    <string name="select_2_9_photos">2-9 টি ছবি নির্বাচন করুন</string>
+    <string name="select_1_1_photos">1 টি ছবি নির্বাচন করুন</string>
+    <string name="maximum_images_selected">সর্বাধিক ছবি নির্বাচিত হয়েছে</string>
+    <string name="photo_edit">ফটো সম্পাদনা</string>
+    <string name="ai_blend">এআই মিশ্রণ</string>
+    <string name="what_would_you_like_to_create">আপনি কী তৈরি করতে চান?</string>
+    <string name="ai_enhance">এআই উন্নত করুন</string>
+
+    <string name="survery_detail">আপনার উত্তর আমাদের আপনার জন্য উপযুক্ত অভিজ্ঞতা আনতে সাহায্য করবে। (সকল উপযুক্ত উত্তর নির্বাচন করুন)</string>
+
+
+
+    <string name="define_your_role">আপনার ভূমিকা নির্ধারণ করুন, আপনার সরঞ্জাম আবিষ্কার করুন!</string>
+    <string name="pick_your_journey">আপনার সৃজনশীল যাত্রা বেছে নিন!</string>
+    <string name="help_us_bring_experiences">আপনার প্রতিক্রিয়া আমাদের আপনার জন্য উপযুক্ত অভিজ্ঞতা আনতে সহায়তা করবে। (সমস্ত উপযুক্ত উত্তর নির্বাচন করুন)</string>
+    <string name="where_publish_content">আপনি কোথায় আপনার বিষয়বস্তু প্রকাশ করেন?</string>
+    <string name="how_did_you_find_us">আপনি আমাদের কিভাবে খুঁজে পেলেন?</string>
+
+    <!-- User Information -->
+    <string name="personal_user">ব্যক্তিগত ব্যবহারকারী</string>
+    <string name="student">ছাত্র</string>
+    <string name="content_creator">কনটেন্ট ক্রিয়েটর</string>
+    <string name="design_teacher">ডিজাইন শিক্ষক</string>
+    <string name="business_owner">ব্যবসার মালিক</string>
+    <string name="employee">কর্মচারী</string>
+    <string name="event_planner">ইভেন্ট পরিকল্পনাকারী</string>
+
+    <!-- Categories -->
+    <string name="frame_templates">ফ্রেম টেমপ্লেট</string>
+    <string name="bg_art">ব্যাকগ্রাউন্ড আর্ট</string>
+    <string name="profile_pic">প্রোফাইল ছবি</string>
+    <string name="pip_template">PIP টেমপ্লেট</string>
+    <string name="other">অন্যান্য</string>
+
+    <!-- Content Types -->
+    <string name="facebook">ফেসবুক</string>
+    <string name="instagram">ইনস্টাগ্রাম</string>
+    <string name="tiktok">টিকটক</string>
+    <string name="pinterest">পিন্টারেস্ট</string>
+    <string name="linkedin">লিঙ্কডইন</string>
+    <string name="reddit">রেডিট</string>
+    <string name="dribbble">ড্রিব্বল</string>
+    <string name="behance">বিহান্স</string>
+    <string name="twitter">টুইটার</string>
+    <string name="youtube">ইউটিউব</string>
+    <string name="discord">ডিসকর্ড</string>
+
+    <string name="skip">এড়িয়ে যান</string>
+
+    <string name="button">বোতাম</string>
+    <string name="make_another">আরেকটি তৈরি করুন</string>
+    <string name="share_to">শেয়ার করুন</string>
+    <string name="failed_to_save_image">ছবি সংরক্ষণ করতে ব্যর্থ</string>
+    <string name="error_while_saving_image">ছবি সংরক্ষণের সময় ত্রুটি</string>
+    <string name="close_background_apps_try_again">অনুগ্রহ করে কিছু ব্যাকগ্রাউন্ড অ্যাপ বন্ধ করুন এবং পুনরায় চেষ্টা করুন</string>
+    <string name="failed_to_load_frame">ফ্রেম লোড করতে ব্যর্থ, অনুগ্রহ করে আবার চেষ্টা করুন</string>
+
+
+    <string name="error_while_applying_blend">ব্লেন্ড প্রয়োগ করার সময় ত্রুটি</string>
+    <string name="image_loading_failed">ছবি লোড করতে ব্যর্থ, অনুগ্রহ করে আবার চেষ্টা করুন</string>
+    <string name="image_is_corrupt">ছবি নষ্ট হয়ে গেছে</string>
+    <string name="image_not_found">ছবি খুঁজে পাওয়া যায়নি</string>
+    <string name="image_saving_failed">ছবি সংরক্ষণ করতে ব্যর্থ</string>
+
+
+    <string name="notification_title_2">🎨 সহজেই কোলাজ তৈরি করুন!</string>
+    <string name="notification_description_2">আপনার প্রিয় ছবিগুলোকে সহজেই দারুণ কোলাজে পরিণত করুন।</string>
+
+    <string name="don_t_allow">অনুমতি দেবেন না</string>
+
+    <string name="full_screen_intent">ফুল স্ক্রিন অনুমতি অস্বীকৃত</string>
+    <string name="full_screen_intent_message">সেরা অ্যাপ অভিজ্ঞতা এবং তাৎক্ষণিক আপডেটের জন্য <b>ফুল স্ক্রিন ইন্টেন্ট</b> সক্ষম করুন।</string>
+    <string name="open">খুলুন</string>
+    <string name="get_start">শুরু করুন</string>
+    <string name="intro_one">AI ব্যবহার করে স্বয়ংক্রিয় সম্পাদনায় সহায়তা করে</string>
+    <string name="intro_two">এই টুলটি আপনাকে দ্রুত এবং নিখুঁত ছবি তৈরি করতে সহায়তা করে।</string>
+    <string name="intro_two_first">The</string>
+    <string name="intro_three">আপনার ছবির অনন্য শৈলী এবং অনুভূতি প্রকাশে সহায়তা করে।</string>
+    <string name="background_art">পটভূমি শিল্প</string>
+    <string name="use">ব্যবহার করুন</string>
+    <string name="intro_one_heading">AI ইমেজ উন্নতকারী</string>
+    <string name="intro_one_sub_heading">আপনার ছবির মান সহজেই উন্নত করুন।</string>
+    <string name="intro_two_heading">অসাধারণ কোলাজ তৈরি করুন</string>
+    <string name="intro_two_sub_heading">বহু ছবি সহজেই একত্রিত করুন।</string>
+    <string name="intro_three_heading">ম্যাজিক এডিট করুন</string>
+    <string name="intro_three_sub_heading">সহজেই আপনার ছবি কাস্টমাইজ করুন।</string>
+
+    <string name="_4k_templates_quality">4K টেমপ্লেটের গুণমান</string>
+
+    <string name="then">তারপর</string>
+    <string name="per_week">/সপ্তাহ</string>
+    <string name="after_trial">বিনামূল্যে ৩ দিনের ট্রায়ালের পরে</string>
+    <string name="subscription_auto_renew">সাবস্ক্রিপশন স্বয়ংক্রিয়ভাবে নবায়ন হয়। যে কোনো সময় বাতিল করুন</string>
+
+
+    <string name="shortcut_ai_blend">এআই ব্লেন্ড</string>
+    <string name="shortcut_ai_edit_photo">এআই ফটো সম্পাদনা</string>
+    <string name="uninstall">আনইনস্টল</string>
+    <string name="hey_there">হ্যালো!!</string>
+
+    <string name="dont_want_to_uninstall">আনইনস্টল করতে চাই না</string>
+    <string name="still_want_to_uninstall">তবুও আনইনস্টল করতে চাই</string>
+    <string name="problem_when_using_app">অ্যাপ ব্যবহার করার সময় সমস্যা</string>
+    <string name="you_are_a_great_partner">আপনি একজন দুর্দান্ত অংশীদার!</string>
+    <string name="your_feedback_is">আপনার মতামত আমাদের ফিচার আরও ভালো করতে সহায়তা করে</string>
+    <string name="why_do_you_uninstall">আপনি কেন আনইনস্টল করছেন?</string>
+    <string name="image_creation_feature">ইমেজ তৈরির ফিচার খারাপ</string>
+    <string name="generating_process_time">তৈরির প্রক্রিয়ার সময় খুব দীর্ঘ</string>
+    <string name="not_enough_features">প্রত্যাশিত ফিচার যথেষ্ট নয়</string>
+    <string name="interface_is_difficult">ইন্টারফেস ব্যবহার করতে কঠিন</string>
+    <string name="too_many_ads">অনেক বেশি বিজ্ঞাপন</string>
+    <string name="i_found_another_app">আমি আরও উপযুক্ত একটি অ্যাপ পেয়েছি</string>
+    <string name="please_enter_the_reason_why">আপনি কেন আনইনস্টল করছেন তা লিখুন</string>
+    <string name="type_your_feedback">এখানে আপনার মতামত লিখুন</string>
+
+    <string name="ai_blend_lacks">কোলাজ ফিচার সীমিত</string>
+    <string name="gen_again">ভিন্ন লেআউট চেষ্টা করুন</string>
+    <string name="ai_edit_photo">এআই সম্পাদনা সঠিক নয়</string>
+    <string name="enhance_again">আবার সম্পাদনা করুন</string>
+    <string name="cannot_find_your">এআই উন্নতকরণে স্বচ্ছতার অভাব</string>
+    <string name="zoom_again">আবার উন্নত করুন</string>
+
+    <string name="please_share_information">আপনার অভিজ্ঞতা উন্নত করতে আমাদের সহায়তা করতে দয়া করে আপনার প্রতিক্রিয়া শেয়ার করুন</string>
+
+
+    <string name="do_you_want_to_discard">আপনি কি বাতিল করতে চান</string>
+    <string name="let_s_go">চলুন যাই</string>
+    <string name="blank">ফাঁকা</string>
+    <string name="template">টেমপ্লেট</string>
+    <string name="app_name_new">CRSL অ্যাপ</string>
+
+    <string name="boarding4_title">স্টিচ</string>
+    <string name="boarding4_text_body">বিভিন্ন ক্লিপ একসাথে যুক্ত করুন।</string>
+
+    <string name="upgrade_plan_now">এখনই প্ল্যান আপগ্রেড করুন!</string>
+    <string name="enjoy_unlimited_benefits_amp_features">সীমাহীন সুবিধা ও বৈশিষ্ট্য উপভোগ করুন</string>
+    <string name="generals">সাধারণ</string>
+    <string name="supports">সহায়তা</string>
+    <string name="seamless">নিরবিচ্ছিন্ন</string>
+    <string name="story">স্টোরি</string>
+    <string name="rewind">রিওয়াইন্ড</string>
+    <string name="paper">কাগজ</string>
+    <string name="tape">টেপ</string>
+    <string name="plastic">প্লাস্টিক</string>
+    <string name="film">ফিল্ম</string>
+    <string name="try_for_free">ফ্রি ট্রাই করুন</string>
+
+    <string name="share_your_new_look_on_social_media_n_tap_below_to_post_it_on_instagram_n_or_tiktok">আপনার নতুন লুক সোশ্যাল মিডিয়ায় শেয়ার করুন\n—ইনস্টাগ্রাম বা টিকটকে পোস্ট করতে নিচে ট্যাপ করুন।</string>
+    <string name="open_instagram">ইনস্টাগ্রাম খুলুন</string>
+    <string name="open_tiktok">টিকটক খুলুন</string>
+    <string name="open_more">আরও খুলুন</string>
+
+    <string name="title_general_notification_without_fo">আপনার চলমান ছবি হারাবেন না!</string>
+    <string name="sub_heading_general_notification_without_fo">এখনই সম্পাদনা শেষ করুন</string>
+    <string name="title_general_notification_with_fo">ফটো এডিটিং মিস করবেন না!</string>
+    <string name="sub_heading_general_notification_with_fo">এখনই ছবি সম্পাদনা চালিয়ে যেতে অ্যাপটি খুলুন</string>
+    <string name="all_pro_materials">সমস্ত প্রো উপকরণ</string>
+    <string name="no_watermark_and_ads">কোনও ওয়াটারমার্ক এবং বিজ্ঞাপন নেই</string>
+    <string name="cancel_anytime_form_the_app">যেকোনো সময় অ্যাপ থেকে বাতিল করুন</string>
+    <string name="weekly_plan">সাপ্তাহিক পরিকল্পনা</string>
+    <string name="yearly_plan">বার্ষিক পরিকল্পনা</string>
+    <string name="notification_title_1">✨ আপনার দুর্দান্ত ক্যারোসেল শেয়ার করুন!</string>
+    <string name="notification_description_1">আপনার ছবি উজ্জ্বল হতে প্রস্তুত। এখনই ইনস্টাগ্রামে আপনার ক্যারোসেল পোস্ট করুন এবং আপনার স্টাইলকে অনুপ্রেরণা হতে দিন! 🌿📸</string>
+
+    <string name="_7_day_free_trail">৭ দিনের বিনামূল্যে ট্রায়াল</string>
+    <string name="_3_day_free_trail">৩ দিনের বিনামূল্যে ট্রায়াল</string>
+
+    <string name="get_pro">প্রো পান</string>
+    <string name="unlock_this_premium_frame">এই প্রিমিয়াম ফ্রেম আনলক করুন</string>
+    <string name="choose_how_you_want_to_unlock_this_frame">আপনি কীভাবে এই ফ্রেমটি আনলক করতে চান তা চয়ন করুন</string>
+    <string name="watch_ad_to_unlock">আনলক করতে বিজ্ঞাপন দেখুন</string>
+    <string name="get_pro_for_unlimited_access">সীমাহীন অ্যাক্সেসের জন্য প্রো পান</string>
+    <string name="unlock_all_premium_frames_forever">চিরকালের জন্য সমস্ত প্রিমিয়াম ফ্রেম আনলক করুন</string>
+
+    <string name="upgrade_to_premium">প্রিমিয়ামে আপগ্রেড করুন</string>
+    <string name="unlock_the_full_experience">সম্পূর্ণ অভিজ্ঞতা আনলক করুন</string>
+    <string name="unlock_all_premium_templates">সমস্ত প্রিমিয়াম টেমপ্লেট আনলক করুন</string>
+    <string name="priority_access_to_new_features">নতুন বৈশিষ্ট্যগুলিতে অগ্রাধিকার অ্যাক্সেস</string>
+    <string name="access_all_style_categories">সমস্ত স্টাইল ক্যাটাগরি অ্যাক্সেস করুন</string>
+    <string name="one_tap_carousel_creator">ওয়ান-ট্যাপ ক্যারোসেল ক্রিয়েটর</string>
+    <string name="quality_export_without_watermark">ওয়াটারমার্ক ছাড়া মানসম্পন্ন এক্সপোর্ট</string>
+    <string name="ad_free_creative_experience">বিজ্ঞাপন-মুক্ত সৃজনশীল অভিজ্ঞতা</string>
+    <string name="_3_days_free_trial">৩ দিনের বিনামূল্যে ট্রায়াল</string>
+    <string name="trusted_by_2m_users_worldwide">বিশ্বব্যাপী ২০ লক্ষেরও বেশি ব্যবহারকারীর বিশ্বাস</string>
+
+    <string name="grab_now">এখনই নিন</string>
+    <string name="unlock_your_premium_experience_today">আজই আপনার প্রিমিয়াম অভিজ্ঞতা আনলক করুন!</string>
+    <string name="_7_days_free_trial">৭ দিনের বিনামূল্যে ট্রায়াল</string>
+    <string name="carousal">ক্যারোসেল</string>
+    <string name="enjoy_50_off_on_weekly_premium">সাপ্তাহিক প্রিমিয়ামে ৫০% ছাড় উপভোগ করুন!</string>
+
+    <string name="apply">প্রয়োগ করুন</string>
+    <string name="preview">প্রিভিউ</string>
+    <string name="projects">প্রকল্প</string>
+    <string name="see_all">সবগুলো দেখুন</string>
+    <string name="with_ad">বিজ্ঞাপন সহ</string>
+
+    <string name="_3_day_free_trial">৩ দিনের বিনামূল্যে ট্রায়াল</string>
+    <string name="join_crsl_premium">CRSL প্রিমিয়ামে যোগদান করুন</string>
+
+
+    <string name="boarding1_title">আঁকা সহজ</string>
+    <string name="boarding1_text_body">ফোনে একটা বাটার পেপার রেখে আঁক।</string>
+    <string name="boarding2_title">ক্যামেরা দিয়ে আঁকুন</string>
+    <string name="boarding2_text_body">আপনার ফোনটি সহজে আঁকতে ধরুন বা দাঁড় করান।</string>
+    <string name="boarding3_title">নিজের ছবি আঁকুন</string>
+    <string name="boarding3_text_body">আপনার পছন্দের যেকোনো ছবিতে আঁকুন, ট্রেস করুন এবং রঙ করুন!</string>
+    <string name="let_s_draw">চলো আঁকি</string>
+    <string name="create_draw_and_have_fun">তৈরি করুন, আঁকুন, এবং মজা করুন!</string>
+    <string name="ar_drawing">এআর অঙ্কন</string>
+    <string name="import_gallery">গ্যালারি আমদানি করুন</string>
+    <string name="photo_to_sketch">ছবি থেকে স্কেচ</string>
+    <string name="learn_to_draw">আঁকতে শিখুন</string>
+    <string name="my_art">আমার শিল্প</string>
+
+    <string name="s_home_h1"><![CDATA[Learning &]]></string>
+    <string name="s_home_h1_sub">অনুশীলন</string>
+    <string name="s_home_h1_detail">অঙ্কন দক্ষতা উন্নত করার জন্য সহজ পাঠ\n</string>
+
+    <string name="s_home_h2"><![CDATA[Drawing &]]></string>
+    <string name="s_home_h2_sub">সৃজনশীলতা</string>
+    <string name="s_home_h2_detail">মজাদার ধাপে ধাপে\nঅঙ্কন পাঠ</string>
+
+    <string name="s_home_h3"><![CDATA[Categories &]]></string>
+    <string name="s_home_h3_sub">থিম</string>
+    <string name="s_home_h3_detail">থিম এবং স্টাইল অনুসারে অঙ্কনগুলি\nঅনুসন্ধান করুন</string>
+
+    <string name="s_home_h4">ছবি</string>
+    <string name="s_home_h4_sub">স্কেচ</string>
+    <string name="s_home_h4_detail">ছবিগুলিকে শৈল্পিক\nপেন্সিল স্কেচে রূপান্তর করুন।</string>
+
+    <string name="start">শুরু করুন</string>
+    <string name="settings">সেটিংস</string>
+    <string name="unlock_premium_features">প্রিমিয়াম বৈশিষ্ট্যগুলি আনলক করুন</string>
+    <string name="terms_and_conditions">শর্তাবলী</string>
+
+    <string name="watch_an_ad">একটি বিজ্ঞাপন দেখুন</string>
+    <string name="pro_face_swap">প্রো ফেস সোয়াপ</string>
+    <string name="swap">অদলবদল</string>
+    <string name="upload_image_template">ছবির টেমপ্লেট আপলোড করুন</string>
+    <string name="upload_or_take_your_image_please_clear_face">আপনার ছবি আপলোড করুন অথবা তুলুন। অনুগ্রহ করে মুখ পরিষ্কার করুন।</string>
+    <string name="upload_your_face">আপনার\nমুখ আপলোড করুন</string>
+    <string name="create">তৈরি করুন</string>
+    <string name="saving_your_image">আপনার ছবি সংরক্ষণ করা হচ্ছে</string>
+    <string name="processing_your_masterpiece">তোমার মাস্টারপিসটি প্রক্রিয়াজাত করা হচ্ছে... 🎨</string>
+    <string name="face_swap">মুখের অদলবদল</string>
+    <string name="edit_more">আরও সম্পাদনা করুন</string>
+    <string name="please_crop">ভালো ফলাফলের জন্য\nছবিটি একই অনুপাতে কাটছাঁট করুন।</string>
+    <string name="stay_with_us">আমাদের সাথেই থাকুন, আপনার অভিজ্ঞতা শুরু হতে চলেছে!\n</string>
+    <string name="got_it">বুঝেছি</string>
+
+    <string name="pencil_sketch">পেন্সিল স্কেচ</string>
+    <string name="sketch_now">এখনই স্কেচ করুন</string>
+    <string name="upgrade_to_pro">প্রো-তে আপগ্রেড করুন</string>
+    <string name="enjoy_all_drawings">সমস্ত অঙ্কন, সরঞ্জাম এবং মজা উপভোগ করুন</string>
+    <string name="sketch_loading">তোমার ছবির স্কেচিং — লাইনগুলো জীবন্ত হয়ে উঠছে...</string>
+    <string name="sketch_ready">তোমার স্কেচ তৈরি হচ্ছে!</string>
+    <string name="memory_sketching">আপনার স্মৃতিকে পেন্সিল শিল্পে পরিণত করা...</string>
+    <string name="sketch_details_fit">রেখা আর ছায়াগুলো জায়গায় জায়গায় পড়ে যাচ্ছে!</string>
+    <string name="sketch_progress">স্কেচ ম্যাজিক চলছে...</string>
+    <string name="sketch_placing_details">প্রতিটি ছোট ছোট জিনিস আঁকা...</string>
+    <string name="sketch_looking_timeless">ক্লাসিক লুক — এখন স্কেচ হিসেবে!</string>
+    <string name="sketch_you_brought_it_back">ওহ! স্কেচটা জীবন্ত দেখাচ্ছে!</string>
+    <string name="sketch_healing_memories">যত্ন সহকারে স্মৃতি আঁকছি...</string>
+    <string name="sketch_almost">প্রায় হয়ে গেছে — শেষ স্ট্রোক বাকি!</string>
+    <string name="sketch_damage_detected">প্রান্তগুলি সামঞ্জস্য করা - রেখাগুলি পরিমার্জন করা!</string>
+    <string name="sketch_transforming">ছবিকে হাতে আঁকা শিল্পে পরিণত করা হচ্ছে...</string>
+    <string name="sketch_uploading">স্কেচ শিল্পীর কাছে আপনার ছবি পাঠানো হচ্ছে...</string>
+    <string name="sketch_final_touch">চূড়ান্ত ছায়াকরণ — এর জন্য দক্ষতা লাগে!</string>
+    <string name="sketch_blast">এই স্কেচটা অন্যরকম লাগছে!</string>
+    <string name="sketch_new_life">নতুন স্কেচের ভাবনা আসছে!</string>
+    <string name="sketch_details_locked">বিস্তারিত তথ্য লক করা হয়েছে — একজন পেশাদারের মতো স্কেচ করা!</string>
+    <string name="sketch_wait">অপেক্ষা করো... পেন্সিল ম্যাজিক লোড হচ্ছে!</string>
+    <string name="sketch_alignment">স্ট্রোকগুলিকে নিখুঁতভাবে সারিবদ্ধ করা হচ্ছে...</string>
+    <string name="sketch_memory_repairing">তোমার স্কেচটি পরিমার্জিত হচ্ছে...</string>
+    <string name="sketch_about_to_shine">প্রস্তুত হও — তোমার স্কেচ উজ্জ্বল হবে!</string>
+    <string name="sketch_epic">মহাকাব্যিক স্কেচ তৈরির কাজ চলছে!</string>
+    <string name="sketch_ready_to_reveal">প্রায় প্রস্তুত — শীঘ্রই স্কেচটি প্রকাশ করুন!</string>
+    <string name="sketch_restoring_clarity">রেখা এবং বৈসাদৃশ্য উন্নত করা হচ্ছে...</string>
+    <string name="sketch_scratches_fading">রুক্ষ প্রান্তগুলি মসৃণ হচ্ছে...</string>
+    <string name="sketch_time_travel_mode">স্কেচ মোড: চালু ✏️</string>
+    <string name="sketch_magic_at_work">কর্মক্ষেত্রে স্কেচ ম্যাজিক - সাথেই থাকুন!</string>
+    <string name="save_colored_text"><![CDATA[ All done! <font color="#FF1BA6"><b>Save</b></font> your photo now.]]></string>
+    <string name="cancel_underline"><u>Cancel</u></string>
+    <string name="do_you_like_our_app">আপনি কি আমাদের অ্যাপ পছন্দ করেন?</string>
+    <string name="sketch">স্কেচ</string>
+    <string name="trace">ট্রেস</string>
+    <string name="drawing_now">এখনই অঙ্কন করুন</string>
+    <string name="how_to_draw">কিভাবে আঁকবেন</string>
+    <string name="picture">ছবি</string>
+    <string name="camera">ক্যামেরা</string>
+    <string name="stop_drawing">ছবি আঁকা বন্ধ করবেন?</string>
+    <string name="you_want_to_stop_drawing">তুমি ছবি আঁকা বন্ধ করতে চাও।</string>
+    <string name="yes_discard">না, করো না</string>
+    <string name="yes_stop_it"><u>Yes, Stop it</u></string>
+    <string name="with_camera">ক্যামেরা ব্যবহার করে চালিয়ে যান</string>
+    <string name="with_cam">ক্যামেরা সহ</string>
+    <string name="without_camera">ক্যামেরা ছাড়াই চালিয়ে যান</string>
+    <string name="without_cam">ক্যামেরা ছাড়া</string>
+
+    <string name="unlock_the_magic">প্রো সৃজনশীলতা আনলক করুন 🌟</string>
+    <string name="unlimited_drawing">বিজ্ঞাপন সরান এবং সীমাহীন সৃজনশীল টুল উপভোগ করুন</string>
+    <string name="standard">স্ট্যান্ডার্ড</string>
+    <string name="unlock_all_sketch">সব স্কেচ আনলক করুন</string>
+    <string name="draw_from_gallery">গ্যালারি থেকে আঁকুন</string>
+    <string name="offline_drawing_mode">অফলাইন ড্রয়িং মোড</string>
+    <string name="photo_to_sketch_convertor">ফটো থেকে স্কেচ কনভার্টার</string>
+    <string name="draw_learning_lessons">ড্রয়িং শেখার পাঠ</string>
+    <string name="share_with_friends">বন্ধুদের সাথে শেয়ার করুন</string>
+    <string name="my_drawing">আমার ড্রয়িং</string>
+    <string name="there_s_no_any_saved_data">কোনো সেভ করা ডেটা নেই!</string>
+    <string name="go_to_drawings">ড্রয়িংসে যান</string>
+
+</resources>

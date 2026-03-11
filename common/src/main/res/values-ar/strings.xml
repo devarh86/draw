@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="downloading">جارٍ التنزيل...</string>
+    <string name="exit_title">هل أنت متأكد أنك تريد الخروج؟</string>
+    <string name="discard">ينبذ</string>
+    <string name="exit">مخرج</string>
+    <string name="cancel">يلغي</string>
+    <string name="edit_photo">تحرير الصورة</string>
+    <string name="are_you_want_to_discard">هل تريد التخلص؟</string>
+    <string name="if_you_go_back_your_work_will_be_discarded">إذا عدت سيتم تجاهل عملك!</string>
+    <string name="try_again">حاول ثانية</string>
+    <string name="select_language">اختر اللغة</string>
+    <string name="term_of_use">شروط الاستخدام</string>
+    <string name="welcome_to_collagepic">مرحبًا بك في CollagePic</string>
+    <string name="what_do_you_want_to_do_in_this_app">ماذا تريد أن تفعل في هذا التطبيق؟</string>
+
+    <string name="ratio">النسبة</string>
+    <string name="add_image">إضافة صورة</string>
+    <string name="select_1_10_photos">اختر 1–10 صور</string>
+    <string name="select_1_9_photos">اختر 1–9 صور</string>
+    <string name="background">الخلفية</string>
+    <string name="filter">تصفية</string>
+    <string name="add">إضافة</string>
+    <string name="stitch">دمج</string>
+    <string name="demandMessage">يمكنك اختيار صورة واحدة فقط %d</string>
+    <string name="requestMessage">يرجى اختيار صورة واحدة على الأقل %d</string>
+    <string name="requestMessageCollage">يرجى اختيار صورة واحدة على الأقل %d</string>
+    <string name="noImage">لم يتم العثور على صورة</string>
+    <string name="multi_fit">ملاءمة متعددة</string>
+    <string name="_continue">متابعة</string>
+    <string name="square">مربع</string>
+    <string name="options">الخيارات\n</string>
+    <string name="stay">ابقَ</string>
+
+    <string name="unlock_all_features">فتح جميع الميزات</string>
+    <string name="start_free_trail">ابدأ التجربة المجانية</string>
+    <string name="start_now">ابدأ الآن</string>
+    <string name="_4k_templates_quality"> أربعة ك جودة قوالب</string> <!-- Arabic -->
+    <string name="then">ثم</string>
+    <string name="per_week">/أسبوع</string>
+    <string name="after_trial">بعد فترة تجريبية مجانية لمدة 3 أيام</string>
+    <string name="subscription_auto_renew">تجدد الاشتراك تلقائيًا. يمكنك الإلغاء في أي وقت على</string>
+
+    <string name="quick_tutorial">برنامج تعليمي سريع</string>
+    <string name="shortcut_template">قالب</string>
+    <string name="use_this_template">استخدم هذا القالب</string>
+    <string name="tap_to_apply">اضغط للتطبيق</string>
+    <string name="great_work">عمل رائع</string>
+    <string name="done">تم</string>
+    <string name="getting_ready">يتم التحضير</string>
+    <string name="change_photos_with_just_one_touch">غيّر الصور بلمسة واحدة فقط</string>
+    <string name="show_me">أرني</string>
+    <string name="create_stunning_designs_in_a_single_tap">أنشئ تصاميم مذهلة بلمسة واحدة</string>
+
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="cancel_subscription">إلغاء الاشتراك</string>
+    <string name="subscription_detail">عند الانتهاء، سيتم تحويل النسخة التجريبية تلقائيًا إلى اشتراك. يتم تجديد الاشتراك تلقائيًا. يمكنك الإلغاء في أي وقت على متجر Google Play.</string>
+    <string name="continue_text">يكمل</string>
+    <string name="no_watermark">لا توجد علامة مائية</string>
+    <string name="no_obligatory_ads">لا توجد إعلانات إلزامية</string>
+    <string name="smoother_experience">تجربة أكثر سلاسة</string>
+    <string name="access_to_all_features">الوصول إلى كافة الميزات</string>
+    <string name="pro">للمحترفين</string>
+    <string name="say_goodbye_to_watermark">قل وداعًا للعلامة المائية</string>
+    <string name="draft">مسودة</string>
+    <string name="language_indo" translatable="false">الاندونيسية</string>
+    <string name="language_english" translatable="false">إنجليزي</string>
+    <string name="language_bengali" translatable="false">البنغالية</string>
+    <string name="language_german" translatable="false">الألمانية</string>
+    <string name="language_portuguese" translatable="false">البرتغالية</string>
+    <string name="language_arabic" translatable="false">عربي</string>
+    <string name="language_spanish" translatable="false">الأسبانية</string>
+    <string name="language_mandarin" translatable="false">الماندرين</string>
+    <string name="language_russian" translatable="false">الروسية</string>
+    <string name="language_urdu" translatable="false">الأردية</string>
+    <string name="language_french" translatable="false">فرنسي</string>
+    <string name="language_hindi" translatable="false">الهندية</string>
+    <string name="language_japanese" translatable="false">اليابانية</string>
+    <string name="waring_out_of_memory">لا توجد ذاكرة كافية. الرجاء إزالة الصور أو سيتم تعطل البرنامج الخاص بك.!!!</string>
+    <string name="hello_blank_fragment">مرحبا جزء فارغ</string>
+    <string name="border_size">حجم الحدود</string>
+    <string name="border_color">لون الحدود</string>
+    <string name="border_padding">حشوة</string>
+    <string name="border_radius">نصف القطر</string>
+    <string name="frame_foreground">مقدمة الإطار</string>
+    <string name="save">يحفظ</string>
+    <string name="message">رسالة</string>
+    <string name="bg">بي جي</string>
+    <string name="text">نص</string>
+    <string name="write_text">كتابة النص</string>
+    <string name="close">يغلق</string>
+    <string name="replace">يستبدل</string>
+    <string name="crop">اقتصاص</string>
+    <string name="remove_watermark">إزالة العلامة المائية</string>
+    <string name="for_24_hours">لمدة 24 ساعة</string>
+    <string name="for_life_time">لمدى الحياة</string>
+    <string name="save_amp_continue"><![CDATA[Save & Continue]]></string>
+    <string name="processing_please_wait">جاري المعالجة، يرجى الانتظار...</string>
+    <string name="share">يشارك</string>
+    <string name="home">بيت</string>
+    <string name="frame_background">FrameBackground</string>
+    <string name="opacity">العتامة</string>
+    <string name="blend">يمزج</string>
+    <string name="_ad">إعلان</string>
+    <string name="watch_video_ad_to_remove_watermark_for_or_go_premium">شاهد إعلان الفيديو لإزالة العلامة المائية أو Go Premium.</string>
+    <string name="go_premium">انطلق إلى عالم التميز</string>
+    <string name="trending_frames">إطارات تتجه</string>
+    <string name="blur">طمس</string>
+    <string name="next">التالي</string>
+    <string name="watch_ad">شاهد الإعلان</string>
+    <string name="effect_opacity">عتامة التأثير</string>
+    <string name="photo_editor_1">محرر</string>
+    <string name="blending">مزج</string>
+
+
+
+
+
+
+
+    <string name="menu_featured">مميز</string>
+    <string name="menu_home">بيت</string>
+    <string name="menu_templates">قوالب</string>
+    <string name="menu_styles">أنماط الفن</string>
+    <string name="menu_files">عملي</string>
+    <string name="ad">إعلان</string>
+    <string name="single_frames">إطارات واحدة</string>
+    <string name="double_frames">إطارات الزوجين</string>
+    <string name="greetings">تحيات</string>
+    <string name="collages">الفن التصويري</string>
+    <string name="collage">ملصقة</string>
+    <string name="shapes">الأشكال</string>
+    <string name="pips">إطارات النقاط</string>
+    <string name="frames">إطارات</string>
+    <string name="frame">إطار</string>
+    <string name="more">أكثر</string>
+    <string name="no_result_found">لم يتم العثور على نتيجة</string>
+    <string name="try_now">حاول الآن</string>
+    <string name="true_love_frames">FrameMe</string>
+    <string name="true_love_frames_camelcase">FrameMe</string>
+    <string name="tell_your_friend">أخبر صديقك</string>
+    <string name="rate_us">قيمنا</string>
+    <string name="send_mail">إرسال البريد</string>
+    <string name="cancel_subscription_description">يمكنك إدارة الاشتراك أو إلغاؤه في أي وقت من خلال إعدادات Google Play.</string>
+    <string name="recommended_apps">التطبيقات الموصى بها</string>
+    <string name="remove_ads">إزالة الإعلانات</string>
+    <string name="editor">محرر</string>
+    <string name="effect">تأثير</string>
+    <string name="adjust">يُعدِّل</string>
+    <string name="stickers">ملصقات</string>
+    <string name="type">يكتب</string>
+    <string name="font">الخط</string>
+    <string name="font_color">لون الخط</string>
+    <string name="bg_color">لون بي جي</string>
+    <string name="opacity_value">العتامة: %1$s %</string>
+    <string name="menu_pro">برو</string>
+    <string name="menu_favourite">مفضل</string>
+    <string name="for_you">جديد</string>
+    <string name="today_special">قمة</string>
+    <string name="most_used">تتجه</string>
+    <string name="more_features">المزيد من الميزات</string>
+    <string name="recently_used">مؤخرًا</string>
+    <string name="saved">أنقذ</string>
+    <string name="mark_as_favorite_then_your_photo_nwill_appear_in_favorite_list">قم بوضع علامة على الإطار كمفضل، ثم سيظهر إطارك\nفي قائمة المفضلة</string>
+    <string name="search_by_keyword">البحث حسب الكلمة الرئيسية</string>
+    <string name="more_apps">التطبيقات الموصى بها</string>
+    <string name="join_full_experience">انضم إلى الخبرة الكاملة</string>
+    <string name="ads_free">إعلانات مجانية</string>
+    <string name="ads_free_experience">تجربة إعلانات مجانية</string>
+    <string name="all_premium_assets">جميع الأصول المميزة</string>
+    <string name="each_plan_includes">تتضمن كل خطة:</string>
+    <string name="unlimited_frams_cards"><![CDATA[UNLIMITED FRAMES & CARDS]]></string>
+    <string name="get_100_stickers">احصل على أكثر من 100 ملصق</string>
+    <string name="remove_ads_cap">إزالة الإعلانات</string>
+    <string name="continue_with_ads">تواصل مع الإعلانات</string>
+    <string name="weekly">أسبوعي</string>
+    <string name="plan">يخطط</string>
+    <string name="yearly">سنوي</string>
+    <string name="life_time">حياة</string>
+    <string name="premium_features">ميزات متميزة</string>
+    <string name="get_access_to_premium_features">احصل على الوصول إلى الميزات المميزة</string>
+    <string name="text_effect">تأثير النص</string>
+
+    <string name="error_gif">يجب أن يكون حجم الارتباط x أو y %1$dpx على الأقل ويجب ألا يزيد حجم الملف عن %2$sM</string>
+    <string name="album_name_all">جميع وسائل الإعلام</string>
+    <string name="error_type_conflict">لا يمكن تحديد الصور ومقاطع الفيديو في نفس الوقت</string>
+    <string name="error_over_count_default">لقد وصلت إلى الحد الأقصى للاختيار</string>
+    <string name="error_over_original_size">لا يمكن تحديد الصور التي يزيد حجمها عن %1$d ميغابايت</string>
+    <string name="error_no_video_activity">لم يتم العثور على تطبيق يدعم معاينة الفيديو</string>
+    <string name="button_ok">نعم</string>
+    <string name="error_file_type">نوع الملف غير معتمد</string>
+    <string name="error_over_original_count">%1$d صورة يزيد حجمها عن %2$d ميغابايت. سيتم إلغاء تحديد الأصل</string>
+    <string name="fonts_bg">الخطوط بي جي</string>
+
+    <plurals name="error_over_count">
+        <item quantity="one">يمكنك فقط تحديد ما يصل إلى %1$d من ملفات الوسائط</item>
+        <item quantity="few">يمكنك فقط تحديد ما يصل إلى %1$d من ملفات الوسائط</item>
+        <item quantity="many">يمكنك فقط تحديد ما يصل إلى %1$d من ملفات الوسائط</item>
+        <item quantity="other">يمكنك فقط تحديد ما يصل إلى %1$d من ملفات الوسائط</item>
+    </plurals>
+    <string name="button_apply">التالي</string>
+    <string name="button_apply_default">التالي</string>
+    <string name="image_selection_limit_default">حدد 2-9 صور</string>
+    <string name="image_selection_limit">حدد 2-9 صور(%1$d)</string>
+    <string name="image_selection_limit_1">حدد صورة</string>
+    <string name="brightness">سطوع</string>
+    <string name="contrast">مقابلة</string>
+    <string name="hue">هوى</string>
+    <string name="exposure">التعرض</string>
+    <string name="saturation">التشبع</string>
+    <string name="tint">لون</string>
+    <string name="warmth">الدفء</string>
+    <string name="color">لون</string>
+    <string name="sharpen">شحذ</string>
+    <string name="vignette">المقالة القصيرة</string>
+    <string name="highlight">تسليط الضوء</string>
+    <string name="shadow">الظل</string>
+
+    <string name="facebook_app_id" translatable="false">1116803502100807</string>
+    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
+
+    <string name="layout_text">تَخطِيط</string>
+    <string name="button_preview">معاينة</string>
+    <string name="button_original">إبداعي</string>
+    <string name="empty_text">لا توجد وسائل الإعلام بعد</string>
+    <string name="button_back">خلف</string>
+    <string name="what_we_offer_in_discount_plan">ما نقدمه في خطة الخصم</string>
+    <string name="original">إبداعي</string>
+    <string name="tick">ضع علامة</string>
+    <string name="reset">إعادة ضبط</string>
+    <string name="filter_opacity">تصفية العتامة</string>
+    <string name="share_text">اكتشف طريقة جديدة وممتعة لتجميل صورك مع هذا التطبيق الرائع.</string>
+    <string name="pro_icon">pro_icon</string>
+    <string name="all_inclusive">شامل كليًا</string>
+    <string name="do_you_have_any_thoughts_you_d_like_to_share">هل لديك أي أفكار ترغب في مشاركتها؟</string>
+    <string name="submit">يُقدِّم</string>
+    <string name="filters">المرشحات</string>
+    <string name="no_internet_connect_found_please_try_again">حدث خطأ ما في اتصالك \n اتصل بالإنترنت.</string>
+    <string name="coming_soon">قريباً</string>
+    <string name="pro_caps">للمحترفين</string>
+    <string name="apply_filter_on_all_images">تطبيق مرشح على جميع الصور</string>
+    <string name="connect_internet_and_explore_fantastic_art_style">قم بتوصيل الإنترنت واستكشف أسلوبًا فنيًا رائعًا.</string>
+    <string name="solo_frames">إطارات فردية</string>
+    <string name="multiplex">متعدد</string>
+    <string name="photo_editor">محرر الصور</string>
+    <string name="image_resolution">دقة الصورة</string>
+    <string name="good">جيد</string>
+    <string name="enhanced">معزز</string>
+    <string name="high">عالي</string>
+    <string name="unlock_this_amazing_frame">افتح هذا الإطار المذهل</string>
+    <string name="ad_start_in_3_second">يبدأ الإعلان خلال 3 ثواني</string>
+    <string name="your_opinion_matters_to_us_we_d_ngreatly_appreciate_if_you_can_rate_us">رأيك يهمنا. نحن نقدر بشدة إذا كان بإمكانك تقييمنا.</string>
+    <string name="the_best_we_can_get">أفضل ما يمكننا الحصول عليه</string>
+    <string name="rotate">تناوب</string>
+    <string name="image_quality">جودة الصورة</string>
+    <string name="edit_text">تحرير النص</string>
+    <string name="edit">يحرر</string>
+
+    <string name="feedback">تعليق</string>
+    <string name="folder_name">صورة مجمعة</string>
+    <string name="name">صورة مجمعة</string>
+    <string name="app_name">صورة مجمعة</string>
+
+    <string name="logo_image">صورة الشعار</string>
+    <string name="unlock_all_assets">فتح جميع الأصول</string>
+    <string name="smoother_user_experience">تجربة مستخدم أكثر سلاسة</string>
+    <string name="remove_obligatory_ads">إزالة الإعلانات الإلزامية</string>
+    <string name="monthly">شهريا</string>
+
+    <string name="premium">غالي</string>
+    <string name="basic">أساسي</string>
+
+
+
+    <string name="adjustment">تعديلات</string>
+    <string name="vertical">عمودي</string>
+    <string name="horizontal">أفقي</string>
+
+    <string name="camera_and_storage">إذن الكاميرا والتخزين</string>
+    <string name="collage_requires_camera_and_storage_access_for_optimal_performance">يتطلب CollagePic الوصول إلى الكاميرا والتخزين لتحقيق الأداء الأمثل.</string>
+    <string name="allow">السماح</string>
+
+
+
+    <string name="enhance">محسن الذكاء الاصطناعي</string>
+
+
+    <string name="enhance_detail_text">الصور تبدو أكثر وضوحًا وحيوية بعد التحسين</string>
+
+    <string name="pro_enhance">تعزيز برو</string>
+    <string name="better_effect_no_ads">تأثير أفضل &amp; بدون إعلانات</string>
+
+    <string name="photo_ready_message">صورتك جاهزة! احفظها الآن.</string>
+
+    <string name="processing_text_one">جاري معالجة تحفتك الفنية... 🎨</string>
+    <string name="processing_text_two">اللمسات الأخيرة... ✨</string>
+    <string name="processing_text_three">بدء التشغيل... 🚀</string>
+
+    <string name="edit_t_s">تحرير الصورة</string>
+    <string name="edit_d_s">خصص صورك بسهولة.</string>
+    <string name="enhance_t_s">تحسين الذكاء الاصطناعي</string>
+    <string name="enhance_d_s">رفع جودة الصورة بذكاء.</string>
+    <string name="blend_t_s">دمج الذكاء الاصطناعي</string>
+    <string name="blend_d_s">دمج الصور بسلاسة باستخدام الذكاء الاصطناعي.</string>
+    <string name="collage_t_s">كولاج الصور</string>
+    <string name="collage_d_s">دمج الصور في تصميمات مذهلة.</string>
+    <string name="bg_art_t_s">فن الخلفية</string>
+    <string name="bg_art_d_s">أنشئ خلفيات رائعة بسهولة.</string>
+    <string name="unleash">أطلق العنان لإبداعك!</string>
+    <string name="unlimited_access">وصول غير محدود</string>
+    <string name="smooth_ux">تجربة مستخدم سلسة</string>
+    <string name="enhance_watch_ad">محسّن \n شاهد إعلانًا</string>
+
+
+    <string name="what_do_you_want_for_your_photo">ماذا تريد لصورتك؟</string>
+    <string name="templates">القوالب</string>
+    <string name="choose_an_answer">اختر إجابة</string>
+    <string name="select_2_9_photos">اختر 2-9 صور</string>
+    <string name="select_1_1_photos">اختر صورة واحدة</string>
+    <string name="maximum_images_selected">تم اختيار الحد الأقصى للصور</string>
+    <string name="photo_edit">تعديل الصورة</string>
+    <string name="ai_blend">دمج الذكاء الاصطناعي</string>
+    <string name="what_would_you_like_to_create">ماذا تريد أن تنشئ؟</string>
+    <string name="ai_enhance">تعزيز الذكاء الاصطناعي</string>
+    <string name="survery_detail">سيساعدنا ردك في تقديم التجارب المناسبة لك. (اختر كل الإجابات المناسبة)</string>
+
+
+
+
+    <string name="define_your_role">حدد دورك، واكتشف أدواتك!</string>
+    <string name="pick_your_journey">اختر رحلتك الإبداعية!</string>
+    <string name="help_us_bring_experiences">ستساعدنا إجابتك في تقديم التجارب المناسبة لك. (اختر كل الإجابات المناسبة)</string>
+    <string name="where_publish_content">أين تنشر محتواك؟</string>
+    <string name="how_did_you_find_us">كيف عثرت علينا؟</string>
+
+    <!-- User Information -->
+    <string name="personal_user">مستخدم شخصي</string>
+    <string name="student">طالب</string>
+    <string name="content_creator">منشئ محتوى</string>
+    <string name="design_teacher">معلم تصميم</string>
+    <string name="business_owner">صاحب عمل</string>
+    <string name="employee">موظف</string>
+    <string name="event_planner">منظم فعاليات</string>
+
+    <!-- Categories -->
+    <string name="frame_templates">قوالب الإطارات</string>
+    <string name="bg_art">فن الخلفية</string>
+    <string name="profile_pic">صورة الملف الشخصي</string>
+    <string name="pip_template">قالب PIP</string>
+    <string name="other">أخرى</string>
+
+    <!-- Content Types -->
+    <string name="facebook">فيسبوك</string>
+    <string name="instagram">إنستغرام</string>
+    <string name="tiktok">تيك توك</string>
+    <string name="pinterest">بينتيريست</string>
+    <string name="linkedin">لينكدإن</string>
+    <string name="reddit">ريديت</string>
+    <string name="dribbble">دريبل</string>
+    <string name="behance">بيهانس</string>
+    <string name="twitter">تويتر</string>
+    <string name="youtube">يوتيوب</string>
+    <string name="discord">ديسكورد</string>
+
+    <string name="skip">تخطي</string>
+    <string name="button">زر</string>
+    <string name="make_another">اصنع آخر</string>
+    <string name="share_to">شارك إلى</string>
+    <string name="failed_to_save_image">فشل في حفظ الصورة</string>
+    <string name="error_while_saving_image">خطأ أثناء حفظ الصورة</string>
+    <string name="close_background_apps_try_again">يرجى إغلاق بعض التطبيقات في الخلفية والمحاولة مرة أخرى</string>
+    <string name="failed_to_load_frame">فشل في تحميل الإطار، يرجى المحاولة مرة أخرى</string>
+
+    <string name="error_while_applying_blend">خطأ أثناء تطبيق الدمج</string>
+    <string name="image_loading_failed">فشل تحميل الصورة، يرجى المحاولة مرة أخرى</string>
+    <string name="image_is_corrupt">الصورة تالفة</string>
+    <string name="image_not_found">لم يتم العثور على الصورة</string>
+    <string name="image_saving_failed">فشل حفظ الصورة</string>
+
+
+    <string name="notification_title_2">🎨 صنع الكولاج بسهولة!</string>
+    <string name="notification_description_2">حوِّل صورك المفضلة إلى كولاجات مذهلة بكل سهولة.</string>
+    <string name="full_screen_intent">تم رفض إذن غرض ملء الشاشة</string>
+    <string name="don_t_allow">لا تسمح</string>
+
+    <string name="full_screen_intent_message">قم بتمكين <b>شاشة كاملة</b> للحصول على أفضل تجربة تطبيق وتحديثات فورية.</string>
+
+
+    <string name="open">افتح</string>
+    <string name="get_start">ابدأ</string>
+    <string name="intro_one">يساعد في التحرير التلقائي باستخدام الذكاء الاصطناعي بسهولة</string>
+    <string name="intro_two">تساعدك هذه الأداة على إنشاء الصور بسرعة وبشكل مثالي.</string>
+    <string name="intro_two_first">ال</string>
+    <string name="intro_three">تساعدك على التعبير عن أسلوبك الفريد وجوهر صورتك.</string>
+    <string name="background_art">فن الخلفية</string>
+    <string name="use">استخدم</string>
+    <string name="intro_one_heading">محسن الصور بالذكاء الاصطناعي</string>
+    <string name="intro_one_sub_heading">حسن جودة صورك بسهولة.</string>
+    <string name="intro_two_heading">إنشاء تراكيب مذهلة</string>
+    <string name="intro_two_sub_heading">ادمج عدة صور بسهولة.</string>
+    <string name="intro_three_heading">تعديل سحري لصورك</string>
+    <string name="intro_three_sub_heading">قم بتخصيص صورك بسهولة.</string>
+
+
+
+    <string name="shortcut_ai_blend">دمج الذكاء الاصطناعي</string>
+    <string name="shortcut_ai_edit_photo">تحرير الصور بالذكاء الاصطناعي</string>
+    <string name="uninstall">إلغاء التثبيت</string>
+    <string name="hey_there">مرحبًا!!</string>
+
+    <string name="dont_want_to_uninstall">لا أرغب في إلغاء التثبيت</string>
+    <string name="still_want_to_uninstall">ما زلت أرغب في إلغاء التثبيت</string>
+    <string name="problem_when_using_app">مشكلة عند استخدام التطبيق</string>
+    <string name="you_are_a_great_partner">أنت شريك رائع!</string>
+    <string name="your_feedback_is">ملاحظاتك هي ما يدفعنا لتحسين الميزة</string>
+    <string name="why_do_you_uninstall">لماذا تقوم بإلغاء التثبيت؟</string>
+    <string name="image_creation_feature">ميزة إنشاء الصور سيئة</string>
+    <string name="generating_process_time">وقت عملية التوليد طويل جدًا</string>
+    <string name="not_enough_features">ميزات غير كافية كما هو متوقع</string>
+    <string name="interface_is_difficult">الواجهة صعبة الاستخدام</string>
+    <string name="too_many_ads">الكثير من الإعلانات</string>
+    <string name="i_found_another_app">وجدت تطبيقًا آخر أكثر ملاءمة</string>
+    <string name="please_enter_the_reason_why">يرجى إدخال سبب إلغاء التثبيت</string>
+    <string name="type_your_feedback">اكتب ملاحظاتك هنا</string>
+
+
+    <string name="ai_blend_lacks">ميزة الكولاج محدودة</string>
+    <string name="gen_again">جرّب تخطيطًا مختلفًا</string>
+    <string name="ai_edit_photo">التحرير بالذكاء الاصطناعي غير دقيق</string>
+    <string name="enhance_again">حرّر مرة أخرى</string>
+    <string name="cannot_find_your">تحسين الذكاء الاصطناعي يفتقر إلى الوضوح</string>
+    <string name="zoom_again">حسّن مرة أخرى</string>
+    <string name="please_share_information">يرجى مشاركة ملاحظاتك لمساعدتنا في تحسين تجربتك</string>
+
+
+    <string name="do_you_want_to_discard">هل تريد الإلغاء</string>
+    <string name="let_s_go">لنذهب</string>
+    <string name="blank">فارغ</string>
+    <string name="template">قالب</string>
+    <string name="app_name_new">تطبيق CRSL</string>
+
+    <string name="boarding4_title">دمج</string>
+    <string name="boarding4_text_body">اجمع مقاطع مختلفة بسلاسة.</string>
+
+    <string name="upgrade_plan_now">قم بترقية الخطة الآن!</string>
+    <string name="enjoy_unlimited_benefits_amp_features">استمتع بمزايا وميزات غير محدودة</string>
+    <string name="generals">عام</string>
+    <string name="supports">الدعم</string>
+    <string name="seamless">سلس</string>
+    <string name="story">قصة</string>
+    <string name="rewind">إرجاع</string>
+    <string name="paper">ورق</string>
+    <string name="tape">شريط</string>
+    <string name="plastic">بلاستيك</string>
+    <string name="film">فيلم</string>
+    <string name="try_for_free">جرّب مجانًا</string>
+
+    <string name="share_your_new_look_on_social_media_n_tap_below_to_post_it_on_instagram_n_or_tiktok">اپنی نئی لک سوشل میڈیا پر شیئر کریں\n—انسٹاگرام یا ٹک ٹاک پر پوسٹ کرنے کے لیے نیچے ٹیپ کریں۔</string>
+    <string name="open_instagram">انسٹاگرام کھولیں</string>
+    <string name="open_tiktok">ٹک ٹاک کھولیں</string>
+    <string name="open_more">مزید کھولیں</string>
+
+
+    <string name="title_general_notification_without_fo">لا تفقد صورتك قيد التقدم!</string>
+    <string name="sub_heading_general_notification_without_fo">أنهِ التحرير الآن</string>
+    <string name="title_general_notification_with_fo">لا تفوت فرصة تحرير الصور!</string>
+    <string name="sub_heading_general_notification_with_fo">افتح التطبيق لمتابعة تحرير صورك الآن</string>
+    <string name="all_pro_materials">جميع المواد الاحترافية</string>
+    <string name="no_watermark_and_ads">بدون علامات مائية وإعلانات</string>
+    <string name="cancel_anytime_form_the_app">يمكنك الإلغاء في أي وقت من التطبيق</string>
+    <string name="weekly_plan">الخطة الأسبوعية</string>
+    <string name="yearly_plan">الخطة السنوية</string>
+
+    <string name="notification_title_1">✨ شارك كاروسيلك المذهل!</string>
+    <string name="notification_description_1">صورك جاهزة للتألق. انشر كاروسيلك على إنستغرام الآن ودع أسلوبك يلهم! 🌿📸</string>
+
+    <string name="_7_day_free_trail">تجربة مجانية لمدة 7 أيام</string>
+    <string name="_3_day_free_trail">تجربة مجانية لمدة 3 أيام</string>
+
+    <string name="get_pro">احصل على النسخة الاحترافية</string>
+    <string name="unlock_this_premium_frame">فتح هذا الإطار المميز</string>
+    <string name="choose_how_you_want_to_unlock_this_frame">اختر كيف تريد فتح هذا الإطار</string>
+    <string name="watch_ad_to_unlock">شاهد الإعلان للفتح</string>
+    <string name="get_pro_for_unlimited_access">احصل على النسخة الاحترافية للوصول غير المحدود</string>
+    <string name="unlock_all_premium_frames_forever">افتح جميع الإطارات المميزة للأبد</string>
+
+    <string name="upgrade_to_premium">الترقية إلى بريميوم</string>
+    <string name="unlock_the_full_experience">افتح التجربة الكاملة</string>
+    <string name="unlock_all_premium_templates">افتح جميع القوالب المميزة</string>
+    <string name="priority_access_to_new_features">أولوية الوصول إلى الميزات الجديدة</string>
+    <string name="access_all_style_categories">الوصول إلى جميع فئات الأنماط</string>
+    <string name="one_tap_carousel_creator">منشئ الدوار بنقرة واحدة</string>
+    <string name="quality_export_without_watermark">تصدير عالي الجودة بدون علامة مائية</string>
+    <string name="ad_free_creative_experience">تجربة إبداعية بدون إعلانات</string>
+    <string name="_3_days_free_trial">تجربة مجانية لمدة 3 أيام</string>
+    <string name="trusted_by_2m_users_worldwide">موثوق به من قبل أكثر من 2 مليون مستخدم حول العالم</string>
+
+    <string name="grab_now">احصل عليه الآن</string>
+    <string name="unlock_your_premium_experience_today">افتح تجربتك المميزة اليوم!</string>
+    <string name="_7_days_free_trial">تجربة مجانية لمدة 7 أيام</string>
+    <string name="carousal">الدوار</string>
+    <string name="enjoy_50_off_on_weekly_premium">استمتع بخصم 50٪ على الاشتراك الأسبوعي المميز!</string>
+
+    <string name="apply">يتقدم</string>
+    <string name="preview">معاينة</string>
+    <string name="projects">المشاريع</string>
+    <string name="see_all">عرض الكل</string>
+    <string name="with_ad">مع إعلان</string>
+
+    <string name="_3_day_free_trial">تجربة مجانية لمدة 3 أيام</string>
+    <string name="join_crsl_premium">انضم إلى CRSL Premium</string>
+
+
+    <string name="boarding1_title">سهل الرسم</string>
+    <string name="boarding1_text_body">ضع ورقة زبدة على الهاتف وارسمه.</string>
+    <string name="boarding2_title">ارسم بالكاميرا</string>
+    <string name="boarding2_text_body">أمسك هاتفك أو ضعه في وضعية ثابتة ليسهل عليك رسمه.</string>
+    <string name="boarding3_title">ارسم صورتك الخاصة</string>
+    <string name="boarding3_text_body">ارسم، وتتبع، ولون أي صورة تحبها!</string>
+    <string name="let_s_draw">هيا نرسم</string>
+    <string name="create_draw_and_have_fun">ابتكر، ارسم، واستمتع!</string>
+    <string name="ar_drawing">رسم الواقع المعزز</string>
+    <string name="import_gallery">معرض الاستيراد</string>
+    <string name="photo_to_sketch">تحويل الصورة إلى رسم تخطيطي</string>
+    <string name="learn_to_draw">تعلم الرسم</string>
+    <string name="my_art">فني</string>
+
+    <string name="s_home_h1"><![CDATA[Learning &]]></string>
+    <string name="s_home_h1_sub">يمارس</string>
+    <string name="s_home_h1_detail">دروس سهلة لتحسين مهارات الرسم</string>
+
+    <string name="s_home_h2"><![CDATA[Drawing &]]></string>
+    <string name="s_home_h2_sub">إِبداع</string>
+    <string name="s_home_h2_detail">دروس رسم ممتعة خطوة بخطوة</string>
+
+    <string name="s_home_h3"><![CDATA[Categories &]]></string>
+    <string name="s_home_h3_sub">المواضيع</string>
+    <string name="s_home_h3_detail">استكشف الرسومات حسب المواضيع والأساليب</string>
+
+    <string name="s_home_h4">صورة إلى</string>
+    <string name="s_home_h4_sub">رسم</string>
+    <string name="s_home_h4_detail">حوّل الصور إلى رسومات فنية بالقلم الرصاص.</string>
+
+    <string name="start">يبدأ</string>
+    <string name="settings">إعدادات</string>
+    <string name="unlock_premium_features">افتح الميزات المميزة</string>
+    <string name="terms_and_conditions">الشروط والأحكام</string>
+
+    <string name="watch_an_ad">شاهد إعلانًا</string>
+    <string name="pro_face_swap">تبديل الوجوه الاحترافي</string>
+    <string name="swap">تبديل</string>
+    <string name="upload_image_template">تحميل قالب الصورة</string>
+    <string name="upload_or_take_your_image_please_clear_face">قم بتحميل صورتك أو التقاطها. يرجى إخفاء الوجه.</string>
+    <string name="upload_your_face">حمّل صورتك</string>
+    <string name="create">يخلق</string>
+    <string name="saving_your_image">حفظ صورتك</string>
+    <string name="processing_your_masterpiece">جارٍ تجهيز تحفتك الفنية... 🎨</string>
+    <string name="face_swap">تبديل الوجوه</string>
+    <string name="edit_more">عدّل المزيد</string>
+    <string name="please_crop">يرجى قص الصورة بنفس النسبة للحصول على نتائج أفضل</string>
+    <string name="stay_with_us">ابقوا معنا، تجربتكم على وشك أن تبدأ!</string>
+    <string name="got_it">فهمتها</string>
+
+    <string name="pencil_sketch">رسم تخطيطي بالقلم الرصاص</string>
+    <string name="sketch_now">ارسم الآن</string>
+    <string name="upgrade_to_pro">قم بالترقية إلى الإصدار الاحترافي</string>
+    <string name="enjoy_all_drawings">استمتع بجميع الرسومات والأدوات والمرح</string>
+    <string name="sketch_loading">رسم صورتك - الخطوط تنبض بالحياة...</string>
+    <string name="sketch_ready">رسمك التخطيطي بدأ يتشكل!</string>
+    <string name="memory_sketching">تحويل ذكرياتك إلى فن الرسم بالقلم الرصاص...</string>
+    <string name="sketch_details_fit">الخطوط والظلال تتناغم مع بعضها البعض!</string>
+    <string name="sketch_progress">رسم سحري قيد الإنجاز...</string>
+    <string name="sketch_placing_details">رسم كل التفاصيل الصغيرة...</string>
+    <string name="sketch_looking_timeless">مظهر كلاسيكي - الآن كرسومات تخطيطية!</string>
+    <string name="sketch_you_brought_it_back">يا إلهي! تبدو تلك الرسمة وكأنها حقيقية!</string>
+    <string name="sketch_healing_memories">رسم الذكريات بعناية...</string>
+    <string name="sketch_almost">أوشكنا على الانتهاء - لم يتبق سوى اللمسات الأخيرة!</string>
+    <string name="sketch_damage_detected">تعديل الحواف - تحسين الخطوط!</string>
+    <string name="sketch_transforming">تحويل الصور إلى فن مرسوم باليد...</string>
+    <string name="sketch_uploading">إرسال صورتك إلى رسام الرسم التخطيطي...</string>
+    <string name="sketch_final_touch">التظليل النهائي - هذا يتطلب مهارة!</string>
+    <string name="sketch_blast">هذا الرسم التخطيطي له وقع مختلف!</string>
+    <string name="sketch_new_life">أجواء رسم جديدة ومنعشة!</string>
+    <string name="sketch_details_locked">تم حفظ التفاصيل — الرسم كالمحترفين!</string>
+    <string name="sketch_wait">انتظروا قليلاً... سحر القلم الرصاص قيد التحميل!</string>
+    <string name="sketch_alignment">محاذاة الضربات بشكل مثالي...</string>
+    <string name="sketch_memory_repairing">يجري تحسين رسمك التخطيطي...</string>
+    <string name="sketch_about_to_shine">استعدوا - رسمكم سيتألق!</string>
+    <string name="sketch_epic">رسم تخطيطي رائع قيد التنفيذ!</string>
+    <string name="sketch_ready_to_reveal">جاهز تقريبًا - سنكشف عن الرسم التخطيطي قريبًا!</string>
+    <string name="sketch_restoring_clarity">تحسين الخطوط والتباين...</string>
+    <string name="sketch_scratches_fading">حواف خشنة تتلاشى...</string>
+    <string name="sketch_time_travel_mode">وضع الرسم: مُفعّل ✏️</string>
+    <string name="sketch_magic_at_work">سحر الرسم في العمل - ترقبوا المزيد!</string>
+    <string name="save_colored_text"><![CDATA[ All done! <font color="#FF1BA6"><b>Save</b></font> your photo now.]]></string>
+    <string name="cancel_underline"><u>Cancel</u></string>
+    <string name="do_you_like_our_app">هل أعجبك تطبيقنا؟</string>
+    <string name="sketch">رسم</string>
+    <string name="trace">يتعقب</string>
+    <string name="drawing_now">الرسم الآن</string>
+    <string name="how_to_draw">كيفية الرسم</string>
+    <string name="picture">صورة</string>
+    <string name="camera">آلة تصوير</string>
+    <string name="stop_drawing">توقف عن الرسم؟</string>
+    <string name="you_want_to_stop_drawing">تريد التوقف عن الرسم</string>
+    <string name="yes_discard">لا، لا تفعل</string>
+    <string name="yes_stop_it"><u>Yes, Stop it</u></string>
+    <string name="with_camera">استمر بالكاميرا</string>
+    <string name="with_cam">مع الكاميرا</string>
+    <string name="without_camera">استمر بدون كاميرا</string>
+    <string name="without_cam">بدون كاميرا</string>
+
+    <string name="unlock_the_magic">أطلق إبداع Pro 🌟</string>
+    <string name="unlimited_drawing">أزل الإعلانات واستمتع بأدوات إبداعية غير محدودة</string>
+    <string name="standard">قياسي</string>
+    <string name="unlock_all_sketch">افتح كل الرسومات</string>
+    <string name="draw_from_gallery">ارسم من المعرض</string>
+    <string name="offline_drawing_mode">وضع الرسم دون اتصال</string>
+    <string name="photo_to_sketch_convertor">محول الصور إلى رسم</string>
+    <string name="draw_learning_lessons">دروس تعلم الرسم</string>
+    <string name="share_with_friends">شارك مع الأصدقاء</string>
+    <string name="my_drawing">رسوماتي</string>
+    <string name="there_s_no_any_saved_data">لا توجد أي بيانات محفوظة!</string>
+    <string name="go_to_drawings">اذهب إلى الرسومات</string>
+
+</resources>
