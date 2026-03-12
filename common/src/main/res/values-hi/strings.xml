@@ -194,8 +194,6 @@
     <string name="highlight">प्रमुखता से दिखाना</string>
     <string name="shadow">छाया</string>
 
-    <string name="facebook_app_id" translatable="false">1116803502100807</string>
-    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
 
     <string name="layout_text">लेआउट</string>
     <string name="button_preview">पूर्व दर्शन</string>

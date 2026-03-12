@@ -12,17 +12,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
-import androidx.core.view.updateMargins
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -42,14 +38,12 @@ import com.fahad.newtruelovebyfahad.R
 import com.fahad.newtruelovebyfahad.databinding.FragmentHomeBinding
 import com.fahad.newtruelovebyfahad.ui.activities.main.FrameObject
 import com.fahad.newtruelovebyfahad.ui.activities.main.MainActivity
-import com.fahad.newtruelovebyfahad.ui.activities.main.MainActivity.Companion.isFirstTime
 import com.fahad.newtruelovebyfahad.ui.activities.pro.slider.SliderList.getImageListHome
 import com.fahad.newtruelovebyfahad.ui.fragments.home.adapter.HomeForYouAdapter
 import com.fahad.newtruelovebyfahad.ui.fragments.home.adapter.HomeSliderAdapter
 import com.fahad.newtruelovebyfahad.utils.Permissions
 import com.fahad.newtruelovebyfahad.utils.enums.FrameThumbType
 import com.fahad.newtruelovebyfahad.utils.gone
-import com.fahad.newtruelovebyfahad.utils.invisible
 import com.fahad.newtruelovebyfahad.utils.isNetworkAvailable
 import com.fahad.newtruelovebyfahad.utils.navigateFragment
 import com.fahad.newtruelovebyfahad.utils.printLog
@@ -57,29 +51,21 @@ import com.fahad.newtruelovebyfahad.utils.setSingleClickListener
 import com.fahad.newtruelovebyfahad.utils.showToast
 import com.fahad.newtruelovebyfahad.utils.visible
 import com.project.common.datastore.FrameDataStore
-import com.project.common.repo.api.apollo.helper.Response
-import com.project.common.repo.room.helper.FavouriteTypeConverter
-import com.project.common.repo.room.model.FavouriteModel
-import com.project.common.repo.room.model.RecentsModel
 import com.project.common.utils.ConstantsCommon
 import com.project.common.utils.ConstantsCommon.favouriteFrames
 import com.project.common.utils.ConstantsCommon.featureForYouData
 import com.project.common.utils.ConstantsCommon.isNetworkAvailable
-import com.project.common.utils.enums.FeatureMainMenuOptions
-import com.project.common.utils.enums.FeatureSubMenuOptions
 import com.project.common.utils.enums.MainMenuOptions
 import com.project.common.utils.eventForGalleryAndEditor
 import com.project.common.utils.getProScreen
 import com.project.common.utils.setDrawable
 import com.project.common.utils.setOnSingleClickListener
-import com.project.common.viewmodels.ApiViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import kotlin.math.roundToInt
 
 @AndroidEntryPoint
 class HomeForYouFragment : Fragment() {
@@ -94,7 +80,6 @@ class HomeForYouFragment : Fragment() {
     private var slideRunnable: Runnable? = null
     private var sliderPageChangeCallback: ViewPager2.OnPageChangeCallback? = null
 
-    private val apiViewModel by activityViewModels<ApiViewModel>()
     var exitModel: ExitModel? = null
     private var isDataLoaded = false
     private var forYouFramesAdapter: HomeForYouAdapter? = null
@@ -162,54 +147,52 @@ class HomeForYouFragment : Fragment() {
                     if (frameBody.tags?.isNotEmpty() == true && frameBody.tags != "Free" && !isProVersion() && !ConstantsCommon.rewardedAssetsList.contains(frameBody.id)) {
                         mActivity?.createProFramesDialog(
                             true, thumb = "${frameBody.baseUrl}${frameBody.thumb}", thumbType = ContextCompat.getDrawable(
-                            context, when (frameBody.thumbtype.lowercase()) {
-                                FrameThumbType.PORTRAIT.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_portrait
-                                FrameThumbType.LANDSCAPE.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_landscape
-                                FrameThumbType.SQUARE.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_squre
-                                else -> com.project.common.R.drawable.frame_placeholder_portrait
-                            }
-                        ), action = {
-
-                            mActivity?.showRewardedInterstitial(true, loadedAction = {
-                                apiViewModel.addToRecent(RecentsModel(frame = frameBody))
-                                lifecycleScope.launch(Dispatchers.IO) {
-                                    frameDataStore.writeUnlockedId(frameBody.id)
-                                    ConstantsCommon.rewardedAssetsList.add(
-                                        frameBody.id
-                                    )
-                                    withContext(Main) {
-                                        if (position != -1) forYouFramesAdapter?.notifyItemChanged(
-                                            position
-                                        )
-                                        kotlin.runCatching {
-                                            navController?.navigate(
-                                                HomeForYouFragmentDirections.actionHomeForYouFragmentToHowToDrawFragment(
-                                                    frameBody.baseUrl + frameBody.thumb
-                                                )
-                                            )
-                                        }
-                                    }
-                                }.invokeOnCompletion {}
-                            }, failedAction = {
-
-                            })
-
-                        }, goProAction = {
-                            try {
-                                activity?.let {
-                                    startActivity(Intent().apply {
-                                        setClassName(
-                                            it.applicationContext, getProScreen()
-                                        )
-                                        putExtra("from_frames", false)
-                                    })
+                                context, when (frameBody.thumbtype.lowercase()) {
+                                    FrameThumbType.PORTRAIT.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_portrait
+                                    FrameThumbType.LANDSCAPE.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_landscape
+                                    FrameThumbType.SQUARE.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_squre
+                                    else -> com.project.common.R.drawable.frame_placeholder_portrait
                                 }
-                            } catch (_: Exception) {
-                            }
-                        }, dismissAction = {}, frameBody.tags?.lowercase() == "paid"
+                            ), action = {
+
+                                mActivity?.showRewardedInterstitial(true, loadedAction = {
+                                    lifecycleScope.launch(Dispatchers.IO) {
+                                        frameDataStore.writeUnlockedId(frameBody.id)
+                                        ConstantsCommon.rewardedAssetsList.add(
+                                            frameBody.id
+                                        )
+                                        withContext(Main) {
+                                            if (position != -1) forYouFramesAdapter?.notifyItemChanged(
+                                                position
+                                            )
+                                            kotlin.runCatching {
+                                                navController?.navigate(
+                                                    HomeForYouFragmentDirections.actionHomeForYouFragmentToHowToDrawFragment(
+                                                        frameBody.baseUrl + frameBody.thumb
+                                                    )
+                                                )
+                                            }
+                                        }
+                                    }.invokeOnCompletion {}
+                                }, failedAction = {
+
+                                })
+
+                            }, goProAction = {
+                                try {
+                                    activity?.let {
+                                        startActivity(Intent().apply {
+                                            setClassName(
+                                                it.applicationContext, getProScreen()
+                                            )
+                                            putExtra("from_frames", false)
+                                        })
+                                    }
+                                } catch (_: Exception) {
+                                }
+                            }, dismissAction = {}, frameBody.tags?.lowercase() == "paid"
                         )
                     } else {
-                        apiViewModel.addToRecent(RecentsModel(frame = frameBody))
                         activity?.showNewInterstitial(activity?.homeInterstitial()) {
                             activity?.loadNewInterstitial(activity?.homeInterstitial()) {}
                             kotlin.runCatching {
@@ -230,11 +213,7 @@ class HomeForYouFragment : Fragment() {
             }, declineAction = {})
 
         }, onFavouriteClick = {
-            apiViewModel.favourite(
-                FavouriteModel(
-                    isFavourite = it.isFavourite, frame = it.frame
-                )
-            )
+
         }, onPurchaseTypeTagClick = {})
     }
 
@@ -359,152 +338,6 @@ class HomeForYouFragment : Fragment() {
             Log.e("error", "onViewCreated: ", ex)
         }
 
-        try {
-
-            var isCompleted = true
-
-            ConstantsCommon.updateInternetStatusFeature.observe(
-                viewLifecycleOwner
-            ) {
-                checkInternet()
-                if (it == true) {
-                    offlinePlaceHolderViewStub.gone()
-                    try {
-                        apiViewModel.featureScreen.observe(viewLifecycleOwner) myObserver@{ response ->
-                            when (response) {
-                                is Response.Loading -> {
-                                    _binding?.swipeToRefresh?.isRefreshing = true
-                                    dataLayout.visible()
-                                    loadingView.startShimmer()
-                                    loadingView.visible()
-                                    framesRv.invisible()
-                                }
-
-                                is Response.ShowSlowInternet -> {}
-
-                                is Response.Success -> {
-                                    _binding?.swipeToRefresh?.isRefreshing = false
-                                    if (featureData.isNotEmpty()) {
-
-                                        loadingView.gone()
-                                        loadingView.stopShimmer()
-                                        if (isNetworkAvailable) {
-                                            framesRv.visible()
-
-                                            forYouFramesAdapter?.let {
-                                                if (it.itemCount != featureData.size) it.updateDataList(featureData)
-                                            }
-                                        }
-                                    } else {
-
-                                        if (isCompleted) {
-                                            isCompleted = false
-
-                                            kotlin.runCatching {
-                                                response.data?.allTags?.filterNotNull()?.forEach {
-                                                    when (it.title.lowercase()) {
-                                                        FeatureSubMenuOptions.FEATURED.title.lowercase() -> {
-                                                            val featureTags = it.tags?.find { it?.title?.lowercase() == FeatureSubMenuOptions.FOR_YOU.title.lowercase() }
-                                                            kotlin.runCatching {
-                                                                featureTags?.frames?.let { mFrames ->
-                                                                    if (_binding?.framesRv?.isComputingLayout == false) {
-                                                                        forYouFramesAdapter?.clearData()
-                                                                    }
-
-                                                                    lifecycleScope.launch(
-                                                                        Dispatchers.IO
-                                                                    ) {
-                                                                        mFrames.mapIndexed { index, frame ->
-//                                                                            var position = index
-                                                                            frame?.let {
-
-                                                                                val result = HomeForYouAdapter.FrameModel(
-                                                                                    it
-                                                                                )
-
-                                                                                result.isFavourite = withContext(
-                                                                                    Dispatchers.Default
-                                                                                ) {
-                                                                                    favouriteFrames.mapNotNull { it?.id }.contains(
-                                                                                            FavouriteTypeConverter.fromJson(
-                                                                                                FavouriteTypeConverter.toJson(
-                                                                                                    result.frame
-                                                                                                )
-                                                                                            )?.id
-                                                                                        )
-                                                                                }
-
-                                                                                withContext(Main) {
-
-                                                                                    loadingView.gone()
-                                                                                    loadingView.stopShimmer()
-                                                                                    if (isNetworkAvailable) framesRv.visible()
-
-                                                                                    forYouFramesAdapter?.updateSingleItem(
-                                                                                        result
-                                                                                    )
-
-                                                                                    featureData.add(
-                                                                                        result
-                                                                                    )
-
-                                                                                }
-                                                                                result
-                                                                            }
-                                                                        }
-                                                                    }.invokeOnCompletion {
-                                                                        isCompleted = true
-                                                                    }
-
-                                                                } ?: kotlin.run {
-                                                                    isCompleted = true
-                                                                }
-                                                            }.onFailure {
-                                                                isCompleted = true
-                                                            }
-                                                        }
-                                                    }
-
-                                                }
-                                            }.onFailure {
-                                                isCompleted = true
-                                            }
-                                        }
-                                    }
-                                }
-
-                                is Response.Error -> {
-                                    _binding?.swipeToRefresh?.isRefreshing = false
-                                    if (!mActivity.isNetworkAvailable()) {
-                                        dataLayout.gone()
-                                        loadingView.stopShimmer()
-                                        loadingView.gone()
-                                        framesRv.invisible()
-                                    }
-                                }
-                            }
-                        }
-
-
-                    } catch (_: Exception) {
-
-                    }
-                } else {
-                    offlinePlaceHolderViewStub.visible()
-                    dataLayout.gone()
-                    loadingView.stopShimmer()
-                    loadingView.gone()
-                    framesRv.invisible()
-                    _binding?.swipeToRefresh?.isRefreshing = false
-                }
-
-
-            }
-
-
-        } catch (_: Exception) {
-
-        }
     }
 
     private fun FragmentHomeBinding.initRecyclerViews() {
@@ -541,13 +374,6 @@ class HomeForYouFragment : Fragment() {
 
 
     private fun FragmentHomeBinding.initListeners() {
-
-
-        if (isNetworkAvailable){
-            swipeToRefresh.setOnRefreshListener {
-                if (apiViewModel.featureScreen.value?.data?.allTags.isNullOrEmpty()) apiViewModel.getFeatureScreen(true)
-            }
-        }
 
         menuContainer.setSingleClickListener {
 

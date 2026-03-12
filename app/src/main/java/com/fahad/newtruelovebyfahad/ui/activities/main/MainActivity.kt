@@ -7,8 +7,6 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
@@ -53,7 +51,6 @@ import com.example.ads.admobs.utils.showRewardedInterstitial
 import com.example.ads.crosspromo.viewModel.CrossPromoViewModel
 import com.example.ads.dialogs.createDownloadingDialog
 import com.example.ads.dialogs.createProFramesDialog
-import com.example.ads.dialogs.onDismissDialog
 import com.example.ads.utils.homeInterstitial
 import com.example.analytics.Constants.firebaseAnalytics
 import com.example.analytics.Constants.parentScreen
@@ -63,7 +60,6 @@ import com.fahad.newtruelovebyfahad.MyApp
 import com.fahad.newtruelovebyfahad.R
 import com.fahad.newtruelovebyfahad.databinding.ActivityMainBinding
 import com.fahad.newtruelovebyfahad.ui.fragments.home.HomeForYouFragment
-import com.fahad.newtruelovebyfahad.ui.fragments.mywork.MyWorkFragment
 import com.fahad.newtruelovebyfahad.utils.InternetConnectivityReceiver
 import com.fahad.newtruelovebyfahad.utils.Permissions
 import com.fahad.newtruelovebyfahad.utils.enums.FrameThumbType
@@ -74,27 +70,15 @@ import com.fahad.newtruelovebyfahad.utils.isNetworkAvailable
 import com.fahad.newtruelovebyfahad.utils.setSingleClickListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.project.common.databinding.BottomFullScreenPermissionBinding
 import com.project.common.datastore.FrameDataStore
-import com.project.common.repo.api.apollo.helper.ApiConstants
-import com.project.common.repo.room.helper.FavouriteTypeConverter
-import com.project.common.repo.room.model.RecentsModel
 import com.project.common.utils.ConstantsCommon
-import com.project.common.utils.ConstantsCommon.favouriteFrames
 import com.project.common.utils.ConstantsCommon.isNetworkAvailable
-import com.project.common.utils.enums.MainMenuOptions
 import com.project.common.utils.getProScreen
 import com.project.common.utils.hideNavigation
 import com.project.common.utils.setLocale
 import com.project.common.utils.setString
-import com.project.common.viewmodels.ApiViewModel
 import com.project.common.viewmodels.DataStoreViewModel
 import com.project.common.viewmodels.HomeAndTemplateViewModel
-import com.project.common.viewmodels.SearchViewModel
-import com.xan.event_notifications.data.NotificationLockScreenHelper
-import com.xan.event_notifications.data.constants.Constants.notiLockScreen
-import com.xan.event_notifications.data.constants.Constants.notiLockscreenCountry
-import com.xan.event_notifications.data.constants.Constants.timePushNotiLockscreen1
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -108,8 +92,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
     private var navController: NavController? = null
-    private val apiViewModel by viewModels<ApiViewModel>()
-    private val searchViewModel by viewModels<SearchViewModel>()
     private val homeAndTemplateViewModel by viewModels<HomeAndTemplateViewModel>()
     private val mainViewModel by viewModels<MainViewModel>()
     private val dataStoreViewModel by viewModels<DataStoreViewModel>()
@@ -171,134 +153,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
         Log.i("TAG", "onStop: mainActivity onDestroy")
     }
 
-    private fun scheduleNotification() {
-
-        notiLockScreen?.let { notiLockcreen ->
-            if (!notiLockcreen) {
-                return
-            }
-            val notificationHelper = NotificationLockScreenHelper(this)
-            Log.d("TAG", "Splash notiLockcreen: $notiLockcreen")
-            notiLockscreenCountry.let { it1 ->
-                timePushNotiLockscreen1?.let { timePushNotiLockscreen1 ->
-                    Log.d("TAG", "Splash timePushNotiLockscreen1: $timePushNotiLockscreen1")
-                    notificationHelper.scheduleAlarmForConditions(
-                        it1,
-                        timePushNotiLockscreen1,
-                        null
-                    )
-                }
-//                timePushNotiLockscreen2?.let { timePushNotiLockscreen2 ->
-//                    Log.d("TAG", "Splash timePushNotiLockscreen2: $timePushNotiLockscreen2")
-//                    notificationHelper.scheduleAlarmForConditions(
-//                        it1,
-//                        null,
-//                        timePushNotiLockscreen2
-//                    )
-//                }
-            }
-        }
-    }
-
-    private var fullScreenPopUp: BottomSheetDialog? = null
-    private var fullScreenPopUpBinding: BottomFullScreenPermissionBinding? = null
-    private var intentPermissionCounter = 1
-    private fun initFullScreenPopUp() {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU) {
-            kotlin.runCatching {
-                val notificationManager =
-                    getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                if (notificationManager.canUseFullScreenIntent()) {
-                    scheduleNotification()
-
-                } else {
-                    fullScreenPopUp?.let {
-                        if (!isDestroyed && !isFinishing && !it.isShowing) {
-                            fullScreenPopUp?.show()
-                        }
-                    } ?: kotlin.run {
-
-                        fullScreenPopUp =
-                            BottomSheetDialog(
-                                this,
-                                com.project.common.R.style.BottomSheetDialog_full_screen
-                            )
-
-                        fullScreenPopUpBinding =
-                            BottomFullScreenPermissionBinding.inflate(layoutInflater)
-                        fullScreenPopUpBinding?.root?.let { it1 ->
-                            fullScreenPopUp?.setContentView(
-                                it1
-                            )
-                        }
-
-                        fullScreenPopUp?.setCancelable(false)
-
-                        fullScreenPopUp?.setOnDismissListener {
-
-                            kotlin.runCatching {
-                                if (!notificationManager.canUseFullScreenIntent()) {
-                                    Toast.makeText(
-                                        this,
-                                        setString(com.project.common.R.string.full_screen_intent),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-
-
-                        }
-
-                        fullScreenPopUpBinding?.allow?.setSingleClickListener {
-                            // AppOpenManager.getInstance().disableAdResumeByClickAction()
-                            checkAndRequestFullScreenPermission(
-                                onGranted = {
-                                    if (!isDestroyed && !isFinishing) {
-                                        fullScreenPopUp?.dismiss()
-                                    }
-
-                                    scheduleNotification()
-                                }, onDenied = {
-
-                                    intentPermissionCounter += 1
-
-                                    if (intentPermissionCounter < 4) {
-                                        initFullScreenPopUp()
-                                    } else {
-                                        if (!isDestroyed && !isFinishing) {
-                                            fullScreenPopUp?.dismiss()
-                                        }
-                                    }
-                                },
-                                notificationManager
-                            )
-                        }
-
-                        fullScreenPopUpBinding?.dontAllow?.setSingleClickListener {
-
-                            if (!isDestroyed && !isFinishing && fullScreenPopUp?.isShowing == true) {
-                                fullScreenPopUp?.dismiss()
-                            }
-
-                            Toast.makeText(
-                                this,
-                                setString(com.project.common.R.string.full_screen_intent),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                        fullScreenPopUp?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                        if (!isDestroyed && !isFinishing && fullScreenPopUp?.isShowing == false) {
-                            fullScreenPopUp?.show()
-                        }
-                    }
-                }
-            }
-        } else {
-            scheduleNotification()
-        }
-    }
-
-
     private fun initUninstallIntentValue() {
         receivedData1 = intent.getStringExtra("shortcut_extra_key1")
         if (receivedData1 != null) {
@@ -313,8 +167,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initUninstallIntentValue()
-
-//        installSplashScreen()
         kotlin.runCatching {
             setLocale(languageCode)
         }
@@ -348,21 +200,8 @@ class MainActivity : Permissions(), InternetConnectivityListener {
 
         initNavigationGraph()
 
-//        showApplyPopUpValentine()
-
         checkFragment(hideViews = false)
 
-//        LeakCanary.config = LeakCanary.config.copy(retainedVisibleThreshold = 1)
-
-        /*checkAndRequestNotificationPermission(
-            onGranted = {
-                initFullScreenPopUp()
-            },
-            onDenied = {
-                Log.d("Notification", "Notification permission denied")
-                //showApplyPopUp()
-            }
-        )*/
         kotlin.runCatching {
             dataStoreViewModel.incrementAppSession()
             dataStoreViewModel.writeCurrentTime()
@@ -373,8 +212,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                 Events.NetworkParams.INTERNET_STATE, if (isNetworkAvailable()) "true" else "false"
             )
         })
-
-
 
         try {
             if (isProVersion.hasObservers()) {
@@ -391,54 +228,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
             }
         } catch (ex: Exception) {
             Log.e("error", "onCreate: ", ex)
-        }
-
-        try {
-            if (apiViewModel.frame.hasObservers()) {
-                apiViewModel.frame.removeObservers(this)
-            }
-
-            apiViewModel.frame.observe(this) {
-                when (it) {
-                    is com.project.common.repo.api.apollo.helper.Response.Loading -> {
-                        Log.d("Fahad", "initApiObservers: ")
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.ShowSlowInternet -> {}
-
-                    is com.project.common.repo.api.apollo.helper.Response.Success -> {
-                        Log.i("TAG", "initClickMain: ${it.data?.frame}")
-                        ConstantsCommon.resetCurrentFrames()
-                        ConstantsCommon.currentFrameMain = it.data?.frame
-                        downloadDialog?.onDismissDialog(1000L) {
-                            try {
-
-                                if (it.data?.frame == null) {
-                                    Toast.makeText(this, "Please try again", Toast.LENGTH_SHORT).show()
-                                    apiViewModel.clearFrame()
-
-                                } else if (it.data?.frame?.editor?.lowercase() == MainMenuOptions.LEARN.title.lowercase()) {
-                                    Log.i("FRAME", "initClickMainelseif: ${it.data?.frame}")
-                                    navController?.navigate(R.id.subFramesFragment)
-                                } else {
-                                    Log.i("FRAME", "initClickMainelse: ${it.data?.frame}")
-                                }
-
-                            } catch (_: Exception) {
-                            }
-
-                            downloadDialog = null
-                        }
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.Error -> {
-                        downloadDialog?.onDismissDialog(1000L) {
-                            downloadDialog = null
-                        }
-                    }
-                }
-            }
-        } catch (_: Exception) {
         }
 
         firebaseAnalytics?.logEvent(Events.Screens.MAIN, Bundle().apply {
@@ -478,12 +267,10 @@ class MainActivity : Permissions(), InternetConnectivityListener {
         } else {
             ConstantsCommon.updateInternetStatusFeature.postValue(false)
             ConstantsCommon.updateInternetStatusFrames.postValue(false)
-            searchViewModel.setNetworkState(false)
         }
 
         initNetworkCallbacks()
 
-        initApiObservers()
 
         try {
             if (CAN_LOAD_ADS) {
@@ -527,40 +314,40 @@ class MainActivity : Permissions(), InternetConnectivityListener {
 
     private fun loadBannerAd(fromButton: Boolean = false) {
         kotlin.runCatching {
-               runOnUiThread {
+            runOnUiThread {
 
-                   // Check if current destination should hide banner ad
-                   val currentDestinationId = navController?.currentDestination?.id
-                   val shouldHideBanner = currentDestinationId == R.id.homeForYouFragment
+                // Check if current destination should hide banner ad
+                val currentDestinationId = navController?.currentDestination?.id
+                val shouldHideBanner = currentDestinationId == R.id.homeForYouFragment
 
-                   if (shouldHideBanner) {
-                       _binding?.bannerContainer?.visibility = View.GONE
-                       return@runOnUiThread
-                   }
+                if (shouldHideBanner) {
+                    _binding?.bannerContainer?.visibility = View.GONE
+                    return@runOnUiThread
+                }
 
-                   if (!showAppOpen && !isProVersion()) {
-                       _binding?.let {
-                           _binding?.bannerContainer?.visibility = View.VISIBLE
-                           onResumeBanner(
-                               binding.adBannerContainer,
-                               binding.crossBannerIv,
-                               binding.bannerLayout.adContainer,
-                               binding.bannerLayout.shimmerViewContainer,
-                               fromButton = fromButton
-                           )
-                       }
-                   } else {
-                       try {
-                           if (isProVersion()) {
-                               _binding?.bannerContainer?.visibility = View.GONE
-                           } else {
-                               _binding?.bannerContainer?.visibility = View.INVISIBLE
-                           }
-                       } catch (ex: java.lang.Exception) {
-                           Log.e("error", "onResume: ", ex)
-                       }
-                   }
-               }
+                if (!showAppOpen && !isProVersion()) {
+                    _binding?.let {
+                        _binding?.bannerContainer?.visibility = View.VISIBLE
+                        onResumeBanner(
+                            binding.adBannerContainer,
+                            binding.crossBannerIv,
+                            binding.bannerLayout.adContainer,
+                            binding.bannerLayout.shimmerViewContainer,
+                            fromButton = fromButton
+                        )
+                    }
+                } else {
+                    try {
+                        if (isProVersion()) {
+                            _binding?.bannerContainer?.visibility = View.GONE
+                        } else {
+                            _binding?.bannerContainer?.visibility = View.INVISIBLE
+                        }
+                    } catch (ex: java.lang.Exception) {
+                        Log.e("error", "onResume: ", ex)
+                    }
+                }
+            }
         }
     }
 
@@ -651,9 +438,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
             val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
             when (val fragment = navHostFragment?.childFragmentManager?.fragments?.get(0)) {
 
-                is MyWorkFragment -> {
-                    if (show) fragment.showGoProBottomRv() else fragment.hideGoProBottomRv()
-                }
 
                 else -> {}
             }
@@ -670,9 +454,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                     if (hideViews) fragment.hideScreenAds() else fragment.showScreenAd()
                 }
 
-                is MyWorkFragment -> {
-                    if (hideViews) fragment.hideScreenAds() else fragment.showScreenAds()
-                }
 
                 else -> {
                     Log.d("AppOpen", "onForegroundEntered: else")
@@ -700,26 +481,12 @@ class MainActivity : Permissions(), InternetConnectivityListener {
     }
 
     private fun initDataOffline() {
-//        if (apiViewModel.offlineFeatureScreen.value?.data?.allTags.isNullOrEmpty()) apiViewModel.getFeatureScreen(
-//            false
-//        )
 
         homeAndTemplateViewModel.removeFromList()
 
-        if (apiViewModel.offlineStickers.value?.data?.parentCategories.isNullOrEmpty()) apiViewModel.getStickers(
-            false
-        )
 
-        if (apiViewModel.offlineFilters.value?.data?.parentCategories.isNullOrEmpty()) apiViewModel.getFilters(
-            false
-        )
     }
 
-    fun refreshTemplateAndFrames() {
-        if (ApiConstants.KEY.isNotBlank()) {
-            if (apiViewModel.mainScreen.value?.data?.childCategories.isNullOrEmpty()) apiViewModel.getMainScreen()
-        }
-    }
 
     private fun initData() {
 
@@ -728,232 +495,11 @@ class MainActivity : Permissions(), InternetConnectivityListener {
             return
         }
 
-        if (ApiConstants.KEY.isNotBlank()) {
-
-            if (apiViewModel.featureScreen.value?.data?.allTags.isNullOrEmpty()) apiViewModel.getFeatureScreen(
-                true
-            )
-
-            apiViewModel.getSearchTags()
-
-            searchViewModel.setNetworkState(true)
-
-            if (isNetworkAvailable) {
-                homeAndTemplateViewModel.getHomeTemplateScreen()
-            } else {
-                homeAndTemplateViewModel.removeFromList()
-            }
-
-            if (apiViewModel.mainScreen.value?.data?.childCategories.isNullOrEmpty()) apiViewModel.getMainScreen()
-
-            if (apiViewModel.stickers.value?.data?.parentCategories.isNullOrEmpty()) apiViewModel.getStickers(
-                true
-            )
-
-            if (apiViewModel.backgrounds.value?.data?.parentCategories.isNullOrEmpty()) apiViewModel.getBackgrounds()
-
-            if (apiViewModel.filters.value?.data?.parentCategories.isNullOrEmpty()) apiViewModel.getFilters(
-                true
-            )
-
-            if (apiViewModel.effects.value?.data?.parentCategories.isNullOrEmpty()) apiViewModel.getEffects()
-        }
     }
 
     private fun initApiObservers() {
 
-        try {
-            if (apiViewModel.favouriteFrames.hasObservers()) {
-                apiViewModel.favouriteFrames.removeObservers(this@MainActivity as LifecycleOwner)
-            }
 
-            apiViewModel.favouriteFrames.observeOnce(this) {
-                it.let {
-                    if (it.isNotEmpty()) {
-                        favouriteFrames =
-                            it.mapNotNull { FavouriteTypeConverter.fromJson(it.frame) }
-                    }
-                }
-            }
-
-            if (apiViewModel.searchTags.hasObservers()) {
-                apiViewModel.searchTags.removeObservers(this@MainActivity as LifecycleOwner)
-            }
-
-            apiViewModel.searchTags.observe(this) {
-                it.let {
-                    lifecycleScope.launch(IO) {
-                        searchViewModel.insertDataInTrie(it.data)
-                    }
-                }
-            }
-
-            if (apiViewModel.effects.hasObservers()) {
-                apiViewModel.effects.removeObservers(this@MainActivity as LifecycleOwner)
-            }
-
-            apiViewModel.effects.observe(this) {
-                when (it) {
-                    is com.project.common.repo.api.apollo.helper.Response.Success -> {
-                        ConstantsCommon.effectList = it.data
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.ShowSlowInternet -> {}
-
-                    is com.project.common.repo.api.apollo.helper.Response.Loading -> {
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.Error -> {
-                    }
-                }
-            }
-
-            if (apiViewModel.token.hasObservers()) {
-                apiViewModel.token.removeObservers(this@MainActivity as LifecycleOwner)
-            }
-
-            apiViewModel.token.observe(this) {
-                when (it) {
-                    is com.project.common.repo.api.apollo.helper.Response.Loading -> {
-                        Log.d("Fahad", "initApiObservers: ")
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.ShowSlowInternet -> {}
-
-
-                    is com.project.common.repo.api.apollo.helper.Response.Success -> {
-                        it.data?.let {
-                            ApiConstants.KEY = "JWT $it"
-
-                            lifecycleScope.launch(IO) {
-
-                                if (!isProVersion()) {
-                                    kotlin.runCatching {
-                                        frameDataStore.readAll()?.collect {
-                                            ConstantsCommon.rewardedAssetsList.clear()
-                                            ConstantsCommon.rewardedAssetsList.addAll(it)
-                                            withContext(Main) {
-                                                initData()
-                                            }
-                                        } ?: run {
-                                            withContext(Main) {
-                                                initData()
-                                            }
-                                        }
-                                    }.onFailure {
-                                        withContext(Main) {
-                                            initData()
-                                        }
-                                    }
-                                } else {
-                                    withContext(Main) {
-                                        initData()
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.Error -> {
-                        Log.d("Fahad", "initApiObservers: Error ")
-
-                        lifecycleScope.launch(IO) {
-
-                            if (!isProVersion()) {
-                                kotlin.runCatching {
-                                    frameDataStore.readAll()?.collect {
-                                        ConstantsCommon.rewardedAssetsList.clear()
-                                        ConstantsCommon.rewardedAssetsList.addAll(it)
-                                        withContext(Main) {
-                                            initData()
-                                        }
-                                    } ?: run {
-                                        withContext(Main) {
-                                            initData()
-                                        }
-                                    }
-                                }.onFailure {
-                                    withContext(Main) {
-                                        initData()
-                                    }
-                                }
-                            } else {
-                                withContext(Main) {
-                                    initData()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        } catch (ex: Exception) {
-            Log.d("Fahad", "initApiObservers: ")
-        }
-
-        try {
-
-            if (apiViewModel.mainFromMainScreen.hasObservers()) {
-                apiViewModel.mainFromMainScreen.removeObservers(this@MainActivity as LifecycleOwner)
-            }
-
-            apiViewModel.mainFromMainScreen.observe(this@MainActivity) {
-                when (it) {
-                    is com.project.common.repo.api.apollo.helper.Response.Loading -> {
-                        Log.d("Fahad", "initApiObservers: ")
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.ShowSlowInternet -> {
-
-                        Log.i("SLOWINTERNET", "mainFromMainScreen: ShowSlowInternet ")
-                        kotlin.runCatching {
-                            Toast.makeText(
-                                this,
-                                it.errorMessage,
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-
-
-                    is com.project.common.repo.api.apollo.helper.Response.Success -> {
-
-                        it.data?.childCategories?.let { mainMenuOptions ->
-
-                            mainMenuOptions.filterNotNull().forEach {
-                                val name = it.title
-                                it.children?.forEach {
-                                    it?.apply {
-                                        frames?.let {
-                                            when (name.lowercase()) {
-                                                MainMenuOptions.DRAWING.title.lowercase() -> {
-                                                    ConstantsCommon.drawingFramesSubData?.set(
-                                                        title, it
-                                                    )
-                                                }
-
-                                                MainMenuOptions.LEARN.title.lowercase() -> {
-                                                    ConstantsCommon.learningFramesSubData?.set(
-                                                        title, it
-                                                    )
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
-                    }
-
-                    is com.project.common.repo.api.apollo.helper.Response.Error -> {
-                        Log.d("Fahad", "initApiObservers: ")
-                    }
-                }
-            }
-        } catch (_: Exception) {
-            Log.d("Fahad", "initApiObservers: ")
-        }
     }
 
     private fun setupSmoothBottomMenu() {
@@ -1067,21 +613,7 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                             crossPromoViewModel.getCrossPromoAds(packageName)
                         }
                         loadBannerAd()
-                        when (apiViewModel.token.value) {
-                            is com.project.common.repo.api.apollo.helper.Response.Success -> {
-                                apiViewModel.token.value?.data?.let {
-                                    ApiConstants.KEY = "JWT ${it}"
-                                }
-                                runOnUiThread {
-                                    isNetworkAvailable = true
-                                    initData()
-                                }
-                            }
 
-                            else -> {
-                                apiViewModel.getAuthToken(true)
-                            }
-                        }
                         runOnUiThread {
                             isNetworkAvailable = true
                             ConstantsCommon.updateInternetStatusFeature.postValue(true)
@@ -1094,7 +626,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                             isNetworkAvailable = false
                             ConstantsCommon.updateInternetStatusFeature.postValue(false)
                             ConstantsCommon.updateInternetStatusFrames.postValue(false)
-                            searchViewModel.setNetworkState(false)
                             initDataOffline()
                         }
                     }
@@ -1115,7 +646,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                         isNetworkAvailable = false
                         ConstantsCommon.updateInternetStatusFeature.postValue(false)
                         ConstantsCommon.updateInternetStatusFrames.postValue(false)
-                        searchViewModel.setNetworkState(false)
                         initDataOffline()
                     }
                 }
@@ -1137,27 +667,12 @@ class MainActivity : Permissions(), InternetConnectivityListener {
         isNetworkAvailable = isConnected
         ConstantsCommon.updateInternetStatusFeature.postValue(isConnected)
         ConstantsCommon.updateInternetStatusFrames.postValue(isConnected)
-        if (!isConnected) {
-            searchViewModel.setNetworkState(false)
-        }
         if (isConnected) {
             loadBannerAd()
             if (!isProVersion() && crossPromoViewModel.crossPromoAds.value?.data == null) {
                 crossPromoViewModel.getCrossPromoAds(packageName)
             }
 
-            when (apiViewModel.token.value) {
-                is com.project.common.repo.api.apollo.helper.Response.Success -> {
-                    runOnUiThread {
-                        isNetworkAvailable = true
-                        initData()
-                    }
-                }
-
-                else -> {
-                    apiViewModel.getAuthToken(true)
-                }
-            }
         } else {
             Log.i("TAG", "onConnectivityChanged: initDataOffline")
             initDataOffline()
@@ -1278,13 +793,11 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                             showRewardedInterstitial(
                                 frameBody.rewardedAd,
                                 loadedAction = {
-                                    apiViewModel.addToRecent(RecentsModel(frame = frameBody.frameBody))
                                     lifecycleScope.launch(IO) {
                                         frameDataStore.writeUnlockedId(frameBody.id)
                                         ConstantsCommon.rewardedAssetsList.add(frameBody.id)
                                         withContext(Main) {
                                             updateRecycler.invoke()
-                                            apiViewModel.getFrame(frameBody.id)
                                         }
                                     }
 
@@ -1312,14 +825,12 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                     )
                 } else {
 
-                    apiViewModel.addToRecent(RecentsModel(frame = frameBody.frameBody))
                     downloadDialog = createDownloadingDialog(
                         frameBody.baseUrl, frameBody.thumb, frameBody.thumbtype
                     )
 
                     showNewInterstitial(homeInterstitial()) {
                         loadNewInterstitialWithoutStrategyCheck(homeInterstitial()) {}
-                        apiViewModel.getFrame(frameBody.id)
                     }
 
                 }

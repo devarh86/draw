@@ -9,7 +9,6 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.asLiveData
 import com.example.ads.Constants.appIsActive
 import com.example.ads.Constants.appOpen
-import com.example.ads.Constants.generalNotificationHideAppEnable
 import com.example.analytics.Constants.firebaseAnalytics
 import com.example.inapp.core.GoogleBilling
 import com.example.inapp.helpers.Constants
@@ -21,7 +20,6 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.ktx.Firebase
 import com.project.common.utils.ActivityTracker
 import com.project.common.utils.GlobalApp
-import com.xan.event_notifications.NotificationHelper
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -38,9 +36,6 @@ class MyApp : Application() {
     lateinit var billingDataStore: BillingDataStore
     private var appObserver: AppObserver? = null
 
-    private var notification: NotificationHelper? = null
-
-
     override fun onCreate() {
         super.onCreate()
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -52,23 +47,6 @@ class MyApp : Application() {
             ProcessLifecycleOwner.get().lifecycle.addObserver(it)
             this.registerActivityLifecycleCallbacks(it)
         }
-
-        /*runCatching {
-            CoroutineScope(Dispatchers.Default).launch {
-                try {
-                    if (!OpenCVLoader.initLocal()) {
-                        isOpenCVSuccess = false
-                    } else {
-                        isOpenCVSuccess = true
-                    }
-                } catch (e: Exception) {
-                    Log.e("MyApp", "Error initializing OpenCV", e)
-                }
-            }
-        }.onFailure { e ->
-            Log.e("MyApp", "Error initializing OpenCV", e)
-            isOpenCVSuccess = false
-        }*/
 
         try {
             firebaseAnalytics = Firebase.analytics
@@ -97,6 +75,7 @@ class MyApp : Application() {
                 override fun onActivityStopped(activity: Activity) {}
                 override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
             })
+
             com.example.ads.Constants.firebaseAnalytics = firebaseAnalytics
 //             Initialize Firebase Crashlytics
             val firebaseCrashlytics = FirebaseCrashlytics.getInstance()
@@ -122,15 +101,6 @@ class MyApp : Application() {
 //            Constants.isProVersion.value = true
 //            Constants.isProVersion.value = false
             Constants.isProVersion.value = it
-        }
-    }
-
-    fun initNotificationHelper() {
-        kotlin.runCatching {
-            if (generalNotificationHideAppEnable) {
-                notification = NotificationHelper(this, firebaseAnalytics)
-                appObserver?.setNotificationHelper(notification)
-            }
         }
     }
 }

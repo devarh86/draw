@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.ads.admobs.utils.loadNewInterstitial
@@ -19,7 +17,6 @@ import com.example.analytics.Events
 import com.example.inapp.helpers.Constants.isProVersion
 import com.fahad.newtruelovebyfahad.databinding.FragmentDrawingFramesBinding
 import com.fahad.newtruelovebyfahad.ui.fragments.common.CategoriesRVAdapter
-import com.fahad.newtruelovebyfahad.ui.fragments.home.HomeForYouFragmentDirections
 import com.fahad.newtruelovebyfahad.ui.fragments.home.adapter.DrawingFramesRV
 import com.fahad.newtruelovebyfahad.utils.gone
 import com.fahad.newtruelovebyfahad.utils.invisible
@@ -28,19 +25,8 @@ import com.fahad.newtruelovebyfahad.utils.setSingleClickListener
 import com.fahad.newtruelovebyfahad.utils.visible
 import com.google.android.gms.ads.nativead.NativeAd
 import com.project.common.datastore.FrameDataStore
-import com.project.common.repo.api.apollo.helper.Response
-import com.project.common.repo.room.helper.FavouriteTypeConverter
-import com.project.common.repo.room.model.FavouriteModel
-import com.project.common.utils.ConstantsCommon
-import com.project.common.utils.ConstantsCommon.drawingFramesSubData
-import com.project.common.utils.ConstantsCommon.favouriteFrames
 import com.project.common.utils.enums.MainMenuBlendOptions
-import com.project.common.utils.enums.MainMenuOptions
-import com.project.common.viewmodels.ApiViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -51,7 +37,6 @@ class DrawingFramesFragment : Fragment() {
     private lateinit var mContext: Context
     private lateinit var mActivity: AppCompatActivity
     private lateinit var navController: NavController
-    private val apiViewModel by activityViewModels<ApiViewModel>()
     private var categoryTagsAdapter: CategoriesRVAdapter? = null
 
     @Inject
@@ -120,11 +105,7 @@ class DrawingFramesFragment : Fragment() {
             }
 
         }, onFavouriteClick = {
-            apiViewModel.favourite(
-                FavouriteModel(
-                    isFavourite = it.isFavourite, frame = it.frame
-                )
-            )
+
         }, onPurchaseTypeTagClick = {})
     }
 
@@ -160,126 +141,7 @@ class DrawingFramesFragment : Fragment() {
     }
 
     private fun FragmentDrawingFramesBinding.initObservers() {
-        try {
-            var isCompleted = true
-            ConstantsCommon.updateInternetStatusFrames.observe(
-                viewLifecycleOwner
-            ) {
-                checkInternet()
-                if (it == true) {
-                    try {
-                        apiViewModel.mainScreen.observe(viewLifecycleOwner) {
-                            when (it) {
-                                is Response.Loading -> {
-                                    tryNowPlaceholder.gone()
-                                    noResultFoundTv.gone()
-                                    loadingView.startShimmer()
-                                    if (ConstantsCommon.isNetworkAvailable) loadingView.visible()
-                                    framesRv.invisible()
-                                }
 
-                                is Response.ShowSlowInternet -> {}
-
-                                is Response.Success -> {
-                                    categoriesFramesSubData?.let {
-                                        if (it.isNotEmpty()) {
-                                            loadingView.gone()
-                                            loadingView.stopShimmer()
-                                            if (ConstantsCommon.isNetworkAvailable) framesRv.visible()
-                                            return@observe
-                                        }
-                                    }
-                                    if (isCompleted) {
-                                        isCompleted = false
-                                        it.data?.childCategories?.let { mainMenuOptions ->
-                                            mainMenuOptions.filterNotNull().forEach {
-                                                when (it.title.lowercase()) {
-                                                    MainMenuOptions.DRAWING.title.lowercase() -> {
-                                                        it.children?.forEach {
-                                                            it?.apply {
-                                                                frames?.let {
-                                                                    drawingFramesSubData?.set(
-                                                                        title, it
-                                                                    )
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        when (option?.lowercase()) {
-
-                                            MainMenuOptions.DRAWING.title.lowercase() -> {
-                                                drawingFramesSubData?.forEach { (key, value) ->
-                                                    if (_binding?.framesRv?.isComputingLayout != true) {
-                                                        framesAdapter?.clearData()
-                                                    }
-                                                    lifecycleScope.launch(Dispatchers.IO) {
-                                                        val frames = value.filterNotNull().map { frame ->
-                                                            DrawingFramesRV.FrameModel(frame)
-                                                        }
-                                                        frames.forEach { frame ->
-                                                            Log.d(
-                                                                "FAHAD", "initObservers: SUCCESS --- ${frame.frame}"
-                                                            )
-                                                            frame.isFavourite = withContext(Dispatchers.Default) {
-                                                                favouriteFrames.mapNotNull { it?.id }.contains(
-                                                                    FavouriteTypeConverter.fromJson(
-                                                                        FavouriteTypeConverter.toJson(
-                                                                            frame.frame
-                                                                        )
-                                                                    )?.id
-                                                                )
-                                                            }
-                                                            if (key.lowercase() == "all") {
-                                                                withContext(Dispatchers.Main) {
-                                                                    categoryTagsRv.visible()
-                                                                    loadingView.gone()
-                                                                    loadingView.stopShimmer()
-                                                                    if (ConstantsCommon.isNetworkAvailable) framesRv.visible()
-                                                                    framesAdapter?.updateSingleItem(
-                                                                        frame
-                                                                    )
-                                                                }
-                                                            }
-                                                        }
-                                                        categoriesFramesSubData?.put(
-                                                            key, frames
-                                                        )
-                                                    }.invokeOnCompletion { isCompleted = true }
-                                                }
-                                                categoryTagsAdapter?.updateDataList(
-                                                    drawingFramesSubData?.keys?.toList()
-                                                )
-                                            }
-
-                                            else -> {
-
-                                            }
-                                        }
-                                    }
-                                }
-
-                                is Response.Error -> {
-                                    Log.d("FAHAD", "initObservers: ERROR")
-                                    if (!mActivity.isNetworkAvailable()) {
-                                        tryNowPlaceholder.visible()
-                                        noResultFoundTv.visible()
-                                        noResultFoundTv.visible()
-                                        loadingView.stopShimmer()
-                                        loadingView.gone()
-                                        framesRv.invisible()
-                                    }
-                                }
-                            }
-                        }
-                    } catch (_: Exception) {
-                    }
-                }
-            }
-        } catch (_: Exception) {
-        }
     }
 
     private fun FragmentDrawingFramesBinding.initRecyclerViews() {

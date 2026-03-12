@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="surface_clr">#FAEDF5</color>
+    <color name="surface_clr">#EFEFEF</color>
     <color name="bottom_bar">#181A1C</color>
-    <color name="dark_window_bg">#FAEDF5</color>
+    <color name="dark_window_bg">#EFEFEF</color>
     <color name="survey_item_bg">#1F1C1D</color>
     <color name="survey_item_bg_border">#2F3339</color>
     <!--activity  container color-->
-    <color name="container_clr_activity">#FAEDF5</color>
+    <color name="container_clr_activity">#EFEFEF</color>
     <color name="outline_clr">#181A1C</color>
 
     <color name="search_bg">#E6131313</color>

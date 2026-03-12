@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyTxt"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintWidth_percent="0.9" />
 
     <LinearLayout
         android:id="@+id/indicators"

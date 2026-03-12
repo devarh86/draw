@@ -7,33 +7,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fahad.newtruelovebyfahad.GetHomeAndTemplateScreenDataQuery
-import com.project.common.R
-import com.project.common.repo.api.apollo.NetworkCallRepo
-import com.project.common.repo.api.apollo.helper.Response
-import com.project.common.repo.offline.OfflineDataRepo
-import com.project.common.repo.room.FavouriteRepo
-import com.project.common.repo.room.RecentRepo
-import com.project.common.utils.ConstantsCommon
-import com.project.common.utils.enums.FeatureMainMenuOptions
-import com.project.common.utils.enums.MainMenuBlendOptions
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.onCompletion
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeAndTemplateViewModel @Inject constructor(
-    private val networkCallRepo: NetworkCallRepo
-) : ViewModel() {
+class HomeAndTemplateViewModel @Inject constructor() : ViewModel() {
 
     var scrollX: Int = 0
     var scrollY: Int = 0
@@ -53,12 +36,6 @@ class HomeAndTemplateViewModel @Inject constructor(
     var alreadyWorking = false
 
     private val templateList: MutableList<FramesModelHomeAndTemplates> = mutableListOf()
-
-    fun onlyCallToEndPointHomeAndTemplateScreen() {
-        CoroutineScope(IO).launch {
-            networkCallRepo.getHomeAndTemplateScreen().collect {}
-        }
-    }
 
     fun getHomeTemplateScreen() {
 //        Log.i("TAG", "getHomeAndTemplateScreen: ${homeList.size}")
@@ -91,54 +68,6 @@ class HomeAndTemplateViewModel @Inject constructor(
         homeAndTemplateJob = viewModelScope.launch(IO) {
             kotlin.runCatching {
 
-                alreadyWorking = true
-
-                networkCallRepo.getHomeAndTemplateScreen().onCompletion {
-//                    Log.i("TAG", "getHomeAndTemplateScreen: complete")
-                    alreadyWorking = false
-                }.collect { response ->
-                    when (response) {
-                        is Response.ShowSlowInternet -> {
-                           // postSlowInternetToScreens(message ="SlowInternet" )
-
-
-                        }
-                        is Response.Loading -> Unit
-                        is Response.Error -> {
-                            postErrorToScreens("Please try again")
-                        }
-
-                        is Response.Success -> {
-
-                            val screens = response.data?.screens ?: run {
-                                postErrorToScreens("Please try again")
-                                return@collect
-                            }
-
-                            homeList.clear()
-                            templateList.clear()
-
-                            val homeFramesList =
-                                screens.find { it?.title == FeatureMainMenuOptions.HOME.title }
-                            val templateFramesList =
-                                screens.find { it?.title == FeatureMainMenuOptions.TEMPLATE.title }
-
-//                            Log.i("TAG", "getHomeAndTemplateScreen: $homeFramesList")
-//                            Log.i("TAG", "getHomeAndTemplateScreen: $templateFramesList")
-
-                            val homeListDeferred = async(IO) {
-                                processFramesList(homeFramesList, homeList, "home")
-                            }
-
-                            val templateListDeferred = async(IO) {
-                                processFramesList(templateFramesList, templateList, "template")
-                            }
-
-                            homeListDeferred.await()
-                            templateListDeferred.await()
-                        }
-                    }
-                }
             }.onFailure {
                 Log.i("TAG", "getHomeAndTemplateScreenErrorViewModel: ${it.message}")
                 postErrorToScreens("Please try again")
@@ -164,7 +93,7 @@ class HomeAndTemplateViewModel @Inject constructor(
                     framesModel.type = ViewHolderTypes.PHOTOEDITOR
 //                    framesModel.thumbnail = R.raw.enhancer_home
                     framesModel.apiOption = framesModel.categoryName
-                }else{
+                } else {
                     Log.i("ENHNACER_ANIM", "processFramesList:  ELSE")
                 }
 
@@ -204,11 +133,11 @@ class HomeAndTemplateViewModel @Inject constructor(
         _templateScreen.postValue(ViewStates.Error(message))
     }
 
-  /*  private fun postSlowInternetToScreens(message: String) {
-        _homeScreen.postValue(ViewStates.SlowInternet(message))
-        _templateScreen.postValue(ViewStates.SlowInternet(message))
-    }
-*/
+    /*  private fun postSlowInternetToScreens(message: String) {
+          _homeScreen.postValue(ViewStates.SlowInternet(message))
+          _templateScreen.postValue(ViewStates.SlowInternet(message))
+      }
+  */
     private suspend fun postUpdateToScreen(
         framesModel: FramesModelHomeAndTemplates,
         screenType: String
@@ -261,7 +190,8 @@ sealed class ViewStates() {
     data object Loading : ViewStates()
     class Error(var message: String) : ViewStates()
     class UpdateObject(var objectValue: FramesModelHomeAndTemplates) : ViewStates()
-//    class SlowInternet(var message: String) : ViewStates()
+
+    //    class SlowInternet(var message: String) : ViewStates()
     class UpdateList(var list: MutableList<FramesModelHomeAndTemplates>) : ViewStates()
     class Offline(var list: MutableList<FramesModelHomeAndTemplates>) : ViewStates()
     data object Idle : ViewStates()
@@ -281,201 +211,3 @@ data class FramesModelHomeAndTemplates(
 enum class ViewHolderTypes {
     FRAMES, PHOTOEDITOR
 }
-
-//    fun getHomeTemplateScreen(screen: String) {
-//
-//        if (screen == "home" && homeList.isNotEmpty()) {
-//            _homeScreen.value = (ViewStates.UpdateList(
-//                this@HomeAndTemplateViewModel.homeList
-//            ))
-//            return
-//        } else if (screen == "template" && templateList.isNotEmpty()) {
-//            _templateScreen.value = (ViewStates.UpdateList(
-//                this@HomeAndTemplateViewModel.templateList
-//            ))
-//            return
-//        }
-//
-//        homeAndTemplateJob?.cancel()
-//
-//        homeAndTemplateJob = viewModelScope.launch(IO) {
-//            kotlin.runCatching {
-//                networkCallRepo.getHomeAndTemplateScreen().collect {
-//                    Log.i("TAG", "getHomeTemplateScreen: $it")
-//                    when (it) {
-//
-//                        is Response.ShowSlowInternet -> {}
-//
-//                        is Response.Loading -> {}
-//
-//                        is Response.Error -> {
-//                            _homeScreen.postValue(ViewStates.Error("Please try again"))
-//                        }
-//
-//                        is Response.Success -> {
-//
-//                            templateList.clear()
-//                            homeList.clear()
-//
-//                            val rewardsIdsList: MutableList<Int> = mutableListOf()
-//                            rewardsIdsList.addAll(ConstantsCommon.rewardedAssetsList)
-//
-//                            val homeFramesList =
-//                                it.data?.screens?.find { it?.title == FeatureMainMenuOptions.HOME.title }
-//                            val templateFramesList =
-//                                it.data?.screens?.find { it?.title == FeatureMainMenuOptions.TEMPLATE.title }
-//
-//                            val child1 = async(IO) {
-//                                homeFramesList?.let { homeList ->
-//                                    var counter = 0
-//                                    homeList.categories?.forEach {
-//
-//                                        Log.i("TAG", "getHomeTemplateScreen: $isActive")
-//
-//                                        counter += 1
-//                                        it?.let { categoryObj ->
-//
-//                                            val framesModelHomeAndTemplates =
-//                                                FramesModelHomeAndTemplates()
-//                                            framesModelHomeAndTemplates.categoryId =
-//                                                categoryObj.id.toLong()
-//                                            framesModelHomeAndTemplates.categoryName =
-//                                                categoryObj.title
-//
-//                                            categoryObj.frames?.let {
-//
-//                                                framesModelHomeAndTemplates.frames.addAll(it.toMutableList())
-//
-//                                                this@HomeAndTemplateViewModel.homeList.add(
-//                                                    framesModelHomeAndTemplates
-//                                                )
-//                                                withContext(Main) {
-//                                                    _homeScreen.postValue(
-//                                                        ViewStates.UpdateObject(
-//                                                            framesModelHomeAndTemplates
-//                                                        )
-//                                                    )
-//                                                }
-//                                            } ?: run {
-//                                                _homeScreen.postValue(ViewStates.Error("Please try again"))
-//                                            }
-//
-//                                            if (counter == 2) {
-//                                                val framesModelHomeAndTemplatesLandscape =
-//                                                    FramesModelHomeAndTemplates()
-//                                                framesModelHomeAndTemplatesLandscape.categoryName =
-//                                                    "Overlay"
-//                                                framesModelHomeAndTemplatesLandscape.type =
-//                                                    ViewHolderTypes.PHOTOEDITOR
-//                                                framesModelHomeAndTemplatesLandscape.thumbnail =
-//                                                    R.raw.overlay
-//                                                framesModelHomeAndTemplatesLandscape.apiOption =
-//                                                    "Overlay"
-//                                                this@HomeAndTemplateViewModel.homeList.add(
-//                                                    framesModelHomeAndTemplatesLandscape
-//                                                )
-//                                                withContext(Main) {
-//                                                    _homeScreen.postValue(
-//                                                        ViewStates.UpdateObject(
-//                                                            framesModelHomeAndTemplatesLandscape
-//                                                        )
-//                                                    )
-//                                                }
-//                                            } else if (counter == 4) {
-//                                                val framesModelHomeAndTemplatesLandscape =
-//                                                    FramesModelHomeAndTemplates()
-//                                                framesModelHomeAndTemplatesLandscape.categoryName =
-//                                                    "Double Exposure"
-//                                                framesModelHomeAndTemplatesLandscape.type =
-//                                                    ViewHolderTypes.PHOTOEDITOR
-//                                                framesModelHomeAndTemplatesLandscape.thumbnail =
-//                                                    R.raw.double_exposure
-//                                                framesModelHomeAndTemplatesLandscape.apiOption =
-//                                                    "Double Exposure"
-//                                                this@HomeAndTemplateViewModel.homeList.add(
-//                                                    framesModelHomeAndTemplatesLandscape
-//                                                )
-//                                                withContext(Main) {
-//                                                    _homeScreen.postValue(
-//                                                        ViewStates.UpdateObject(
-//                                                            framesModelHomeAndTemplatesLandscape
-//                                                        )
-//                                                    )
-//                                                }
-//                                            }
-//
-//                                        } ?: run {
-//                                            _homeScreen.postValue(ViewStates.Error("Please try again"))
-//                                        }
-//                                    }
-//                                } ?: run {
-//                                    _homeScreen.postValue(ViewStates.Error("Please try again"))
-//                                }
-//                            }
-//
-//                            val child2 = async(IO) {
-//                                templateFramesList?.let { templateList ->
-//                                    var counter = 0
-//                                    templateList.categories?.forEach {
-//
-//                                        counter += 1
-//                                        it?.let { categoryObj ->
-//
-//                                            val framesModelHomeAndTemplates =
-//                                                FramesModelHomeAndTemplates()
-//                                            framesModelHomeAndTemplates.categoryId =
-//                                                categoryObj.id.toLong()
-//                                            framesModelHomeAndTemplates.categoryName =
-//                                                categoryObj.title
-//                                            framesModelHomeAndTemplates.apiOption =
-//                                                categoryObj.apioption ?: ""
-//                                            categoryObj.frames?.let {
-//                                                framesModelHomeAndTemplates.frames.addAll(it.toMutableList())
-//
-//                                                this@HomeAndTemplateViewModel.templateList.add(
-//                                                    framesModelHomeAndTemplates
-//                                                )
-//                                                _templateScreen.postValue(
-//                                                    ViewStates.UpdateObject(
-//                                                        framesModelHomeAndTemplates
-//                                                    )
-//                                                )
-//                                            } ?: run {
-//                                                _templateScreen.postValue(ViewStates.Error("Please try again"))
-//                                            }
-//                                        } ?: run {
-//                                            _templateScreen.postValue(ViewStates.Error("Please try again"))
-//                                        }
-//                                    }
-//                                } ?: run {
-//                                    _templateScreen.postValue(ViewStates.Error("Please try again"))
-//                                }
-//                            }
-//
-//                            child1.await()
-//                            withContext(Main) {
-//                                _homeScreen.postValue(
-//                                    ViewStates.UpdateList(
-//                                        this@HomeAndTemplateViewModel.homeList
-//                                    )
-//                                )
-//                            }
-//
-//                            child2.await()
-//                            withContext(Main) {
-//                                _templateScreen.postValue(
-//                                    ViewStates.UpdateList(
-//                                        this@HomeAndTemplateViewModel.templateList
-//                                    )
-//                                )
-//                            }
-//
-//                        }
-//                    }
-//                }
-//            }.onFailure {
-//                Log.i("TAG", "initLiveData: ${it.message}")
-//                _homeScreen.postValue(ViewStates.Error("Please try again"))
-//            }
-//        }
-//    }

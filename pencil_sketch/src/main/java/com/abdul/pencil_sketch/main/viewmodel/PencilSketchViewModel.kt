@@ -31,8 +31,6 @@ import com.project.common.R
 import com.project.common.enum_classes.SaveQuality
 import com.project.common.model.ImagesModel
 import com.project.common.model.SavingModel
-import com.project.common.repo.datastore.AppDataStore
-import com.project.common.repository.EditorRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -53,14 +51,10 @@ import java.io.FileOutputStream
 import java.io.IOException
 import javax.inject.Inject
 import kotlin.coroutines.coroutineContext
-import kotlin.math.abs
 
 
 @HiltViewModel
-class PencilSketchViewModel @Inject constructor(
-    private val editorRepository: EditorRepository,
-    private val appDataStore: AppDataStore
-) : ViewModel() {
+class PencilSketchViewModel @Inject constructor() : ViewModel() {
 
     var restoreIntent: Channel<SketchIntent>? = null
     var saveIntent: Channel<SaveIntentSketch>? = null
@@ -107,83 +101,6 @@ class PencilSketchViewModel @Inject constructor(
     }
 
     private fun handleIntent() {
-        viewModelScope.launch(IO) {
-            restoreIntent?.consumeAsFlow()?.collect {
-                when (it) {
-                    is SketchIntent.GenerateToken -> {
-                        if (imageEnhancedPath.isNotEmpty()) {
-                            _state.value = SketchImageActionViewState.ShowLoadingState
-                            try {
-                                val context = it.context
-                                runCatching {
-                                    appDataStore.readAuthKeySketchCompleteRunBlock(context).let {
-                                        runCatching {
-                                            Log.i(colorizeLogger, "GenerateToken: $it")
-
-                                            if (it.isBlank()) {
-                                                restoreImage(context, "")
-                                            } else {
-                                                restoreImage(context, it)
-                                            }
-                                        }
-                                    }
-                                }
-                            } catch (e: Exception) {
-                                updateErrorForEnhance()
-                            }
-                        }
-
-                    }
-
-                    is SketchIntent.AddCroppedImage -> {
-                        _state.value = SketchImageActionViewState.Loading
-                        addCroppedImage(it.index, it.path)
-                    }
-
-                    is SketchIntent.ImageEnhancementAndPlacing -> {
-
-                    }
-
-                    is SketchIntent.SaveImageForEditor -> {
-                        copyIntoDataDirForEditor(context = it.context, bitmap = it.editorBitmap)
-
-                    }
-
-                    is SketchIntent.SaveImages -> {
-                        copyIntoDataDir(
-                            context = it.context
-                        )
-                    }
-
-                    SketchIntent.SetFrame -> {
-                        setLoadingState()
-                        withContext(Main) {
-//                            _state.value = ColorizeActionViewState.UpdateFrame(
-//                                filePath,
-//                                isShape
-//                            )
-                        }
-
-                    }
-
-                    SketchIntent.SetImage -> {
-                        setLoadingState()
-
-                        withContext(Main) {
-                            if (imageEnhancedPath.isNotEmpty())
-                                _state.value =
-                                    SketchImageActionViewState.SetUserImage(imageEnhancedPath[0].croppedPath)
-                        }
-                    }
-
-                    is SketchIntent.SingleImageEnhancementAndPlacing -> {
-                        singleImageEnhancement(
-                            path = it.path, index = it.index
-                        )
-                    }
-                }
-            }
-        }
         viewModelScope.launch(IO) {
             saveIntent?.consumeAsFlow()?.collect {
                 when (it) {
@@ -825,66 +742,7 @@ class PencilSketchViewModel @Inject constructor(
     }
 
     private suspend fun restoreImage(context: Context, key: String) {
-        if (imageEnhancedPath.isNotEmpty()) {
-            val path = File(imageEnhancedPath[0].croppedPath)
-            var newcounter = 0
-            editorRepository.resetValues()
-            editorRepository.applyImageSketch(
-                context.packageName,
-                key,
-                path,
-                updateToken = {
-                    viewModelScope.launch(IO) {
-                        appDataStore.writeAuthKeySketch(it)
-                    }
-                },
-                successCallback = { callback ->
-                    callback?.let { resultPath ->
-                        if (newcounter < 18) {
-                            newcounter = 17
-                        } else {
-                            val difference = abs(newcounter - maxCounter)
-                            if (newcounter == 18) {
-                                maxCounter += (difference - 1)
 
-                            } else {
-                                maxCounter += (difference + 2) - difference
-                            }
-                        }
-                        newcounter += 1
-                        updateCounterAndViewState(newcounter)
-                        viewModelScope.launch(IO) {
-                            delay(1000)
-
-                            preloadImageAndNavigate(
-                                context = context,
-                                resultPath,
-                                newcounter
-                            )
-                        }
-                        authKeyJob?.cancel()
-
-
-                        Log.d(
-                            "ENHNACEIMG",
-                            "EnhancerViewModel: token--$resultPath"
-                        )
-                    } ?: run {
-                        // _state.value = FrameViewState.Error("Found issue went something wrong")
-                        updateErrorForEnhance()
-
-                        Log.d("ENHNACEIMG", "EnhancerViewModel: run block")
-                    }
-                }, errorCallback = {
-                    updateErrorForEnhance()
-                }, loading = {
-                    if (newcounter <= maxCounter) {
-                        newcounter += 1
-                        updateCounterAndViewState(newcounter)
-                    }
-                }
-            )
-        }
     }
 
     private suspend fun preloadImageAndNavigate(

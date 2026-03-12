@@ -14,13 +14,13 @@ android {
     namespace 'com.fahad.newtruelovebyfahad'
     compileSdk 35
     defaultConfig {
-        applicationId "com.pixin.drawing.art.editor"
+        applicationId "com.pixin.drawing"
         multiDexEnabled =true
         minSdk 24
         targetSdk 35
 
-        versionCode 3
-        versionName "0.3"
+        versionCode 1
+        versionName "0.1"
 
 //        versionCode 10000
 //        versionName "10000"
@@ -79,7 +79,6 @@ dependencies {
     implementation(fileTree(dir: "libs", includes: ["*.aar"]))
     implementation ("com.android.support:multidex:1.0.3")
     implementation(project(":appOnBoarding"))
-    implementation(project(":event_notifications"))
     implementation(project(":pencil_sketch"))
 
     implementation 'androidx.core:core-ktx:1.15.0'
@@ -97,7 +96,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-process:2.8.7'
     implementation 'com.google.firebase:firebase-messaging-ktx:24.0.1'
     implementation 'androidx.activity:activity:1.9.2'
-    implementation project(':questions_intro')
 
     annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
 

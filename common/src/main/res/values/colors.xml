@@ -16,13 +16,13 @@
     <color name="text_color">#4B5563</color>
     <color name="text_color_drawing_screen">#AFAFAF</color>
 
-    <color name="surface_clr">#FAEDF5</color>
+    <color name="surface_clr">#EFEFEF</color>
     <color name="bottom_bar">#181A1C</color>
-    <color name="dark_window_bg">#FAEDF5</color>
+    <color name="dark_window_bg">#EFEFEF</color>
     <color name="survey_item_bg">#1F1C1D</color>
     <color name="survey_item_bg_border">#2F3339</color>
     <!--activity  container color-->
-    <color name="container_clr_activity">#FAEDF5</color>
+    <color name="container_clr_activity">#EFEFEF</color>
 
     <color name="search_bg">#E6131313</color>
     <color name="cancel_btn_clr">#373737</color>

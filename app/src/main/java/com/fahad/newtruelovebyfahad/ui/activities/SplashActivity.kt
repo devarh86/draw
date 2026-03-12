@@ -100,8 +100,6 @@ import com.fahad.newtruelovebyfahad.utils.isNetworkAvailable
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.FirebaseAnalytics.ConsentType
 import com.project.common.remote_config.RemoteConfigViewModel
-import com.project.common.repo.api.apollo.helper.ApiConstants
-import com.project.common.repo.api.apollo.helper.Response
 import com.project.common.utils.Constants.isProWithInterOn
 import com.project.common.utils.ConstantsCommon
 import com.project.common.utils.ConstantsCommon.introOnBoardingCompleted
@@ -111,14 +109,7 @@ import com.project.common.utils.ConstantsCommon.surveyCompleted
 import com.project.common.utils.getProScreen
 import com.project.common.utils.hideNavigation
 import com.project.common.utils.setLocale
-import com.project.common.viewmodels.ApiViewModel
 import com.project.common.viewmodels.DataStoreViewModel
-import com.project.common.viewmodels.HomeAndTemplateViewModel
-import com.xan.event_notifications.data.constants.Constants.notiLockScreen
-import com.xan.event_notifications.data.constants.Constants.notiLockscreenCountry
-import com.xan.event_notifications.data.constants.Constants.notiStatusBarCountry
-import com.xan.event_notifications.data.constants.Constants.timePushNotiLockscreen1
-import com.xan.event_notifications.data.constants.Constants.timePushNotiLockscreen2
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -134,8 +125,6 @@ const val TAG = "SplashActivity"
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     private var _binding: ActivitySplashBinding? = null
-    private val apiViewModel by viewModels<ApiViewModel>()
-    private val homeAndTemplateViewModel by viewModels<HomeAndTemplateViewModel>()
     private val binding get() = _binding!!
     private var splashTimerJob: Job? = null
     private var isConsentFormCompleted = false
@@ -175,7 +164,6 @@ class SplashActivity : AppCompatActivity() {
 
         hideNavigation()
         runCatching {
-            animationStopListener()
             nextWork()
         }
     }
@@ -199,34 +187,17 @@ class SplashActivity : AppCompatActivity() {
         initUninstallIntent()
         ConstantsCommon.isNetworkAvailable = isNetworkAvailable()
         ADS_SDK_INITIALIZE.set(false)
-//        ADS_SDK_INITIALIZE_BIGO.set(false)
         interstitialNew = InterstitialNew()
-
-
 
         if (isNetworkAvailable()) {
             initConsentForum()
         } else {
             initObserver()
         }
+
         firebaseAnalytics?.logEvent(Events.Screens.SPLASH, Bundle().apply {
             putString(Events.ParamsKeys.ACTION, Events.ParamsValues.DISPLAYED)
         })
-    }
-
-    private fun animationStopListener() {
-        /*  _binding?.appIconAnim?.let { lottieV ->
-              // Add a listener to detect when the animation ends
-              lottieV.addAnimatorListener(object : AnimatorListenerAdapter() {
-                  override fun onAnimationEnd(animation: Animator) {
-                      super.onAnimationEnd(animation)
-                      _binding?.animView?.isVisible = true
-                      _binding?.animView?.playAnimation()
-                  }
-              })
-
-          }*/
-
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -272,28 +243,10 @@ class SplashActivity : AppCompatActivity() {
                                 newAdsConfig = it
                                 remoteConfig(it)
                                 lifecycleScope.launch(Main) {
-                                    /*kotlin.runCatching {
-                                        application?.let {
-                                            if (it is MyApp) {
-                                                it.initNotificationHelper()
-                                            }
-                                        }
-                                    }*/
 
-
-//                                    if (!loadSplashAppOpen) {
-//                                        if (loadInterstitialSplash) {
-//                                            loadNewInterstitialForPro(splashInterstitial()) {}
-//
-//                                            /* splashInterstitial()?.let { config ->
-//                                                 loadInterstitial({}, {}, true, config = config)
-//                                             }*/
-//                                        }
-//                                    } else {
                                     if (loadSplashAppOpen) {
                                         loadAppOpenSplash(true)
                                     }
-                                    //  }
 
                                     if (!isProVersion() && !showAppOpen) {
                                         if (loadBannerSplash) {
@@ -326,7 +279,6 @@ class SplashActivity : AppCompatActivity() {
 
 
                                 }
-                                apiViewModel.getAuthToken(isNetworkAvailable())
 
                                 dataStoreViewModel.introComplete.observeOnce(this@SplashActivity) { it ->
                                     Log.i(TAG, "initConsentForum: introComplete")
@@ -342,17 +294,11 @@ class SplashActivity : AppCompatActivity() {
 
                         }
 
-
-                        /*  initObserver()}*/
-                        val consentMap: MutableMap<ConsentType, FirebaseAnalytics.ConsentStatus> =
-                            EnumMap(ConsentType::class.java)
-                        consentMap[ConsentType.ANALYTICS_STORAGE] =
-                            FirebaseAnalytics.ConsentStatus.GRANTED
+                        val consentMap: MutableMap<ConsentType, FirebaseAnalytics.ConsentStatus> = EnumMap(ConsentType::class.java)
+                        consentMap[ConsentType.ANALYTICS_STORAGE] = FirebaseAnalytics.ConsentStatus.GRANTED
                         consentMap[ConsentType.AD_STORAGE] = FirebaseAnalytics.ConsentStatus.GRANTED
-                        consentMap[ConsentType.AD_USER_DATA] =
-                            FirebaseAnalytics.ConsentStatus.GRANTED
-                        consentMap[ConsentType.AD_PERSONALIZATION] =
-                            FirebaseAnalytics.ConsentStatus.GRANTED
+                        consentMap[ConsentType.AD_USER_DATA] = FirebaseAnalytics.ConsentStatus.GRANTED
+                        consentMap[ConsentType.AD_PERSONALIZATION] = FirebaseAnalytics.ConsentStatus.GRANTED
                         firebaseAnalytics?.setConsent(consentMap)
 
                     }
@@ -385,43 +331,11 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun initObserver() {
-
-        if (isNetworkAvailable()) {
-            apiViewModel.token.observe(this) {
-                when (it) {
-                    is Response.Loading -> {}
-                    is Response.ShowSlowInternet -> {}
-                    is Response.Success -> {
-                        Log.i("TAG", "initData: success")
-                        Log.i(TAG, "initConsentForum: success")
-                        it.data?.let {
-                            ApiConstants.KEY = "JWT $it"
-                            if (!initDataInit) {
-                                initDataInit = true
-                                initData()
-                            }
-                        }
-                    }
-
-                    is Response.Error -> {
-                        Log.i("TAG", "initData: error")
-                        if (!initDataInit) {
-                            initDataInit = true
-                            initData()
-                        }
-                    }
-                }
-            }
-        } else {
-            initData()
-        }
+        initData()
     }
-
-    private var initDataInit = false
 
     private fun initData() {
         if (isNetworkAvailable()) {
-            homeAndTemplateViewModel.onlyCallToEndPointHomeAndTemplateScreen()
             ConstantsCommon.updateInternetStatusFrames.postValue(true)
         } else {
 
@@ -475,18 +389,13 @@ class SplashActivity : AppCompatActivity() {
                 return@runCatching
             }
 
-//            if (loadInterstitialSplash && !loadSplashAppOpen) {
-//                showNewInterstitialPro(splashInterstitial()) {
-//                    myCallback.invoke()
-//                }
-//            } else {
             if (loadSplashAppOpen) {
                 _binding?.bannerContainer?.visibility = View.INVISIBLE
                 showAppOpenSplash {
                     myCallback.invoke()
                 }
             }
-            // }
+
         }
     }
 
@@ -576,52 +485,7 @@ class SplashActivity : AppCompatActivity() {
                                                         }
 
 
-                                                    } /*else if (!surveyCompleted && surveyScreenEnable) {
-                                                        kotlin.runCatching {
-                                                            val intent = Intent()
-                                                            intent.setClassName(
-                                                                applicationContext,
-                                                                "com.example.questions_intro.ui.activity.SurveyActivity"
-                                                            )
-                                                            startActivity(intent)
-                                                            finish()
-                                                        }
-                                                    } else if (showQuestionScreenTimeCheck) {
-                                                        kotlin.runCatching {
-                                                            val intent = Intent(
-                                                                applicationContext,
-                                                                QuestionsActivity::class.java
-                                                            )
-                                                            startActivity(intent)
-                                                            overridePendingTransition(0, 0)
-                                                            finish()
-                                                        }
-                                                    } else if (openScreenIntroduction) {
-                                                        kotlin.runCatching {
-                                                            if (receivedData != null) {
-                                                                val intent = Intent(
-                                                                    applicationContext,
-                                                                    MainActivity::class.java
-                                                                )
-                                                                intent.putExtra(
-                                                                    "shortcut_extra_key",
-                                                                    receivedData
-                                                                )
-                                                                startActivity(intent)
-                                                                overridePendingTransition(0, 0)
-                                                                //  completeFOFlow()
-                                                                finish()
-                                                            } else {
-                                                                val intent = Intent(
-                                                                    applicationContext,
-                                                                    MainActivity::class.java
-                                                                )
-                                                                startActivity(intent)
-                                                                overridePendingTransition(0, 0)
-                                                                finish()
-                                                            }
-                                                        }
-                                                    }*/ else if (isProVersion()) {
+                                                    } else if (isProVersion()) {
                                                         kotlin.runCatching {
                                                             val intent = Intent(
                                                                 applicationContext,
@@ -771,11 +635,6 @@ class SplashActivity : AppCompatActivity() {
                     ?: "ca-app-pub-4276074242154795/8729106095"
             splashInterAdId = adConfigModel.splashScreen?.interstitial?.adUnitIds?.getOrNull(0)
                 ?: "ca-app-pub-4276074242154795/7571205893"
-            notiLockScreen = adConfigModel.globalSettings?.notification?.lockscreen ?: false
-            timePushNotiLockscreen1 =
-                adConfigModel.globalSettings?.notification?.timePush1?.toLong() ?: 10L
-            timePushNotiLockscreen2 = 9
-            notiStatusBarCountry = 1
             loadNativeOnResume = true
             homeNewInterStrategy = true
             flowUninstall = false
@@ -785,7 +644,6 @@ class SplashActivity : AppCompatActivity() {
             InterstitialUnInstall = false
             adGalleryNativeFloor = 4
             adGalleryNative = true
-            notiLockscreenCountry = "1"
             loadNativeOld = true
             popupEventValentine = false
             loadNativeFullOne = false

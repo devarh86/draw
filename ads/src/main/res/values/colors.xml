@@ -4,7 +4,7 @@
     <!--selected color -->
 
     <color name="selected_txt_clr">#FFFFFF</color>
-    <color name="container_clr_activity">#FAEDF5</color>
+    <color name="container_clr_activity">#EFEFEF</color>
     <!--activity  container color-->
     <color name="pro_bg_new">#131313</color>
     <color name="btn_txt_clr">#ffffff</color>

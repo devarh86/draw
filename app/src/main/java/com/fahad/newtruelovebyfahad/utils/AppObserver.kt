@@ -17,13 +17,8 @@ import com.example.ads.Constants.showAppOpen
 import com.example.ads.admobs.scripts.AppOpen
 import com.example.analytics.Constants.firebaseAnalytics
 import com.example.analytics.Events
-import com.example.questions_intro.ui.activity.IntroActivity
-import com.example.questions_intro.ui.activity.QuestionsActivity
-import com.example.questions_intro.ui.activity.SurveyActivity
 import com.fahad.newtruelovebyfahad.ui.activities.main.MainActivity
 import com.fahad.newtruelovebyfahad.ui.activities.save.SaveAndShareActivity
-import com.project.common.utils.ConstantsCommon
-import com.xan.event_notifications.NotificationHelper
 
 class AppObserver(
     private val appOpen: AppOpen,
@@ -35,13 +30,6 @@ class AppObserver(
     private var mCurrentActivity: Activity? = null
     private var appStart: Boolean = true
     private val ramThresholdMb = 250
-
-
-    private var notificationHelper: NotificationHelper? = null
-
-    fun setNotificationHelper(notificationHelper: NotificationHelper?) {
-        this.notificationHelper = notificationHelper
-    }
 
     private fun onBackgroundEntered() {
         appIsForeground = false
@@ -103,21 +91,6 @@ class AppObserver(
                             it.showAppOpenAd()
                         }
 
-                        is SurveyActivity -> {
-                            it.showAppOpen = true
-                            it.showAppOpen()
-                        }
-
-                        is IntroActivity -> {
-                            it.showAppOpen = true
-                            it.showAppOpen()
-                        }
-
-                        is QuestionsActivity -> {
-                            it.showAppOpen = true
-                            it.showAppOpen()
-                        }
-
                         else -> {}
                     }
                 } else appStart = false
@@ -131,11 +104,6 @@ class AppObserver(
         when (event) {
             Lifecycle.Event.ON_STOP -> {
                 this.onBackgroundEntered()
-                if (ConstantsCommon.enableGeneralNotification) {
-                    notificationHelper?.showNotification()
-                } else {
-                    ConstantsCommon.enableGeneralNotification = true
-                }
             }
 
             Lifecycle.Event.ON_START -> this.onForegroundEntered()

@@ -170,8 +170,6 @@
     <string name="highlight">Highlight</string>
     <string name="shadow">Shadow</string>
 
-    <string name="facebook_app_id" translatable="false">1116803502100807</string>
-    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
 
     <string name="layout_text">Layout</string>
     <string name="button_preview">Preview</string>
@@ -511,11 +509,11 @@
 
 
     <string name="boarding1_title">Easy to Draw</string>
-    <string name="boarding1_text_body">Put a butter paper on phone and draw it.</string>
+    <string name="boarding1_text_body">Place butter paper on your phone screen and trace the image.</string>
     <string name="boarding2_title">Draw With Camera</string>
-    <string name="boarding2_text_body">Hold or stand your phone to draw it easily.</string>
+    <string name="boarding2_text_body">Keep your phone steady and follow the image to draw easily.</string>
     <string name="boarding3_title">Draw Your Own Picture</string>
-    <string name="boarding3_text_body">Draw, trace, and color on any photo you love!</string>
+    <string name="boarding3_text_body">Draw, trace, and color on any photo you like!</string>
     <string name="let_s_draw">Let\'s Draw</string>
     <string name="create_draw_and_have_fun">Create, draw, and have fun!</string>
     <string name="ar_drawing">AR Drawing</string>
@@ -627,5 +625,6 @@
     <string name="brush">Brush</string>
     <string name="off_set">Off Set</string>
     <string name="eraser">Eraser</string>
+    <string name="this_action_may_contains_ads">This action may contains ads</string>
 
 </resources>

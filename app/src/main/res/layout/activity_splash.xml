@@ -8,11 +8,33 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.activities.SplashActivity">
 
+    <ImageView
+        android:id="@+id/app_icon_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/app_icon"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/banner_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sp_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_icon_anim" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/banner_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/animView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,43 +73,34 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/app_icon_anim"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/app_icon"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/banner_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/sp_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_icon_anim" />
-
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animView"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
         android:adjustViewBounds="true"
         android:scaleType="centerInside"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/splash_anim"
+        app:lottie_rawRes="@raw/anim_splash_loading"
         app:lottie_renderMode="hardware" />
+
+    <TextView
+        android:id="@+id/adTV"
+        style="@style/TextOnHomeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:text="@string/this_action_may_contains_ads"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

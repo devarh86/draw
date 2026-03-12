@@ -9,8 +9,6 @@ import androidx.core.view.WindowCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.ads.Constants
 import com.example.ads.Constants.languageCode
-import com.example.ads.Constants.showRoboPro
-import com.example.ads.Constants.surveyScreenEnable
 import com.example.ads.admobs.utils.loadNewInterstitialForPro
 import com.example.ads.admobs.utils.showNewInterstitialPro
 import com.example.ads.utils.startedInterstitial
@@ -18,9 +16,6 @@ import com.example.analytics.Constants.firebaseAnalytics
 import com.example.analytics.Events
 import com.example.apponboarding.databinding.ActivityOnBoardingBinding
 import com.example.apponboarding.ui.main.adapter.OnboardingAdapter
-import com.example.inapp.helpers.Constants.isProVersion
-import com.project.common.utils.ConstantsCommon.surveyCompleted
-import com.project.common.utils.getProScreen
 import com.project.common.utils.hideNavigation
 import com.project.common.utils.setLocale
 import com.project.common.viewmodels.DataStoreViewModel
@@ -172,64 +167,17 @@ class OnBoardingActivity : AppCompatActivity() {
 
     private fun completeOnboarding() {
         kotlin.runCatching {
-            // showNewInterstitial(obLastInterstitial()) {
             showNewInterstitialPro(startedInterstitial()) {
-                if (!surveyCompleted && surveyScreenEnable) {
-                    kotlin.runCatching {
-                        val intent = Intent()
-                        intent.setClassName(
-                            applicationContext,
-                            "com.example.questions_intro.ui.activity.SurveyActivity"
-                        )
-                        startActivity(intent)
-                        finish()
-                    }
-                } else if (isProVersion()) {
-                    kotlin.runCatching {
-                        val intent = Intent()
-                        intent.setClassName(
-                            applicationContext,
-                            "com.fahad.newtruelovebyfahad.ui.activities.main.MainActivity"
-                        )
-                        startActivity(intent)
-                        finish()
-                    }
-                } else if (showRoboPro) {
-                    kotlin.runCatching {
-                        sendEvent()
-                        val intent = Intent()
-                        intent.setClassName(
-                            applicationContext,
-                            getProScreen()
-                        )
-                        intent.putExtra("show_ad", true)
-                        startActivity(intent)
-                        finish()
-                    }
-                } else {
-                    /*  kotlin.runCatching {
-                        sendEvent()
-                        val intent = Intent()
-                        intent.setClassName(
-                            applicationContext,
-                            getProScreen()
-                        )
-                        intent.putExtra("show_ad", true)
-                        startActivity(intent)
-                        finish()
-                    }*/
-                    kotlin.runCatching {
-                        val intent = Intent()
-                        intent.setClassName(
-                            applicationContext,
-                            "com.fahad.newtruelovebyfahad.ui.activities.main.MainActivity"
-                        )
-                        startActivity(intent)
-                        finish()
-                    }
+                kotlin.runCatching {
+                    val intent = Intent()
+                    intent.setClassName(
+                        applicationContext,
+                        "com.fahad.newtruelovebyfahad.ui.activities.main.MainActivity"
+                    )
+                    startActivity(intent)
+                    finish()
                 }
             }
-            // }
         }
     }
 

@@ -217,8 +217,6 @@
     <string name="highlight">تسليط الضوء</string>
     <string name="shadow">الظل</string>
 
-    <string name="facebook_app_id" translatable="false">1116803502100807</string>
-    <string name="facebook_client_token" translatable="false">20e7e74441820ce829e94727c2e402b1</string>
 
     <string name="layout_text">تَخطِيط</string>
     <string name="button_preview">معاينة</string>
