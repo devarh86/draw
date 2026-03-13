@@ -92,7 +92,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
     private var navController: NavController? = null
-    private val homeAndTemplateViewModel by viewModels<HomeAndTemplateViewModel>()
     private val mainViewModel by viewModels<MainViewModel>()
     private val dataStoreViewModel by viewModels<DataStoreViewModel>()
     private val crossPromoViewModel by viewModels<CrossPromoViewModel>()
@@ -473,28 +472,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
         }
     }
 
-    private fun initDataOffline() {
-
-        homeAndTemplateViewModel.removeFromList()
-
-
-    }
-
-
-    private fun initData() {
-
-        if (!isNetworkAvailable) {
-            initDataOffline()
-            return
-        }
-
-    }
-
-    private fun initApiObservers() {
-
-
-    }
-
     private fun setupSmoothBottomMenu() {
         try {
             navController?.let {
@@ -619,7 +596,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                             isNetworkAvailable = false
                             ConstantsCommon.updateInternetStatusFeature.postValue(false)
                             ConstantsCommon.updateInternetStatusFrames.postValue(false)
-                            initDataOffline()
                         }
                     }
                 }
@@ -639,7 +615,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
                         isNetworkAvailable = false
                         ConstantsCommon.updateInternetStatusFeature.postValue(false)
                         ConstantsCommon.updateInternetStatusFrames.postValue(false)
-                        initDataOffline()
                     }
                 }
             }
@@ -668,7 +643,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
 
         } else {
             Log.i("TAG", "onConnectivityChanged: initDataOffline")
-            initDataOffline()
         }
     }
 

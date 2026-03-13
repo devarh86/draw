@@ -171,6 +171,9 @@ class GalleryListDialogFragment : Fragment() {
                         galleryViewModel.selectedImages.removeAt(position)
                         setCounter(galleryViewModel.selectedImages.size)
                         gallerySelectedImageRecyclerAdapter?.removeItem(position)
+                        if (newFlow) {
+                            galleryViewModel.updateTickIcon(galleryViewModel.selectedImages.isNotEmpty())
+                        }
                     }
                 }
             })
@@ -561,18 +564,7 @@ class GalleryListDialogFragment : Fragment() {
             binding.bottomLayoutForSelection.visibility = View.VISIBLE
             setCounter(galleryViewModel.selectedImages.size)
 
-            binding.deleteImageImg.setOnSingleClickListener {
-                galleryViewModel.selectedImages.forEach {
-                    galleryImageRecyclerAdapter?.removeCounter(it, it.indexInAdapter)
-                }
-
-                galleryViewModel.selectedImages.clear()
-                gallerySelectedImageRecyclerAdapter?.addList(galleryViewModel.selectedImages)
-                setCounter(0)
-            }
-
-            if(galleryButtonNewFlow) {
-                binding.deleteImageImgNewFlow.setOnSingleClickListener {
+                binding.deleteImageImg.setOnSingleClickListener {
                     galleryViewModel.selectedImages.forEach {
                         galleryImageRecyclerAdapter?.removeCounter(it, it.indexInAdapter)
                     }
@@ -580,7 +572,24 @@ class GalleryListDialogFragment : Fragment() {
                     galleryViewModel.selectedImages.clear()
                     gallerySelectedImageRecyclerAdapter?.addList(galleryViewModel.selectedImages)
                     setCounter(0)
+                    if (newFlow) {
+                        galleryViewModel.updateTickIcon(false)
+                    }
                 }
+
+                if(galleryButtonNewFlow) {
+                    binding.deleteImageImgNewFlow.setOnSingleClickListener {
+                        galleryViewModel.selectedImages.forEach {
+                            galleryImageRecyclerAdapter?.removeCounter(it, it.indexInAdapter)
+                        }
+
+                        galleryViewModel.selectedImages.clear()
+                        gallerySelectedImageRecyclerAdapter?.addList(galleryViewModel.selectedImages)
+                        setCounter(0)
+                        if (newFlow) {
+                            galleryViewModel.updateTickIcon(false)
+                        }
+                    }
 
                 binding.nextNewFlow.setOnSingleClickListener {
                     if (showTick.value) {
@@ -717,6 +726,9 @@ class GalleryListDialogFragment : Fragment() {
                                     galleryViewModel.selectedImages.removeAt(position)
                                     setCounter(galleryViewModel.selectedImages.size)
                                     gallerySelectedImageRecyclerAdapter?.removeItem(position)
+                                    if (newFlow) {
+                                        galleryViewModel.updateTickIcon(galleryViewModel.selectedImages.isNotEmpty())
+                                    }
                                 }
                             }
 
@@ -733,6 +745,9 @@ class GalleryListDialogFragment : Fragment() {
 //                                    } else {
                                         myListener?.onSelection(obj.path)
                                         galleryViewModel.selectedImages.add(obj)
+                                        if (newFlow) {
+                                            galleryViewModel.updateTickIcon(true)
+                                        }
 //                                    }
 
                                 } else {

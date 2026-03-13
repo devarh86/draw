@@ -389,23 +389,9 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.facebook.shimmer.ShimmerFrameLayout>
+
         </FrameLayout>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <FrameLayout
-        android:id="@+id/offline_place_holder_view_stub"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <include
-            android:id="@+id/offline_place_holder"
-            layout="@layout/offline_place_holder_view_stub"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

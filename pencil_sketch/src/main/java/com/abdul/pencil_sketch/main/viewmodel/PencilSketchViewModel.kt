@@ -116,6 +116,42 @@ class PencilSketchViewModel @Inject constructor() : ViewModel() {
                 }
             }
         }
+
+        viewModelScope.launch(IO) {
+            restoreIntent?.consumeAsFlow()?.collect { intent ->
+                when (intent) {
+                    is SketchIntent.SingleImageEnhancementAndPlacing -> {
+                        singleImageEnhancement(intent.path, intent.index)
+                    }
+
+                    is SketchIntent.SaveImages -> {
+                        copyIntoDataDir(intent.context)
+                    }
+
+                    is SketchIntent.SaveImageForEditor -> {
+                        copyIntoDataDirForEditor(intent.context, intent.editorBitmap)
+                    }
+
+                    is SketchIntent.AddCroppedImage -> {
+                        addCroppedImage(intent.index, intent.path)
+                    }
+
+                    is SketchIntent.ImageEnhancementAndPlacing -> {
+                        copyIntoDataDir(intent.context)
+                    }
+
+                    is SketchIntent.GenerateToken -> {
+                        // Not implemented in this module; keep no-op to avoid unintended UI states.
+                    }
+
+                    SketchIntent.SetImage,
+                    SketchIntent.SetFrame,
+                    -> {
+                        // No-op: handlers not defined for these intents.
+                    }
+                }
+            }
+        }
     }
 
     private suspend fun saveClicked(resolution: SaveQuality) {

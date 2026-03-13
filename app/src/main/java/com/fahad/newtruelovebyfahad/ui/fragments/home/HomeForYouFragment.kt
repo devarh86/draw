@@ -19,17 +19,15 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.abdul.pencil_sketch.main.activity.PencilSketchActivity
 import com.example.ads.admobs.utils.loadNewInterstitial
 import com.example.ads.admobs.utils.showNewInterstitial
-import com.example.ads.admobs.utils.showRewardedInterstitial
 import com.example.ads.dialogs.ExitModel
 import com.example.ads.dialogs.createExitDialog
-import com.example.ads.dialogs.createProFramesDialog
 import com.example.ads.utils.homeInterstitial
 import com.example.analytics.Constants.firebaseAnalytics
 import com.example.analytics.Events
@@ -42,48 +40,36 @@ import com.fahad.newtruelovebyfahad.ui.activities.pro.slider.SliderList.getImage
 import com.fahad.newtruelovebyfahad.ui.fragments.home.adapter.HomeForYouAdapter
 import com.fahad.newtruelovebyfahad.ui.fragments.home.adapter.HomeSliderAdapter
 import com.fahad.newtruelovebyfahad.utils.Permissions
-import com.fahad.newtruelovebyfahad.utils.enums.FrameThumbType
 import com.fahad.newtruelovebyfahad.utils.gone
-import com.fahad.newtruelovebyfahad.utils.isNetworkAvailable
 import com.fahad.newtruelovebyfahad.utils.navigateFragment
 import com.fahad.newtruelovebyfahad.utils.printLog
 import com.fahad.newtruelovebyfahad.utils.setSingleClickListener
 import com.fahad.newtruelovebyfahad.utils.showToast
 import com.fahad.newtruelovebyfahad.utils.visible
 import com.project.common.datastore.FrameDataStore
-import com.project.common.utils.ConstantsCommon
-import com.project.common.utils.ConstantsCommon.favouriteFrames
-import com.project.common.utils.ConstantsCommon.featureForYouData
 import com.project.common.utils.ConstantsCommon.isNetworkAvailable
 import com.project.common.utils.enums.MainMenuOptions
 import com.project.common.utils.eventForGalleryAndEditor
 import com.project.common.utils.getProScreen
 import com.project.common.utils.setDrawable
 import com.project.common.utils.setOnSingleClickListener
+import com.project.common.viewmodels.HomeAndTemplateViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeForYouFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
     private var mContext: Context? = null
     private var mActivity: AppCompatActivity? = null
     private var navController: NavController? = null
-
     private val slideHandler = Handler(Looper.getMainLooper())
     private var slideRunnable: Runnable? = null
     private var sliderPageChangeCallback: ViewPager2.OnPageChangeCallback? = null
-
     var exitModel: ExitModel? = null
-    private var isDataLoaded = false
     private var forYouFramesAdapter: HomeForYouAdapter? = null
-    private var featureData: MutableList<HomeForYouAdapter.FrameModel> = mutableListOf()
+    private val homeViewModel: HomeAndTemplateViewModel by viewModels()
 
     @Inject
     lateinit var frameDataStore: FrameDataStore
@@ -103,118 +89,20 @@ class HomeForYouFragment : Fragment() {
 
         eventForGalleryAndEditor(Events.Screens.HOME, "", true)
 
-        forYouFramesAdapter = HomeForYouAdapter(mContext, arrayListOf(), null, onClick = { frameBody, position ->
-            Log.i(TAG, "onCreate: $position")
-            Log.i(TAG, "onCreate: ${frameBody.baseUrl}${frameBody.thumb}")
-
-            if (!isNetworkAvailable) {
-                forYouFramesAdapter?.let {
-                    kotlin.runCatching {
-                        if (!frameBody.thumb.contains("android_asset")) {
-                            kotlin.runCatching {
-                                mActivity?.let {
-                                    Toast.makeText(
-                                        mActivity, "Please connect to internet", Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-                            return@HomeForYouAdapter
-                        }
-                    }
+        // Simple adapter — only drawable images, click navigates to HowToDrawFragment with the image path
+        forYouFramesAdapter = HomeForYouAdapter(onClick = { item, position ->
+            Log.i(TAG, "onCreate: clicked position $position path=${item.path}")
+            activity?.showNewInterstitial(activity?.homeInterstitial()) {
+                activity?.loadNewInterstitial(activity?.homeInterstitial()) {}
+                kotlin.runCatching {
+                    navController?.navigate(
+                        HomeForYouFragmentDirections.actionHomeForYouFragmentToHowToDrawFragment(
+                            item.path
+                        )
+                    )
                 }
             }
-
-            val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) arrayOf(
-                Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.CAMERA
-            )
-            else arrayOf(
-
-                Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA
-            )
-
-            (mActivity as Permissions).checkAndRequestPermissions(*permissions, action = {
-                mActivity?.let {
-                    if (it is MainActivity) {
-                        it.eventForFrameClick(
-                            FrameObject(
-                                frameBody.id, frameBody.title, Events.Screens.FEATURE, "", Events.Screens.FEATURE, frameBody.tags ?: "", frameBody.baseUrl ?: "", frameBody.thumb, frameBody.thumbtype, true, true, frameBody, "list"
-                            )
-                        )
-                    }
-                }
-
-                mContext?.let { context ->
-                    if (frameBody.tags?.isNotEmpty() == true && frameBody.tags != "Free" && !isProVersion() && !ConstantsCommon.rewardedAssetsList.contains(frameBody.id)) {
-                        mActivity?.createProFramesDialog(
-                            true, thumb = "${frameBody.baseUrl}${frameBody.thumb}", thumbType = ContextCompat.getDrawable(
-                                context, when (frameBody.thumbtype.lowercase()) {
-                                    FrameThumbType.PORTRAIT.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_portrait
-                                    FrameThumbType.LANDSCAPE.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_landscape
-                                    FrameThumbType.SQUARE.type.lowercase() -> com.project.common.R.drawable.frame_placeholder_squre
-                                    else -> com.project.common.R.drawable.frame_placeholder_portrait
-                                }
-                            ), action = {
-
-                                mActivity?.showRewardedInterstitial(true, loadedAction = {
-                                    lifecycleScope.launch(Dispatchers.IO) {
-                                        frameDataStore.writeUnlockedId(frameBody.id)
-                                        ConstantsCommon.rewardedAssetsList.add(
-                                            frameBody.id
-                                        )
-                                        withContext(Main) {
-                                            if (position != -1) forYouFramesAdapter?.notifyItemChanged(
-                                                position
-                                            )
-                                            kotlin.runCatching {
-                                                navController?.navigate(
-                                                    HomeForYouFragmentDirections.actionHomeForYouFragmentToHowToDrawFragment(
-                                                        frameBody.baseUrl + frameBody.thumb
-                                                    )
-                                                )
-                                            }
-                                        }
-                                    }.invokeOnCompletion {}
-                                }, failedAction = {
-
-                                })
-
-                            }, goProAction = {
-                                try {
-                                    activity?.let {
-                                        startActivity(Intent().apply {
-                                            setClassName(
-                                                it.applicationContext, getProScreen()
-                                            )
-                                            putExtra("from_frames", false)
-                                        })
-                                    }
-                                } catch (_: Exception) {
-                                }
-                            }, dismissAction = {}, frameBody.tags?.lowercase() == "paid"
-                        )
-                    } else {
-                        activity?.showNewInterstitial(activity?.homeInterstitial()) {
-                            activity?.loadNewInterstitial(activity?.homeInterstitial()) {}
-                            kotlin.runCatching {
-                                navController?.navigate(
-                                    HomeForYouFragmentDirections.actionHomeForYouFragmentToHowToDrawFragment(
-                                        frameBody.baseUrl + frameBody.thumb
-                                    )
-                                )
-                            }
-
-                            activity?.showNewInterstitial(activity?.homeInterstitial()) {
-                                activity?.loadNewInterstitial(activity?.homeInterstitial()) {}
-
-                            }
-                        }
-                    }
-                }
-            }, declineAction = {})
-
-        }, onFavouriteClick = {
-
-        }, onPurchaseTypeTagClick = {})
+        })
     }
 
     override fun onCreateView(
@@ -338,38 +226,35 @@ class HomeForYouFragment : Fragment() {
             Log.e("error", "onViewCreated: ", ex)
         }
 
+        _binding?.let {
+            it.loadingView.visible()
+            it.framesRv.gone()
+        }
+        // Observe drawable images from ViewModel and submit to adapter
+        homeViewModel.drawableImages.observe(viewLifecycleOwner) { resIds ->
+            val packageName = mContext?.packageName ?: return@observe
+            val items = resIds.map { resId ->
+                HomeForYouAdapter.DrawableItem(
+                    drawableResId = resId,
+                    path = "android.resource://$packageName/$resId"
+                )
+            }
+            forYouFramesAdapter?.submitList(items)
+
+            _binding?.let {
+                it.loadingView.gone()
+                it.framesRv.visible()
+            }
+
+        }
+
+        // Trigger loading the drawable list
+        homeViewModel.loadDrawableImages()
+
     }
 
     private fun FragmentHomeBinding.initRecyclerViews() {
         framesRv.adapter = forYouFramesAdapter
-    }
-
-    private fun checkInternet() {
-        _binding?.apply {
-            if (mActivity?.isNetworkAvailable() == true) {
-                dataLayout.visible()
-            }
-
-            if (isDataLoaded) {
-                loadingView.stopShimmer()
-                loadingView.gone()
-            }
-        }
-    }
-
-    private fun initViewPager() {
-        checkInternet()
-        offlineDataSettingToAdapter()
-    }
-
-    private fun offlineDataSettingToAdapter() {
-        featureForYouData?.second?.forEach {
-            it?.let {
-                val frame = HomeForYouAdapter.FrameModel(it)
-                frame.isFavourite = favouriteFrames.mapNotNull { it?.id }.contains(frame.frame.id)
-                forYouFramesAdapter?.updateSingleItem(frame)
-            }
-        }
     }
 
 
