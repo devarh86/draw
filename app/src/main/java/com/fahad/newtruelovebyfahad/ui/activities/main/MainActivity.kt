@@ -274,18 +274,11 @@ class MainActivity : Permissions(), InternetConnectivityListener {
 
         try {
             if (CAN_LOAD_ADS) {
-
-                //loadInterstitial(loadedAction = {}, failedAction = {}, false)
-
-                //  loadNewInterstitialWithoutStrategyCheck(homeInterstitial()) {}
-                //   MediationTestSuite.launch(this)
                 loadNewInterstitialForPro(homeInterstitial()) {}
 
                 loadAppOpen()
 
                 loadRewarded(loadedAction = {}, failedAction = {})
-
-                //loadRewardedInterstitial(loadedAction = {}, failedAction = {})
             }
         } catch (ex: Exception) {
             Log.e("TAG", "onCreate: ", ex)

@@ -73,19 +73,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_menu" />
 
-            <com.airbnb.lottie.LottieAnimationView
+            <ImageView
                 android:id="@+id/pro_btn"
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/menu_container"
                 app:layout_constraintEnd_toStartOf="@+id/menu_container"
                 app:layout_constraintTop_toTopOf="@+id/menu_container"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/anim_pro"
-                app:lottie_renderMode="hardware" />
+                app:srcCompat="@drawable/ic_pro_new" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/top_pager"
@@ -189,33 +185,34 @@
 
                 <TextView
                     android:id="@+id/like_layout"
+                    style="@style/TextOnHomeMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_6sdp"
                     android:background="@drawable/rounded_30dp"
-                    android:backgroundTint="#1C7BFB"
+                    android:backgroundTint="#FFF3B1"
                     android:layoutDirection="ltr"
                     android:maxLines="1"
                     android:paddingHorizontal="@dimen/_4sdp"
                     android:paddingVertical="@dimen/_2sdp"
                     android:text="@string/coming_soon"
-                    android:textColor="@color/white"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/_8sdp"
                     app:layout_constraintBottom_toTopOf="@+id/learnDrawing"
                     app:layout_constraintEnd_toEndOf="@+id/learnDrawing"
                     app:layout_constraintTop_toTopOf="@+id/learnDrawing" />
 
                 <LinearLayout
-                    android:id="@+id/sketch"
+                    android:id="@+id/importGallery"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:layout_marginEnd="@dimen/_6sdp"
-                    android:background="@drawable/ic_sketch"
+                    android:background="@drawable/import_gallery"
                     android:gravity="center"
                     android:orientation="vertical"
-                    app:layout_constraintEnd_toStartOf="@+id/importGallery"
+                    app:layout_constraintEnd_toStartOf="@+id/myWork"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/arDrawing">
 
@@ -235,24 +232,24 @@
                         android:fontFamily="@font/poppins_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="@string/photo_to_sketch"
+                        android:text="@string/import_gallery"
                         android:textColor="@color/tab_txt_clr"
                         android:textSize="@dimen/_10sdp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/importGallery"
+                    android:id="@+id/myWork"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_6sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
-                    android:background="@drawable/import_gallery"
+                    android:background="@drawable/ic_sketch"
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/sketch"
-                    app:layout_constraintTop_toTopOf="@+id/sketch">
+                    app:layout_constraintStart_toEndOf="@+id/importGallery"
+                    app:layout_constraintTop_toTopOf="@+id/importGallery">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -260,7 +257,7 @@
                         android:layout_marginBottom="6dp"
                         android:elevation="1dp"
                         android:gravity="center"
-                        android:src="@drawable/img_import" />
+                        android:src="@drawable/img_mwork" />
 
                     <TextView
                         style="@style/TextOnHomeMedium"
@@ -270,79 +267,11 @@
                         android:fontFamily="@font/poppins_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="@string/import_gallery"
+                        android:text="@string/my_art"
                         android:textColor="@color/tab_txt_clr"
                         android:textSize="@dimen/_10sdp"
                         android:textStyle="bold" />
                 </LinearLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/myWork"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginHorizontal="@dimen/_12sdp"
-                    android:layout_marginTop="@dimen/_12sdp"
-                    android:background="@drawable/ic_mwork"
-                    android:padding="@dimen/_12sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sketch">
-
-                    <ImageView
-                        android:id="@+id/imageView30"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:gravity="center"
-                        android:src="@drawable/img_mwork"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        style="@style/TextOnHomeBold"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/_8sdp"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:text="@string/my_art"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_10sdp"
-                        app:layout_constraintBottom_toTopOf="@+id/textView3"
-                        app:layout_constraintEnd_toStartOf="@+id/imageView31"
-                        app:layout_constraintStart_toEndOf="@+id/imageView30"
-                        app:layout_constraintTop_toTopOf="@+id/imageView30"
-                        app:layout_constraintVertical_chainStyle="packed" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        style="@style/TextOnHomeMedium"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/_8sdp"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:text="@string/all_your_drawings"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_9sdp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView30"
-                        app:layout_constraintEnd_toStartOf="@+id/imageView31"
-                        app:layout_constraintStart_toEndOf="@+id/imageView30"
-                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-                    <ImageView
-                        android:id="@+id/imageView31"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:elevation="1dp"
-                        android:gravity="center"
-                        android:src="@drawable/arrow_forward"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/textView4"
@@ -353,7 +282,7 @@
                     android:layout_marginTop="@dimen/_24sdp"
                     android:includeFontPadding="false"
                     android:maxLines="1"
-                    android:text="Trending Drawing�s"
+                    android:text="Trending Drawing's"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/_16sdp"
                     app:layout_constraintStart_toStartOf="parent"

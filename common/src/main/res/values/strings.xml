@@ -524,15 +524,15 @@
 
     <string name="s_home_h1"><![CDATA[Learning &]]></string>
     <string name="s_home_h1_sub">Practice</string>
-    <string name="s_home_h1_detail">Easy lessons to improve\ndrawing skills</string>
+    <string name="s_home_h1_detail">Fun step-by-step drawing\nlessons</string>
 
     <string name="s_home_h2"><![CDATA[Drawing &]]></string>
     <string name="s_home_h2_sub">Creativity</string>
-    <string name="s_home_h2_detail">Fun step-by-step\ndrawing lessons</string>
+    <string name="s_home_h2_detail"> Easy lessons to improve\ndrawing skills</string>
 
     <string name="s_home_h3"><![CDATA[Categories &]]></string>
     <string name="s_home_h3_sub">Themes</string>
-    <string name="s_home_h3_detail">Explore drawings by\nthemes and styles</string>
+    <string name="s_home_h3_detail">Explore drawings by themes\nand styles</string>
 
     <string name="s_home_h4">Photo to</string>
     <string name="s_home_h4_sub">Sketch</string>

@@ -411,27 +411,6 @@ class HomeForYouFragment : Fragment() {
             selectCategory(MainMenuOptions.DRAWING.title)
         }
 
-        sketch.setSingleClickListener {
-            if (isNetworkAvailable) {
-
-                eventForCategoryClick(
-                    FrameObject(
-                        screenName = "home", categoryName = Events.ParamsValues.HomeScreen.SKETCH, from = "photo_sketch_btn", frameBody = ""
-                    )
-                )
-
-                selectCategory(MainMenuOptions.SKETCH.title)
-
-            } else {
-                context?.let { cntx ->
-                    Toast.makeText(
-                        cntx, com.project.common.R.string.no_internet_connect_found_please_try_again, Toast.LENGTH_SHORT
-                    ).show()
-
-                }
-            }
-        }
-
         importGallery.setSingleClickListener {
             if (isNetworkAvailable) {
 
@@ -502,32 +481,6 @@ class HomeForYouFragment : Fragment() {
                                                 from, from
                                             )
                                         )
-                                    }
-                                }
-                            }
-                        }, declineAction = {})
-                    } catch (ex: Exception) {
-                        printLog(ex.message.toString())
-                    }
-
-                }
-
-                MainMenuOptions.SKETCH.title -> {
-
-                    try {
-                        val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) arrayOf(
-                            Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.CAMERA
-                        )
-                        else arrayOf(
-                            Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA
-                        )
-                        (mActivity as Permissions).checkAndRequestPermissions(*permissions, action = {
-                            runCatching {
-                                activity?.showNewInterstitial(activity?.homeInterstitial()) {
-                                    activity?.loadNewInterstitial(activity?.homeInterstitial()) {}
-                                    kotlin.runCatching {
-                                        val intent = Intent(mActivity, PencilSketchActivity::class.java)
-                                        getParentActivity()?.getActivityLauncher()?.launch(intent) //mActivity.startActivity(intent)
                                     }
                                 }
                             }

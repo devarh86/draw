@@ -62,14 +62,6 @@ object SliderList {
                 context.setString(com.project.common.R.string.s_home_h1_detail)
             ),
             SliderItem(
-                R.drawable.s_image_4,
-                MainMenuOptions.SKETCH.title,
-                context.setString(com.project.common.R.string.s_home_h4_sub),
-                context.setString(com.project.common.R.string.s_home_h4),
-                context.setString(com.project.common.R.string.s_home_h4_detail)
-
-            ),
-            SliderItem(
                 R.drawable.s_image_3,
                 MainMenuOptions.IMPORT_GALLERY.title,
                 context.setString(com.project.common.R.string.s_home_h3_sub),
@@ -81,7 +73,7 @@ object SliderList {
                 MainMenuOptions.LEARNING.title,
                 context.setString(com.project.common.R.string.s_home_h1_sub),
                 context.setString(com.project.common.R.string.s_home_h1),
-                context.setString(com.project.common.R.string.s_home_h1_detail)
+                context.setString(com.project.common.R.string.s_home_h2_detail)
             )
         )
     }
