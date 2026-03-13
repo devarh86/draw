@@ -14,7 +14,7 @@ android {
     namespace 'com.fahad.newtruelovebyfahad'
     compileSdk 35
     defaultConfig {
-        applicationId "com.pixin.drawing"
+        applicationId "com.zyro.ar.drawing.sketch"
         multiDexEnabled =true
         minSdk 24
         targetSdk 35
@@ -39,6 +39,12 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
+
+            // Disable automatic upload of Crashlytics mapping file for release builds
+            // to avoid network/config related failures during bundling.
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
         }
     }
 

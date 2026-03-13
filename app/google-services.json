@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "85732079201",
+    "project_id": "ar-drawing-48802",
+    "storage_bucket": "ar-drawing-48802.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85732079201:android:04854ca5aa519ce948dc20",
+        "android_client_info": {
+          "package_name": "com.zyro.ar.drawing.sketch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTyCw0kpHvb5FCG0vyrRIFvILbcs4fxTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

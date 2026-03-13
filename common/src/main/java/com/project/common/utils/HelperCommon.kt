@@ -451,7 +451,7 @@ fun Activity.privacyPolicy() {
         startActivity(
             Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://xen-studios.com/appmigo-privacy-policy.html")
+                Uri.parse("https://zyroapps.com/privacy-policy.php")
             )
         )
     } catch (e: Exception) {

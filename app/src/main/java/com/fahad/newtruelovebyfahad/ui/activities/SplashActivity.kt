@@ -103,7 +103,6 @@ import com.project.common.remote_config.RemoteConfigViewModel
 import com.project.common.utils.Constants.isProWithInterOn
 import com.project.common.utils.ConstantsCommon
 import com.project.common.utils.ConstantsCommon.introOnBoardingCompleted
-import com.project.common.utils.ConstantsCommon.receivedData
 import com.project.common.utils.ConstantsCommon.showQuestionScreenTimeCheck
 import com.project.common.utils.ConstantsCommon.surveyCompleted
 import com.project.common.utils.getProScreen
@@ -132,16 +131,6 @@ class SplashActivity : AppCompatActivity() {
     private var showAppOpen = false
     private val languageViewModel by viewModels<LanguageViewModel>()
     private val remoteConfigModel by viewModels<RemoteConfigViewModel>()
-
-    private fun initUninstallIntent() {
-        receivedData = intent.getStringExtra("shortcut_extra_key")
-        if (receivedData != null) {
-            Log.d(TAG, "initUninstallIntent :Received from shortcut: $receivedData")
-        } else {
-            Log.d(TAG, "initUninstallIntent: receivedData is null")
-        }
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -184,7 +173,7 @@ class SplashActivity : AppCompatActivity() {
                 }
             }
         }
-        initUninstallIntent()
+
         ConstantsCommon.isNetworkAvailable = isNetworkAvailable()
         ADS_SDK_INITIALIZE.set(false)
         interstitialNew = InterstitialNew()
