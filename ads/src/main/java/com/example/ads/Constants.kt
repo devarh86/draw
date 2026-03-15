@@ -2,17 +2,12 @@ package com.example.ads
 
 import com.example.ads.admobs.scripts.AppOpen
 import com.example.ads.admobs.scripts.Banner
-import com.example.ads.admobs.scripts.BannerBlendBoarding
-import com.example.ads.admobs.scripts.BannerOnBoarding
 import com.example.ads.admobs.scripts.BannerSplash
-import com.example.ads.admobs.scripts.BannerSurvey
 import com.example.ads.admobs.scripts.Interstitial
 import com.example.ads.admobs.scripts.InterstitialNew
-import com.example.ads.admobs.scripts.LargeBanner
 import com.example.ads.admobs.scripts.Native
 import com.example.ads.admobs.scripts.Rewarded
 import com.example.ads.admobs.scripts.RewardedInterstitial
-import com.example.ads.crosspromo.api.retrofit.model.CrossPromoItem
 import com.google.errorprone.annotations.Keep
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.project.common.remote_config.AdConfigModel
@@ -23,7 +18,7 @@ object Constants {
 
     var proSplashOrHome: Boolean = true
     var generalNotificationHideAppEnable = true
-    var newAdsConfig:AdConfigModel? = null
+    var newAdsConfig: AdConfigModel? = null
     var enableObLastInterAd = false
     var interstitialObLastFloor = 0
     var interstitialObLastStartCount = 0
@@ -33,10 +28,6 @@ object Constants {
     var loadBannerSplash = true
     var splashBannerReloadLimit = 2
     var loadBannerSurvey = true
-    var loadBannerOnBoardOne = true
-    var loadBannerOnBoardTwo = true
-    var loadBannerOnBoardThree = true
-    var loadBannerOnBoardFour = true
     var loadBannerOnBoardMedium = false
     var loadSplashAppOpen = true
     var remoteRevenue = 0.5f
@@ -177,24 +168,16 @@ object Constants {
     var appOpenSplash = AppOpen()
     var appIsActive = false
     var banner = Banner()
-    var largeBanner = LargeBanner()
-    var onBoardingBannerOne = BannerOnBoarding()
-    var onBoardingBannerTwo = BannerOnBoarding()
-    var onBoardingBannerThree = BannerOnBoarding()
-    var onBoardingBannerFour = BannerOnBoarding()
- //   var mNewInterstitial = InterstitialNew()
+
     var mNewInterstitial: InterstitialNew? = InterstitialNew()
 
     var native = Native()
     var bannerSplash = BannerSplash()
     var rewarded = Rewarded()
-    var bannerBlendBoarding = BannerBlendBoarding()
-    var bannerSurvey = BannerSurvey()
     var rewardedInterstitial = RewardedInterstitial()
     var interstitial = Interstitial()
     var interstitialNew = InterstitialNew()
     var actionGallery = false
-    var crossPromoAdsList: List<CrossPromoItem> = emptyList()
     var placement: String = ""
     var appIsForeground = false
     var needToLoadAppOpen = true
@@ -208,31 +191,6 @@ object Constants {
     var showRewardAdPipEditorFrames = false
     var showRewardAdPhotoEditorEffects = false
     var allBannerReloadLimit = 2L
-
-
-    var onBoardingOneNativeId = "ca-app-pub-4276074242154795/6026210694"
-    var onBoardingTwoNativeId = "ca-app-pub-4276074242154795/4531227820"
-    var onBoardingThreeNativeId = "ca-app-pub-4276074242154795/7094662041"
-    var onBoardingFourNativeId = "ca-app-pub-4276074242154795/4171618250"
-
-
-
-    var onBoardingFullOneNativeId = "ca-app-pub-4276074242154795/5811108808"
-    var onBoardingFullTwoNativeId = "ca-app-pub-4276074242154795/5811108808"
-
-    var lfoOneNativeId = "ca-app-pub-4276074242154795/2355269438"
-    var lfoTwoNativeId = "ca-app-pub-4276074242154795/8729106095"
-    var splashInterAdId = "ca-app-pub-4276074242154795/7571205893"
-
-
-
-
-
-
-    var saveInterAdId = "ca-app-pub-4276074242154795/3006951685" //
-    var nativeProcessingId = "ca-app-pub-4276074242154795/9500207846"
-
-    var nativeDialogsId = "ca-app-pub-4276074242154795/3500941555"
 
     var splashTimeOut = 20000L
     var autoScrollFullNative = 6000L

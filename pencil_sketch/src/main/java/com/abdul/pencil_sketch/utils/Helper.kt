@@ -77,27 +77,12 @@ suspend fun Bitmap.saveMediaToStorage(context: Context, onUriCreated: (String?) 
     val filename = "${System.currentTimeMillis()}.png"
     try {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-//                put(
-//                    MediaStore.MediaColumns.RELATIVE_PATH,
-//                    Environment.DIRECTORY_PICTURES + File.separator + context.getString(R.string.folder_name)
-//                )
-//            } else {
-//                put(
-//                    MediaStore.MediaColumns.DATA,
-//                    Environment.DIRECTORY_PICTURES + File.separator + context.getString(
-//                        R.string.folder_name
-//                    )
-//                )
-//            }
-
             val resolver = context.contentResolver
             val contentValues = ContentValues()
             contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
             contentValues.put(
                 MediaStore.MediaColumns.RELATIVE_PATH,
-                Environment.DIRECTORY_PICTURES + File.separator + "Ar Drawing"
+                Environment.DIRECTORY_PICTURES + File.separator + "AR Drawing"
             )
             contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
             val imageUri =
@@ -106,10 +91,6 @@ suspend fun Bitmap.saveMediaToStorage(context: Context, onUriCreated: (String?) 
                 fos = Objects.requireNonNull(it).let {
                     resolver.openOutputStream(it)
                 }
-//                fos?.let { compress(Bitmap.CompressFormat.PNG, 100, it) }
-//                Objects.requireNonNull(fos)
-//                delay(200)
-//                fos?.close()
                 try {
                     fos?.use {
                         compress(Bitmap.CompressFormat.PNG, 100, it)
@@ -148,7 +129,7 @@ suspend fun Bitmap.saveMediaToStorage(context: Context, onUriCreated: (String?) 
             val imagesDir =
                 File(
                     Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-                    "Ar Drawing"
+                    "AR Drawing"
                 )
             if (!imagesDir.exists()) {
                 imagesDir.mkdirs()

@@ -7,8 +7,6 @@ import android.os.Looper
 import android.util.Log
 import com.example.ads.Constants.OTHER_AD_ON_DISPLAY
 import com.example.ads.Constants.immediateInterstitial
-import com.example.ads.Constants.saveInterAdId
-import com.example.ads.Constants.splashInterAdId
 import com.example.ads.Constants.splashTimeOut
 import com.example.ads.R
 import com.example.ads.model.AdConfigModel
@@ -71,12 +69,12 @@ class Interstitial {
 
                             else -> {
 //                                isMedium = true
-                                splashInterAdId
+                                config.idHigh
                             }
                         }
                     } ?: kotlin.run {
                         Log.i("SPLASHISSUE", "loadInterstitial---RUN")
-                        context.getString(R.string.splash_inter_backup) // Fallback if `adConfig` is null  check this case
+                        context.getString(R.string.all_inter_low) // Fallback if `adConfig` is null  check this case
                     }
                 } else if (forSave) {
                     Log.i("SPLASHISSUE", "loadInterstitial--For Save")
@@ -94,16 +92,16 @@ class Interstitial {
 
                             else -> {
                                 isMedium = true
-                                saveInterAdId
+                                config.idHigh
                             }
                         }
                     } ?: kotlin.run {
                         Log.i("SPLASHISSUE", "loadInterstitial---RUN")
-                        context.getString(R.string.save_inter_backup) // Fallback if `adConfig` is null  check this case
+                        context.getString(R.string.all_inter_low) // Fallback if `adConfig` is null  check this case
                     }
                 } else {
                     Log.i("SPLASHISSUE", "loadInterstitial--For ELSE")
-                    context.getString(R.string.interstitial)
+                    context.getString(R.string.all_inter_low)
                 },
                 adRequest,
                 object : InterstitialAdLoadCallback() {

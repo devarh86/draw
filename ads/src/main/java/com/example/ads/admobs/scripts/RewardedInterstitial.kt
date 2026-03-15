@@ -30,7 +30,7 @@ class RewardedInterstitial {
         if (rewardedInterstitialAd == null) {
             RewardedInterstitialAd.load(
                 activity.applicationContext,
-                activity.getString(R.string.rewarded_interstitial),
+                activity.getString(R.string.rewarded_low),
                 AdRequest.Builder().build(),
                 object : RewardedInterstitialAdLoadCallback() {
                     override fun onAdLoaded(ad: RewardedInterstitialAd) {

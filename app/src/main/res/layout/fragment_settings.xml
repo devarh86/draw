@@ -347,65 +347,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/bottom_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/content_container"
-            app:layout_constraintVertical_bias="1.0">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/more_apps_tv"
-                style="@style/TextOnHomeMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="-8dp"
-                android:text="@string/more_apps"
-                android:textColor="@color/text_color"
-                android:textSize="@dimen/_14ssp"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ads_tv" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/ads_tv"
-                style="@style/TextOnHomeMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="@string/_ad"
-                android:textColor="@color/red"
-                android:textSize="@dimen/_8ssp"
-                android:visibility="visible"
-                app:layout_constraintStart_toEndOf="@+id/more_apps_tv"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recommended_apps_rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="3dp"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/more_apps_tv"
-                app:spanCount="4"
-                tools:listitem="@layout/crosspromo_icons_row_item" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

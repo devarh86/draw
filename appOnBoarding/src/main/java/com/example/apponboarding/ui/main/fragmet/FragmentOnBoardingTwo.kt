@@ -9,14 +9,11 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.ads.Constants
-import com.example.ads.Constants.loadBannerOnBoardTwo
 import com.example.ads.Constants.loadNativeFullTwo
 import com.example.ads.Constants.loadNativeObFour
 import com.example.ads.Constants.loadNativeObThree
 import com.example.ads.admobs.utils.OnBoardingAds
 import com.example.ads.admobs.utils.loadAndShowOnBoardingAds
-import com.example.ads.admobs.utils.loadOnBoardingBanner
-import com.example.ads.admobs.utils.onPauseONBoardingBanner
 import com.example.ads.dialogs.hide
 import com.example.ads.dialogs.show
 import com.example.ads.model.AdConfigModel
@@ -72,8 +69,6 @@ class FragmentOnBoardingTwo : Fragment() {
 
 
         runCatching {
-//            _binding?.onBoardImage?.playAnimation()
-
             if (Constants.loadBannerOnBoardMedium) {
                 _binding?.bannerLayout?.root?.show()
                 _binding?.bannerLayoutAdaptive?.root?.hide()
@@ -81,18 +76,6 @@ class FragmentOnBoardingTwo : Fragment() {
                 _binding?.bannerLayout?.root?.hide()
                 _binding?.bannerLayoutAdaptive?.root?.show()
             }
-            activity?.loadOnBoardingBanner(getObBannerPosition())
-        }
-    }
-
-
-    private fun getObBannerPosition(): Int? {
-        return if (Constants.loadBannerOnBoardThree) {
-            2
-        } else if (Constants.loadBannerOnBoardFour) {
-            3
-        } else {
-            null
         }
     }
 
@@ -114,7 +97,7 @@ class FragmentOnBoardingTwo : Fragment() {
                         WeakReference(if (Constants.loadBannerOnBoardMedium) binding.bannerLayout.shimmerViewContainer else binding.bannerLayoutAdaptive.shimmerViewContainer),
                         WeakReference(binding.crossBannerIv),
                         position = 1,
-                        isBanner = loadBannerOnBoardTwo,
+                        isBanner = false,
                         isMedium = Constants.loadBannerOnBoardMedium
                     ),
                     activity?.onBoardNativeTwo(), getNextConfig()
@@ -134,11 +117,6 @@ class FragmentOnBoardingTwo : Fragment() {
         } else {
             null
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        onPauseONBoardingBanner(1)
     }
 
     private fun FragmentOnBoardingTwoBinding.initViews() {

@@ -9,10 +9,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.ads.Constants
-import com.example.ads.Constants.loadBannerOnBoardFour
 import com.example.ads.admobs.utils.OnBoardingAds
 import com.example.ads.admobs.utils.loadAndShowOnBoardingAds
-import com.example.ads.admobs.utils.onPauseONBoardingBanner
 import com.example.ads.dialogs.hide
 import com.example.ads.dialogs.show
 import com.example.ads.utils.onBoardNativeFour
@@ -75,11 +73,11 @@ class FragmentOnBoardingFour : Fragment() {
                         WeakReference(binding.mediumNativeLayout.adContainer),
                         WeakReference(binding.mediumNativeLayout.shimmerViewContainer),
                         WeakReference(binding.bannerContainer),
-                        WeakReference(if (Constants.loadBannerOnBoardMedium) binding.bannerLayout.adContainer else binding.bannerLayoutAdaptive.adContainer),
+                        WeakReference(binding.bannerLayoutAdaptive.adContainer),
                         WeakReference(if (Constants.loadBannerOnBoardMedium) binding.bannerLayout.shimmerViewContainer else binding.bannerLayoutAdaptive.shimmerViewContainer),
                         WeakReference(binding.crossBannerIv),
                         position = 3,
-                        isBanner = loadBannerOnBoardFour,
+                        isBanner = false,
                         isMedium = Constants.loadBannerOnBoardMedium
                     ),
                     activity?.onBoardNativeFour(), null
@@ -95,11 +93,6 @@ class FragmentOnBoardingFour : Fragment() {
         _binding = FragmentOnBoardingFourBinding.inflate(inflater, container, false)
         _binding?.initViews()
         return binding.root
-    }
-
-    override fun onPause() {
-        super.onPause()
-        onPauseONBoardingBanner(3)
     }
 
     private fun FragmentOnBoardingFourBinding.initViews() {

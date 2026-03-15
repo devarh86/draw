@@ -9,11 +9,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.ads.Constants.autoScrollFullNative
-import com.example.ads.Constants.loadNativeFullTwo
 import com.example.ads.Constants.loadNativeObFour
 import com.example.ads.Constants.loadNativeObThree
 import com.example.ads.admobs.utils.loadAndShowNativeOnBoarding
-import com.example.ads.admobs.utils.onPauseONBoardingBanner
 import com.example.ads.crosspromo.helper.hide
 import com.example.ads.crosspromo.helper.show
 import com.example.ads.model.AdConfigModel

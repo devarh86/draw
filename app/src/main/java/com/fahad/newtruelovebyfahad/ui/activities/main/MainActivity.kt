@@ -48,7 +48,6 @@ import com.example.ads.admobs.utils.onResumeBanner
 import com.example.ads.admobs.utils.showAppOpen
 import com.example.ads.admobs.utils.showNewInterstitial
 import com.example.ads.admobs.utils.showRewardedInterstitial
-import com.example.ads.crosspromo.viewModel.CrossPromoViewModel
 import com.example.ads.dialogs.createDownloadingDialog
 import com.example.ads.dialogs.createProFramesDialog
 import com.example.ads.utils.homeInterstitial
@@ -94,7 +93,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
     private var navController: NavController? = null
     private val mainViewModel by viewModels<MainViewModel>()
     private val dataStoreViewModel by viewModels<DataStoreViewModel>()
-    private val crossPromoViewModel by viewModels<CrossPromoViewModel>()
     var showAppOpen = false
     var hideCollapsibleBanner = false
     var receivedData1: String? = null
@@ -575,15 +573,10 @@ class MainActivity : Permissions(), InternetConnectivityListener {
     private fun initNetworkCallbacks() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             if (connectivityManager == null && networkCallback == null) {
-                connectivityManager =
-                    getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+                connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
                 networkCallback = object : ConnectivityManager.NetworkCallback() {
                     override fun onAvailable(network: Network) {
-                        if (!isProVersion() && crossPromoViewModel.crossPromoAds.value?.data == null) {
-                            crossPromoViewModel.getCrossPromoAds(packageName)
-                        }
                         loadBannerAd()
-
                         runOnUiThread {
                             isNetworkAvailable = true
                             ConstantsCommon.updateInternetStatusFeature.postValue(true)
@@ -637,10 +630,6 @@ class MainActivity : Permissions(), InternetConnectivityListener {
         ConstantsCommon.updateInternetStatusFrames.postValue(isConnected)
         if (isConnected) {
             loadBannerAd()
-            if (!isProVersion() && crossPromoViewModel.crossPromoAds.value?.data == null) {
-                crossPromoViewModel.getCrossPromoAds(packageName)
-            }
-
         } else {
             Log.i("TAG", "onConnectivityChanged: initDataOffline")
         }

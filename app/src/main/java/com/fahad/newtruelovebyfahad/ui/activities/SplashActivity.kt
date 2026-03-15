@@ -29,13 +29,7 @@ import com.example.ads.Constants.interstitialHomeStartCount
 import com.example.ads.Constants.interstitialNew
 import com.example.ads.Constants.introScreen
 import com.example.ads.Constants.languageCode
-import com.example.ads.Constants.lfoOneNativeId
-import com.example.ads.Constants.lfoTwoNativeId
-import com.example.ads.Constants.loadBannerOnBoardFour
 import com.example.ads.Constants.loadBannerOnBoardMedium
-import com.example.ads.Constants.loadBannerOnBoardOne
-import com.example.ads.Constants.loadBannerOnBoardThree
-import com.example.ads.Constants.loadBannerOnBoardTwo
 import com.example.ads.Constants.loadBannerSplash
 import com.example.ads.Constants.loadInterstitialSave
 import com.example.ads.Constants.loadInterstitialSplash
@@ -52,9 +46,6 @@ import com.example.ads.Constants.loadNativeOnResume
 import com.example.ads.Constants.loadSplashAppOpen
 import com.example.ads.Constants.nativeReasonUninstall
 import com.example.ads.Constants.newAdsConfig
-import com.example.ads.Constants.onBoardingOneNativeId
-import com.example.ads.Constants.onBoardingThreeNativeId
-import com.example.ads.Constants.onBoardingTwoNativeId
 import com.example.ads.Constants.openTutorial
 import com.example.ads.Constants.popupEventValentine
 import com.example.ads.Constants.proCounter
@@ -63,7 +54,6 @@ import com.example.ads.Constants.questionScreenEnable
 import com.example.ads.Constants.showAllAppOpenAd
 import com.example.ads.Constants.showBlendGuideScreen
 import com.example.ads.Constants.splashBannerReloadLimit
-import com.example.ads.Constants.splashInterAdId
 import com.example.ads.Constants.splashTime
 import com.example.ads.Constants.splashTimeOut
 import com.example.ads.Constants.tutorialScr
@@ -88,7 +78,6 @@ import com.example.ads.utils.nativeLanguageTwo
 import com.example.ads.utils.onBoardNativeOne
 import com.example.ads.utils.onBoardNativeThree
 import com.example.ads.utils.onBoardNativeTwo
-import com.example.ads.utils.question
 import com.example.analytics.Constants.firebaseAnalytics
 import com.example.analytics.Events
 import com.example.apponboarding.ui.main.viewModels.LanguageViewModel
@@ -259,7 +248,6 @@ class SplashActivity : AppCompatActivity() {
 
                                                 withContext(Main) {
                                                     if (showQuestionScreenTimeCheck) {
-                                                        preLoadNative(question())
                                                     }
                                                 }
                                             }
@@ -581,10 +569,6 @@ class SplashActivity : AppCompatActivity() {
 
     private fun remoteConfig(adConfigModel: com.project.common.remote_config.AdConfigModel) {
         kotlin.runCatching {
-            loadBannerOnBoardOne = false
-            loadBannerOnBoardTwo = false
-            loadBannerOnBoardThree = false
-            loadBannerOnBoardFour = false
             loadBannerOnBoardMedium = false
             proSplashOrHome = adConfigModel.splashScreen?.splashProHome ?: false
             allBannerReloadLimit = (newAdsConfig?.appBanner?.reloadLimit ?: 2L).toLong()
@@ -611,19 +595,6 @@ class SplashActivity : AppCompatActivity() {
             loadNativeObThree = adConfigModel.onboarding3Native?.isEnabled ?: true
             loadNativeObFour = false
             showAllAppOpenAd = adConfigModel.appOpenResume?.isEnabled ?: true
-            onBoardingOneNativeId = adConfigModel.onboarding1Native?.adUnitIds?.getOrNull(0) ?: "ca-app-pub-4276074242154795/6026210694"
-            onBoardingTwoNativeId = adConfigModel.onboarding2Native?.adUnitIds?.getOrNull(0)
-                ?: "ca-app-pub-4276074242154795/8852923006"
-            onBoardingThreeNativeId = adConfigModel.onboarding3Native?.adUnitIds?.getOrNull(0)
-                ?: "ca-app-pub-4276074242154795/1799627163"
-            lfoOneNativeId =
-                adConfigModel.languageScreen?.nativeBeforeSelection?.adUnitIds?.getOrNull(0)
-                    ?: "ca-app-pub-4276074242154795/2355269438"
-            lfoTwoNativeId =
-                adConfigModel.languageScreen?.nativeAfterSelection?.adUnitIds?.getOrNull(0)
-                    ?: "ca-app-pub-4276074242154795/8729106095"
-            splashInterAdId = adConfigModel.splashScreen?.interstitial?.adUnitIds?.getOrNull(0)
-                ?: "ca-app-pub-4276074242154795/7571205893"
             loadNativeOnResume = true
             homeNewInterStrategy = true
             flowUninstall = false
@@ -645,7 +616,6 @@ class SplashActivity : AppCompatActivity() {
 
 
             Log.i("TAG", "//remoteConfig: completed")
-            //onCompletion.invoke()
         }
     }
 

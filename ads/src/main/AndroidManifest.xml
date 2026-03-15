@@ -14,12 +14,5 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/app_id" />
 
-        <activity
-            android:name=".crosspromo.scripts.CrossPromoInterstitialAdsActivity"
-            android:configChanges="uiMode"
-            android:exported="true"
-            android:resizeableActivity="false"
-            android:screenOrientation="nosensor" />
-
     </application>
 </manifest>

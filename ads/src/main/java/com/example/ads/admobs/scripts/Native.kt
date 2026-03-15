@@ -353,7 +353,7 @@ class Native {
         try {
             val adLoader = AdLoader.Builder(
                 activity,
-                activity.applicationContext.getString(R.string.native_language_back_up)
+                activity.applicationContext.getString(R.string.native_language_low)
             ).forNativeAd { ad: NativeAd ->
                 nativeAd = ad
                 loadedAction.invoke(nativeAd)

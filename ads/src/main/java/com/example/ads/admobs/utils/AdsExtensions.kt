@@ -1,8 +1,6 @@
 package com.example.ads.admobs.utils
 
 import android.app.Activity
-import android.content.Context
-import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +10,6 @@ import android.widget.Toast
 import androidx.annotation.Keep
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.ads.Constants
@@ -20,26 +17,18 @@ import com.example.ads.Constants.ADS_SDK_INITIALIZE
 import com.example.ads.Constants.OTHER_AD_ON_DISPLAY
 import com.example.ads.Constants.appIsForeground
 import com.example.ads.Constants.appOpen
-import com.example.ads.Constants.appOpenBlendGuide
 import com.example.ads.Constants.appOpenSplash
 import com.example.ads.Constants.banner
-import com.example.ads.Constants.bannerBlendBoarding
 import com.example.ads.Constants.bannerSplash
-import com.example.ads.Constants.bannerSurvey
 import com.example.ads.Constants.bigoPopUpOnClick
 import com.example.ads.Constants.failureMsg
-import com.example.ads.Constants.firebaseAnalytics
 import com.example.ads.Constants.interstitial
 import com.example.ads.Constants.interstitialOnClick
-import com.example.ads.Constants.largeBanner
-import com.example.ads.Constants.loadBannerOnBoardMedium
 import com.example.ads.Constants.loadInterstitialSave
 import com.example.ads.Constants.mNewInterstitial
 import com.example.ads.Constants.native
 import com.example.ads.Constants.needToLoadAppOpen
 import com.example.ads.Constants.newAdsConfig
-import com.example.ads.Constants.openTutorial
-import com.example.ads.Constants.remoteRevenue
 import com.example.ads.Constants.rewarded
 import com.example.ads.Constants.rewardedInterstitial
 import com.example.ads.Constants.rewardedShown
@@ -49,106 +38,15 @@ import com.example.ads.R
 import com.example.ads.admobs.scripts.AppOpen
 import com.example.ads.crosspromo.helper.hide
 import com.example.ads.crosspromo.helper.isNetworkAvailable
-import com.example.ads.crosspromo.helper.openUrl
 import com.example.ads.crosspromo.helper.show
 import com.example.ads.model.AdConfigModel
 import com.example.ads.utils.allBanner
 import com.example.inapp.helpers.Constants.isProVersion
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.project.common.utils.ConstantsCommon.showInterstitialAd
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.lang.ref.WeakReference
-
-//fun Activity?.loadAppOpen() {
-//    this?.let {
-//        if (isNetworkAvailable() && !isProVersion() && Constants.appIsForeground && showAllAppOpenAd) {
-//            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS && needToLoadAppOpen) appOpen.loadAd(
-//                this.applicationContext
-//            )
-//            else MobileAds().initialize(this.applicationContext) { ADS_SDK_INITIALIZE.set(true) }
-//        }
-//    }
-//}
-
-fun logTaichiTroasFirebaseAdRevenueEvent(taichiTroasCache: Float) {
-    kotlin.runCatching {
-
-        val bundle = Bundle().apply {
-            putDouble(
-                FirebaseAnalytics.Param.VALUE,
-                taichiTroasCache.toDouble()
-            ) // (Required) tROAS event must include Double Value
-            putString(
-                FirebaseAnalytics.Param.CURRENCY,
-                "USD"
-            ) // (Required) tROAS must include Currency
-        }
-        firebaseAnalytics?.logEvent("Total_Ads_Revenue_01", bundle)
-        Log.i("logger_revenue", "onAdLoaded: Total_Ads_Revenue_01, $bundle")
-    }
-}
-
-fun logRevenue(price: Double, context: Context) {
-
-    CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val currentImpressionRevenue = price
-            val sharedPref = context.getSharedPreferences("ads_shared", Context.MODE_PRIVATE)
-            val editor = sharedPref.edit()
-
-            val previousTaichiTroasCache = sharedPref.getFloat("TaichiTroasCache", 0f)
-            val currentTaichiTroasCache = previousTaichiTroasCache + currentImpressionRevenue.toFloat()
-
-            Log.d("TAG", "logTaichiTroasFirebaseAdRevenueEvent:$remoteRevenue")
-
-            if (currentTaichiTroasCache >= remoteRevenue) {
-                withContext(Main) {
-                    logTaichiTroasFirebaseAdRevenueEvent(currentTaichiTroasCache)
-                }
-                editor.putFloat("TaichiTroasCache", 0f)
-            } else {
-                editor.putFloat("TaichiTroasCache", currentTaichiTroasCache)
-            }
-
-            editor.apply() // Non-blocking
-        } catch (e: Exception) {
-            Log.e("logger_revenue", "Error while processing ad revenue", e)
-        }
-    }
-}
-
-/*fun Activity?.loadAppOpen() {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion() && Constants.appIsForeground && showAllAppOpenAd) {
-            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS && needToLoadAppOpen)
-                appOpen.loadAd(
-                    this.applicationContext
-                )
-            else MobileAds().initialize(this.applicationContext) { ADS_SDK_INITIALIZE.set(true) }
-        }
-    }
-}*/
-
-//fun Activity?.loadAppOpenSplash() {
-//    this?.let {
-//        if (isNetworkAvailable() && !isProVersion() && Constants.appIsForeground && showAllAppOpenAd && Constants.loadSplashAppOpen) {
-//            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS && needToLoadAppOpen)
-//                appOpenSplash.loadAd(
-//                    this.applicationContext, true
-//                )
-//            else MobileAds().initialize(this.applicationContext) { ADS_SDK_INITIALIZE.set(true) }
-//        }
-//    }
-//}
-
 
 fun Activity?.loadAppOpen() {
 
@@ -158,8 +56,8 @@ fun Activity?.loadAppOpen() {
             onAdLoaded = {},
             onAdFailed = {},
             adUnits = listOfNotNull(
-                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.resume_app_open_high),
-                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.resume_app_open_medium),
+                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.resume_app_open_low),
+                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.resume_app_open_low),
                 it.adUnitIds?.getOrNull(2) ?: ContextCompat.getString(this ?: return, R.string.resume_app_open_low)
             )
         )
@@ -176,8 +74,8 @@ fun Activity?.loadAppOpenSplash(
             onAdLoaded = {},
             onAdFailed = {},
             adUnits = listOfNotNull(
-                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.splash_app_open_high),
-                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.splash_app_open_medium),
+                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.splash_app_open_low),
+                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.splash_app_open_low),
                 it.adUnitIds?.getOrNull(2) ?: ContextCompat.getString(this ?: return, R.string.splash_app_open_low)
             )
         )
@@ -189,7 +87,7 @@ fun Activity?.loadAppOpenSequentially(
     isFromSplash: Boolean = false,
     onAdLoaded: () -> Unit,
     onAdFailed: () -> Unit,
-    adUnits: List<String> = listOfNotNull(this?.getString(R.string.app_open)),
+    adUnits: List<String> = listOfNotNull(this?.getString(R.string.splash_app_open_low)),
 ) {
     if (isProVersion() || adUnits.isEmpty()) {
         onAdFailed.invoke()
@@ -278,54 +176,6 @@ fun Activity?.showAppOpenSplash(onCompleteAction: () -> Unit) {
     }
 }
 
-//fun Activity?.loadAppOpenBlendGuide() {
-//    this?.let {
-//        if (isNetworkAvailable() && !isProVersion() && Constants.appIsForeground && showAllAppOpenAd) {
-//            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS && needToLoadAppOpen)
-//                appOpenBlendGuide.loadAd(
-//                    this.applicationContext, isFromSplash = false, forBlendGuide = true
-//                )
-//            else MobileAds().initialize(this.applicationContext) { ADS_SDK_INITIALIZE.set(true) }
-//        }
-//    }
-//}
-
-fun Activity?.showAppOpenBlendGuide(onCompleteAction: () -> Unit, showLoading: () -> Unit) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion() && !OTHER_AD_ON_DISPLAY && Constants.appIsForeground && !Constants.actionGallery && showAllAppOpenAd && openTutorial) {
-            showLoading.invoke()
-            appOpenBlendGuide.showAdIfAvailable(
-                this,
-                object : AppOpen.OnShowAdCompleteListener {
-                    override fun onShowAdComplete() {
-                        needToLoadAppOpen = true
-                        onCompleteAction.invoke()
-                    }
-
-                    override fun adDismiss() {
-                        Log.i("TAG", "adDismiss:  adDismiss ")
-                        resetCounter()
-                        showInterstitialAd = false
-                        needToLoadAppOpen = true
-                        onCompleteAction.invoke()
-                    }
-
-                    override fun onAdFailed() {
-                        showInterstitialAd = true
-                        needToLoadAppOpen = true
-                        onCompleteAction.invoke()
-                    }
-                }
-            )
-        } else {
-            Constants.actionGallery = false
-            onCompleteAction.invoke()
-        }
-    } ?: run {
-        onCompleteAction.invoke()
-    }
-}
-
 fun Activity?.showAppOpen(onCompleteAction: () -> Unit) {
     this?.let {
         if (isNetworkAvailable() && !isProVersion() && !OTHER_AD_ON_DISPLAY && Constants.appIsForeground && !Constants.actionGallery && showAllAppOpenAd) {
@@ -359,10 +209,6 @@ fun Activity?.showAppOpen(onCompleteAction: () -> Unit) {
     } ?: run {
         onCompleteAction.invoke()
     }
-}
-
-fun onPauseLargeBanner() {
-    if (!isProVersion()) largeBanner.onPause()
 }
 
 fun Activity?.onResumeBanner(
@@ -413,136 +259,6 @@ fun onPauseBanner() {
     if (!isProVersion()) banner.onPause()
 }
 
-fun Activity?.showBlendBoardingAdaptiveBanner(
-    container: ConstraintLayout,
-    crossBanner: ImageView?,
-    frameLayout: FrameLayout,
-    shimmerFrameLayout: ShimmerFrameLayout,
-    loadNewAd: Boolean = false,
-) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion()) {
-            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS) bannerBlendBoarding.showAdaptiveBannerAd(
-                this,
-                container,
-                crossBanner,
-                frameLayout,
-                shimmerFrameLayout,
-                loadNewAd = loadNewAd
-            )
-            else {
-                try {
-                    MobileAds().initialize(application) { ADS_SDK_INITIALIZE.set(true) }
-                } catch (_: Exception) {
-                    Log.e("TAG", "showSplashAdaptiveBanner: ex")
-                }
-                frameLayout.hide()
-                shimmerFrameLayout.hide()
-            }
-        } else {
-            container.hide()
-            frameLayout.hide()
-            shimmerFrameLayout.hide()
-        }
-    } ?: run {
-        container.hide()
-        frameLayout.hide()
-        shimmerFrameLayout.hide()
-    }
-}
-
-fun Activity?.onResumeBlendBoardingBanner(
-    container: ConstraintLayout,
-    crossBanner: ImageView?,
-    frameLayout: FrameLayout,
-    shimmerFrameLayout: ShimmerFrameLayout,
-    loadNewAd: Boolean = false,
-) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion()) {
-            bannerBlendBoarding.onResume()
-            showBlendBoardingAdaptiveBanner(
-                container,
-                crossBanner,
-                frameLayout,
-                shimmerFrameLayout,
-                loadNewAd
-            )
-        } else {
-            container.hide()
-            frameLayout.hide()
-            shimmerFrameLayout.hide()
-        }
-    }
-}
-
-fun onPauseBlendBoardingBanner() {
-    if (!isProVersion()) bannerBlendBoarding.onPause()
-}
-
-fun Activity?.showSurveyMediumBanner(
-    container: ConstraintLayout,
-    crossBanner: ImageView?,
-    frameLayout: FrameLayout,
-    shimmerFrameLayout: ShimmerFrameLayout
-) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion()) {
-            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS) bannerSurvey.showAdaptiveBannerAd(
-                this,
-                container,
-                crossBanner,
-                frameLayout,
-                shimmerFrameLayout
-            )
-            else {
-                try {
-                    MobileAds().initialize(application) { ADS_SDK_INITIALIZE.set(true) }
-                } catch (_: Exception) {
-                    Log.e("TAG", "showSplashAdaptiveBanner: ex")
-                }
-                frameLayout.hide()
-                shimmerFrameLayout.hide()
-            }
-        } else {
-            container.hide()
-            frameLayout.hide()
-            shimmerFrameLayout.hide()
-        }
-    } ?: run {
-        container.hide()
-        frameLayout.hide()
-        shimmerFrameLayout.hide()
-    }
-}
-
-fun Activity?.onResumeSurveyBanner(
-    container: ConstraintLayout,
-    crossBanner: ImageView?,
-    frameLayout: FrameLayout,
-    shimmerFrameLayout: ShimmerFrameLayout,
-) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion()) {
-            bannerSurvey.onResume()
-            showSurveyMediumBanner(
-                container,
-                crossBanner,
-                frameLayout,
-                shimmerFrameLayout
-            )
-        } else {
-            container.hide()
-            frameLayout.hide()
-            shimmerFrameLayout.hide()
-        }
-    }
-}
-
-fun onPauseSurveyBanner() {
-    if (!isProVersion()) bannerSurvey.onPause()
-}
-
 fun Activity?.showAdaptiveBanner(
     container: ConstraintLayout,
     crossBanner: ImageView?,
@@ -583,154 +299,6 @@ fun Activity?.showAdaptiveBanner(
         frameLayout.hide()
         shimmerFrameLayout.hide()
     }
-}
-
-fun Activity?.loadOnBoardingBanner(
-    position: Int?
-) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion() && position != null) {
-            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS) {
-                val bannerClassObj = when (position) {
-                    0 -> {
-                        Constants.onBoardingBannerOne
-                    }
-
-                    1 -> {
-                        Constants.onBoardingBannerTwo
-                    }
-
-                    else -> {
-                        Constants.onBoardingBannerThree
-                    }
-                }
-                bannerClassObj.obIndex = position
-                bannerClassObj.mAdSize =
-                    if (loadBannerOnBoardMedium) AdSize.MEDIUM_RECTANGLE else AdSize.BANNER
-                bannerClassObj.preLoadBanner(this)
-            }
-        }
-    }
-}
-
-fun Activity?.showOnBoardingBanner(
-    container: ConstraintLayout,
-    crossBanner: ImageView?,
-    frameLayout: FrameLayout,
-    shimmerFrameLayout: ShimmerFrameLayout,
-    position: Int
-) {
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion()) {
-            if (ADS_SDK_INITIALIZE.get() && Constants.CAN_LOAD_ADS) {
-                val bannerClassObj = when (position) {
-                    0 -> {
-                        Constants.onBoardingBannerOne
-                    }
-
-                    1 -> {
-                        Constants.onBoardingBannerTwo
-                    }
-
-                    else -> {
-                        Constants.onBoardingBannerThree
-                    }
-                }
-                bannerClassObj.showAdaptiveBannerAd(
-                    it,
-                    container,
-                    crossBanner,
-                    frameLayout,
-                    shimmerFrameLayout
-                )
-            } else {
-                try {
-                    MobileAds().initialize(application) { ADS_SDK_INITIALIZE.set(true) }
-                } catch (_: Exception) {
-                }
-                frameLayout.hide()
-                shimmerFrameLayout.hide()
-            }
-        } else {
-            container.hide()
-            frameLayout.hide()
-            shimmerFrameLayout.hide()
-        }
-    } ?: run {
-        container.hide()
-        frameLayout.hide()
-        shimmerFrameLayout.hide()
-    }
-}
-
-fun Activity?.onResumeOnBoardingBanner(
-    container: ConstraintLayout,
-    crossBanner: ImageView?,
-    frameLayout: FrameLayout,
-    shimmerFrameLayout: ShimmerFrameLayout,
-    position: Int
-) {
-    kotlin.runCatching {
-        crossBanner?.let {
-            if (!crossBanner.hasOnClickListeners()) {
-                crossBanner.setOnClickListener {
-                    this?.openUrl("https://play.google.com/store/apps/details?id=com.xenstudio.garden.photoframe".toUri())
-                }
-            }
-        }
-    }
-    this?.let {
-        if (isNetworkAvailable() && !isProVersion()) {
-
-            val bannerClassObj = when (position) {
-                0 -> {
-                    Constants.onBoardingBannerOne
-                }
-
-                1 -> {
-                    Constants.onBoardingBannerTwo
-                }
-
-                else -> {
-                    Constants.onBoardingBannerThree
-                }
-            }
-            bannerClassObj.onResume()
-
-            showOnBoardingBanner(
-                container,
-                crossBanner,
-                frameLayout,
-                shimmerFrameLayout,
-                position
-            )
-        } else {
-            container.hide()
-            frameLayout.hide()
-            shimmerFrameLayout.hide()
-        }
-    }
-}
-
-fun onPauseONBoardingBanner(position: Int) {
-    val bannerClassObj = when (position) {
-        0 -> {
-            Constants.onBoardingBannerOne
-        }
-
-        1 -> {
-            Constants.onBoardingBannerTwo
-        }
-
-        2 -> {
-            Constants.onBoardingBannerThree
-        }
-
-        else -> {
-            Constants.onBoardingBannerFour
-        }
-    }
-    if (!isProVersion()) bannerClassObj.onPause()
 }
 
 fun Activity?.loadAndShowNativeOnBoarding(
@@ -787,81 +355,14 @@ fun Fragment?.loadAndShowOnBoardingAds(
                 runCatching {
                     it.activity?.let { activity ->
                         obj.apply {
-                            if (isBanner) {
-                                parentContainer.get()?.show()
-                                nativeContainer.get()?.visibility = View.INVISIBLE
-                                bannerContainer.get()?.show()
+                            parentContainer.get()?.show()
+                            nativeContainer.get()?.show()
+                            if (shimmerNativeFrameLayout.get()?.isVisible == true) shimmerNativeFrameLayout.get()
+                                ?.startShimmer()
 
-                                bannerContainer.get()?.let { bannerContainer ->
-                                    crossPromoImgView.get().let { crossPromoImgView ->
-                                        bannerAdContainer.get()?.let { bannerAdContainer ->
-                                            shimmerBannerFrameLayout.get()
-                                                ?.let { shimmerBannerFrameLayout ->
-                                                    val bannerClassObj = when (position) {
-                                                        0 -> {
-                                                            Constants.onBoardingBannerOne
-                                                        }
-
-                                                        1 -> {
-                                                            Constants.onBoardingBannerTwo
-                                                        }
-
-                                                        else -> {
-                                                            Constants.onBoardingBannerThree
-                                                        }
-                                                    }
-                                                    bannerClassObj.obIndex = position
-                                                    bannerClassObj.mAdSize = if (isMedium) AdSize.MEDIUM_RECTANGLE else AdSize.BANNER
-                                                    activity.onResumeOnBoardingBanner(
-                                                        container = bannerContainer,
-                                                        crossBanner = crossPromoImgView,
-                                                        frameLayout = bannerAdContainer,
-                                                        shimmerFrameLayout = shimmerBannerFrameLayout,
-                                                        position = position
-                                                    )
-                                                }
-                                        }
-                                    }
-                                }
-                            } else {
-                                parentContainer.get()?.show()
-                                nativeContainer.get()?.show()
-                                if (shimmerNativeFrameLayout.get()?.isVisible == true) shimmerNativeFrameLayout.get()
-                                    ?.startShimmer()
-
-                                activity.loadAndShowNativeOnBoarding(
-                                    loadedAction = { loadedValue ->
-                                        kotlin.runCatching {
-                                            if (isVisible && !isDetached) {
-
-                                                nativeContainer.get()?.let { nativeContainer ->
-                                                    nativeAdContainer.get()
-                                                        ?.let { nativeAdContainer ->
-                                                            shimmerNativeFrameLayout.get()
-                                                                ?.let { shimmerNativeFrameLayout ->
-                                                                    nativeContainer.show()
-                                                                    nativeAdContainer.show()
-                                                                    shimmerNativeFrameLayout.visibility =
-                                                                        View.INVISIBLE
-                                                                    nativeAdContainer.removeAllViews()
-                                                                    if (loadedValue?.parent != null) {
-                                                                        (loadedValue.parent as ViewGroup).removeView(
-                                                                            loadedValue
-                                                                        )
-                                                                    }
-                                                                    if (isVisible && !isDetached) {
-                                                                        nativeAdContainer.addView(
-                                                                            loadedValue
-                                                                        )
-                                                                    }
-                                                                }
-                                                        }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    failedAction = {
-
+                            activity.loadAndShowNativeOnBoarding(
+                                loadedAction = { loadedValue ->
+                                    kotlin.runCatching {
                                         if (isVisible && !isDetached) {
 
                                             nativeContainer.get()?.let { nativeContainer ->
@@ -869,18 +370,47 @@ fun Fragment?.loadAndShowOnBoardingAds(
                                                     ?.let { nativeAdContainer ->
                                                         shimmerNativeFrameLayout.get()
                                                             ?.let { shimmerNativeFrameLayout ->
-                                                                shimmerNativeFrameLayout.show()
-                                                                nativeAdContainer.hide()
-                                                                nativeContainer.visibility = View.INVISIBLE
+                                                                nativeContainer.show()
+                                                                nativeAdContainer.show()
+                                                                shimmerNativeFrameLayout.visibility =
+                                                                    View.INVISIBLE
+                                                                nativeAdContainer.removeAllViews()
+                                                                if (loadedValue?.parent != null) {
+                                                                    (loadedValue.parent as ViewGroup).removeView(
+                                                                        loadedValue
+                                                                    )
+                                                                }
+                                                                if (isVisible && !isDetached) {
+                                                                    nativeAdContainer.addView(
+                                                                        loadedValue
+                                                                    )
+                                                                }
                                                             }
                                                     }
                                             }
                                         }
-                                    },
-                                    config = nativeAdConfigCurrent,
-                                    nextConfig = nativeAdConfigNext
-                                )
-                            }
+                                    }
+                                },
+                                failedAction = {
+
+                                    if (isVisible && !isDetached) {
+
+                                        nativeContainer.get()?.let { nativeContainer ->
+                                            nativeAdContainer.get()
+                                                ?.let { nativeAdContainer ->
+                                                    shimmerNativeFrameLayout.get()
+                                                        ?.let { shimmerNativeFrameLayout ->
+                                                            shimmerNativeFrameLayout.show()
+                                                            nativeAdContainer.hide()
+                                                            nativeContainer.visibility = View.INVISIBLE
+                                                        }
+                                                }
+                                        }
+                                    }
+                                },
+                                config = nativeAdConfigCurrent,
+                                nextConfig = nativeAdConfigNext
+                            )
                         }
                     }
                 }
@@ -1265,9 +795,9 @@ fun Activity?.loadRewardedSave(
             onAdLoaded = { loadedAction() },
             onAdFailed = { failedAction() },
             adUnits = listOfNotNull(
-                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.reward_frames_high),
-                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.reward_medium),
-                it.adUnitIds?.getOrNull(2) ?: ContextCompat.getString(this ?: return, R.string.reward_low)
+                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.rewarded_low),
+                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.rewarded_low),
+                it.adUnitIds?.getOrNull(2) ?: ContextCompat.getString(this ?: return, R.string.rewarded_low)
             )
         )
     } ?: run {
@@ -1290,7 +820,7 @@ fun Activity?.loadRewardedSave(
 fun Activity?.loadRewardAdSequentiallySave(
     onAdLoaded: () -> Unit,
     onAdFailed: () -> Unit,
-    adUnits: List<String> = listOfNotNull(this?.getString(R.string.reward_low)),
+    adUnits: List<String> = listOfNotNull(this?.getString(R.string.rewarded_low)),
 ) {
     if (isProVersion() || adUnits.isEmpty()) {
         onAdFailed.invoke()
@@ -1346,9 +876,9 @@ fun Activity?.loadRewarded(
             onAdLoaded = { loadedAction() },
             onAdFailed = { failedAction() },
             adUnits = listOfNotNull(
-                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.reward_frames_high),
-                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.reward_frames_medium),
-                it.adUnitIds?.getOrNull(2) ?: ContextCompat.getString(this ?: return, R.string.reward_frames_low)
+                it.adUnitIds?.getOrNull(0) ?: ContextCompat.getString(this ?: return, R.string.rewarded_low),
+                it.adUnitIds?.getOrNull(1) ?: ContextCompat.getString(this ?: return, R.string.rewarded_low),
+                it.adUnitIds?.getOrNull(2) ?: ContextCompat.getString(this ?: return, R.string.rewarded_low)
             )
         )
     } ?: run {
@@ -1371,7 +901,7 @@ fun Activity?.loadRewarded(
 fun Activity?.loadRewardAdSequentially(
     onAdLoaded: () -> Unit,
     onAdFailed: () -> Unit,
-    adUnits: List<String> = listOfNotNull(this?.getString(R.string.reward_low)),
+    adUnits: List<String> = listOfNotNull(this?.getString(R.string.rewarded_low)),
 ) {
     if (isProVersion() || adUnits.isEmpty()) {
         onAdFailed.invoke()

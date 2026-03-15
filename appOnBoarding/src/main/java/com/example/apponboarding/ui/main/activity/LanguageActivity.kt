@@ -11,10 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.ads.Constants
 import com.example.ads.Constants.firebaseAnalytics
 import com.example.ads.Constants.languageCode
-import com.example.ads.Constants.loadBannerOnBoardOne
 import com.example.ads.Constants.loadNativeFullOne
 import com.example.ads.Constants.loadNativeFullTwo
 import com.example.ads.Constants.loadNativeLfTwo
@@ -57,20 +55,6 @@ class LanguageActivity : AppCompatActivity() {
     private var beforeCallFromLfOne = true
 
     private lateinit var languageAdapter: LanguageAdapter
-
-    private fun getObBannerPosition(): Int? {
-        return if (loadBannerOnBoardOne) {
-            0
-        } else if (Constants.loadBannerOnBoardTwo) {
-            1
-        } else if (Constants.loadBannerOnBoardThree) {
-            2
-        } else if (Constants.loadBannerOnBoardFour) {
-            3
-        } else {
-            null
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

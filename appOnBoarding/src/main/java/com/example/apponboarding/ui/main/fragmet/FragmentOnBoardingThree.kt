@@ -9,12 +9,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.ads.Constants
-import com.example.ads.Constants.loadBannerOnBoardThree
 import com.example.ads.Constants.loadNativeObFour
 import com.example.ads.admobs.utils.OnBoardingAds
 import com.example.ads.admobs.utils.loadAndShowOnBoardingAds
 import com.example.ads.admobs.utils.loadNewInterstitialWithoutStrategyCheck
-import com.example.ads.admobs.utils.onPauseONBoardingBanner
 import com.example.ads.dialogs.hide
 import com.example.ads.dialogs.show
 import com.example.ads.model.AdConfigModel
@@ -85,7 +83,7 @@ class FragmentOnBoardingThree : Fragment() {
                         WeakReference(if (Constants.loadBannerOnBoardMedium) binding.bannerLayout.shimmerViewContainer else binding.bannerLayoutAdaptive.shimmerViewContainer),
                         WeakReference(binding.crossBannerIv),
                         position = 2,
-                        isBanner = loadBannerOnBoardThree,
+                        isBanner = false,
                         isMedium = Constants.loadBannerOnBoardMedium
                     ),
                     activity?.onBoardNativeThree(), null
@@ -95,17 +93,8 @@ class FragmentOnBoardingThree : Fragment() {
     }
 
     private fun getNextConfig(): AdConfigModel? {
-
         return if (loadNativeObFour) {
             activity?.onBoardNativeFour()
-        } else {
-            null
-        }
-    }
-
-    private fun getObBannerPosition(): Int? {
-        return if (Constants.loadBannerOnBoardThree) {
-            2
         } else {
             null
         }
@@ -118,11 +107,6 @@ class FragmentOnBoardingThree : Fragment() {
         _binding = FragmentOnBoardingThreeBinding.inflate(inflater, container, false)
         _binding?.initViews()
         return binding.root
-    }
-
-    override fun onPause() {
-        super.onPause()
-        onPauseONBoardingBanner(2)
     }
 
     private fun FragmentOnBoardingThreeBinding.initViews() {

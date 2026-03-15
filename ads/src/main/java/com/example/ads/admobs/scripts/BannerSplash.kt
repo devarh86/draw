@@ -41,17 +41,17 @@ class BannerSplash {
             adUnitId = when {
                 !bnrLoadingFailed && splashBannerReloadLimit >= 2 -> {
                     Log.i("BannerSplash", "loadAdaptiveBanner: config.idHigh")
-                    adConfig?.idHigh ?: activity.getString(R.string.banner_splash_high)
+                    adConfig?.idHigh ?: activity.getString(R.string.splash_banner_low)
                 }
 
                 (bnrLoadingFailed && splashBannerReloadLimit == 2 && bannerFailed == 1) || (splashBannerReloadLimit == 1 && !bnrLoadingFailed) -> {
                     Log.i("BannerSplash", "loadAdaptiveBanner: config.idMedium")
-                    adConfig?.idMedium ?: activity.getString(R.string.banner_splash_medium)
+                    adConfig?.idMedium ?: activity.getString(R.string.splash_banner_low)
                 }
 
                 else -> {
                     Log.i("BannerSplash", "loadAdaptiveBanner: config.idBackUp")
-                    adConfig?.idBackUp ?: activity.getString(R.string.banner_splash_all)
+                    adConfig?.idBackUp ?: activity.getString(R.string.splash_banner_low)
                 }
             }
 

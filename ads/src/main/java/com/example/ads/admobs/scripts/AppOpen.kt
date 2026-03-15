@@ -43,7 +43,7 @@ class AppOpen {
         val request = AdRequest.Builder().build()
         if (appIsForeground) {
             AppOpenAd.load(
-                context, adUnitId ?: context.getString(com.example.ads.R.string.app_open), request,
+                context, adUnitId ?: context.getString(com.example.ads.R.string.resume_app_open_low), request,
                 object : AppOpenAd.AppOpenAdLoadCallback() {
 
                     override fun onAdLoaded(ad: AppOpenAd) {

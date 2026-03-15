@@ -54,12 +54,12 @@ class Banner {
             adUnitId = when {
                 !bnrLoadingFailed && allBannerReloadLimit.toInt() >= 2 -> {
                     Log.i("BannerSplash", "loadAdaptiveBanner: config.idHigh")
-                    adConfig?.idHigh ?: activity.getString(R.string.banner_overall_highs)
+                    adConfig?.idHigh ?: activity.getString(R.string.banner_overall_low)
                 }
 
                 (bnrLoadingFailed && allBannerReloadLimit.toInt() == 2 && bannerFailed == 1) || (allBannerReloadLimit.toInt() == 1 && !bnrLoadingFailed) -> {
                     Log.i("BannerSplash", "loadAdaptiveBanner: config.idMedium")
-                    adConfig?.idMedium ?: activity.getString(R.string.banner_overall_med)
+                    adConfig?.idMedium ?: activity.getString(R.string.banner_overall_low)
                 }
 
                 else -> {

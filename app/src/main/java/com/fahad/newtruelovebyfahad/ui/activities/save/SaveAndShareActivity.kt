@@ -1,27 +1,21 @@
 package com.fahad.newtruelovebyfahad.ui.activities.save
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.ViewTreeObserver
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.core.view.marginTop
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.ads.Constants
 import com.example.ads.Constants.enablePopUpSave
@@ -41,7 +35,6 @@ import com.project.common.utils.eventForGalleryAndEditor
 import com.project.common.utils.hideNavigation
 import com.project.common.utils.setLocale
 import com.project.common.utils.setOnSingleClickListener
-import com.project.common.viewmodels.DataStoreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 
@@ -50,7 +43,6 @@ class SaveAndShareActivity : AppCompatActivity() {
 
     private var _binding: SaveCarousalBinding? = null
 
-    //  private var _binding: SaveUpdatedUiBinding? = null
     private val binding get() = _binding!!
     private var imagePath: String = ""
     private var imageList: MutableList<String> = mutableListOf()
@@ -61,13 +53,11 @@ class SaveAndShareActivity : AppCompatActivity() {
     private var startForResult: ActivityResultLauncher<Intent>? = null
     private var alreadyShownSaved = false
     private var eventScreenName = ""
-    private val dataStoreViewModel by viewModels<DataStoreViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         _binding = SaveCarousalBinding.inflate(layoutInflater)
-        // _binding = SaveUpdatedUiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         kotlin.runCatching {
@@ -120,32 +110,8 @@ class SaveAndShareActivity : AppCompatActivity() {
         }
         init()
         _binding?.initClick()
-        runCatching {
-            /*   if (!isProVersion() && saveSession != 2 && Constants.showProSave) {
-                   val intent = Intent()
-                   intent.putExtra("image_path", imagePath)
-                   intent.setClassName(
-                       applicationContext,
-                       "com.fahad.newtruelovebyfahad.ui.activities.pro.ProCarousal"
-                   )
-                   startForResult?.launch(intent)
-               } else {
-               }*/
-        }
         hideNavigation()
     }
-
-    private fun <T> LiveData<T>.observeOnce(owner: LifecycleOwner, observer: (T) -> Unit) {
-        observe(owner, object : Observer<T> {
-            override fun onChanged(value: T) {
-                removeObserver(this)
-                observer(value)
-            }
-        })
-    }
-
-    private var isPopUpShown = false
-
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
@@ -243,16 +209,6 @@ class SaveAndShareActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun isAppInstalled(context: Context, packageName: String): Boolean {
-        return try {
-            context.packageManager.getPackageInfo(packageName, 0)
-            true
-        } catch (e: Exception) {
-            false
-        }
-    }
-
     private fun SaveCarousalBinding.initClick() {
 
         home.setOnSingleClickListener {
@@ -307,42 +263,6 @@ class SaveAndShareActivity : AppCompatActivity() {
         }
     }
 
-    private fun Activity.shareImageToApp(uri: String, appPackage: String) {
-        runOnUiThread {
-            kotlin.runCatching {
-                val newUri = if (fromSaved) {
-                    uri.toUri()
-                } else {
-                    if (uri.isBlank()) {
-                        if (imageList.isNotEmpty()) {
-                            shareImagesToApp(imageList, appPackage, false)
-                        }
-                        return@runCatching
-                    }
-                    val authority = "${this@SaveAndShareActivity.packageName}.provider"
-                    FileProvider.getUriForFile(this@SaveAndShareActivity, authority, File(uri))
-                }
-                val shareIntent = Intent(Intent.ACTION_SEND).apply {
-                    type = "image/*"
-                    putExtra(Intent.EXTRA_STREAM, newUri)
-                    //   putExtra(Intent.EXTRA_STREAM, uri.toUri())
-                    putExtra(
-                        Intent.EXTRA_TEXT,
-                        "${getString(com.project.common.R.string.share_text)} https://play.google.com/store/apps/details?id=$packageName"
-                    )
-                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    setPackage(appPackage) // Set the specific app package
-                }
-                try {
-                    showAppOpen = false
-                    startActivity(shareIntent)
-                } catch (e: Exception) {
-                    Toast.makeText(this, "App not installed", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
-
     private fun Activity.shareImages(uris: List<String>, fromSaved: Boolean) {
         runOnUiThread {
             kotlin.runCatching {
@@ -373,48 +293,6 @@ class SaveAndShareActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun Activity.shareImagesToApp(
-        uris: List<String>,
-        appPackage: String,
-        fromSaved: Boolean,
-    ) {
-        runOnUiThread {
-            kotlin.runCatching {
-                val imageUris = uris.map { uriString ->
-                    if (fromSaved) {
-                        uriString.toUri()
-                    } else {
-                        val authority = "${packageName}.provider"
-                        FileProvider.getUriForFile(this, authority, File(uriString))
-                    }
-                }
-
-                if (imageUris.isEmpty()) {
-                    return@runCatching
-                }
-
-                val shareIntent = Intent(Intent.ACTION_SEND_MULTIPLE).apply {
-                    type = "image/*"
-                    putParcelableArrayListExtra(Intent.EXTRA_STREAM, ArrayList(imageUris))
-                    putExtra(
-                        Intent.EXTRA_TEXT,
-                        "${getString(com.project.common.R.string.share_text)} https://play.google.com/store/apps/details?id=$packageName"
-                    )
-                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    setPackage(appPackage) // Target specific app
-                }
-
-                try {
-                    showAppOpen = false
-                    startActivity(shareIntent)
-                } catch (e: Exception) {
-                    Toast.makeText(this, "App not installed", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
-
 
     override fun onDestroy() {
         super.onDestroy()

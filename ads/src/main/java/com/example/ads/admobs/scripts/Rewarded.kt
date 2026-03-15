@@ -27,7 +27,7 @@ class Rewarded {
             val adRequest = AdRequest.Builder().build()
             RewardedAd.load(
                 activity.applicationContext,
-                adUnitId ?: activity.getString(R.string.reward_low),
+                adUnitId ?: activity.getString(R.string.rewarded_low),
                 adRequest,
                 object : RewardedAdLoadCallback() {
                     override fun onAdFailedToLoad(adError: LoadAdError) {

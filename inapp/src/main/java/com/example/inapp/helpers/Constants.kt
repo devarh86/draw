@@ -12,10 +12,7 @@ object Constants {
 
     var isProVersion = MutableLiveData(false)
     fun isProVersion() = isProVersion.value ?: false
-    fun isProVersionGallery() = isProVersion.value ?: false
     var proScreenReady: Boolean = false
-    var SINGULAR_SECRET = "a628b434bcfc30722e78c79b697c3530"
-    var SINGULAR_API_KEY = "mobify_dd1a3006"
     var proNewEnable = true
     val SKU_LIST =
         listOf(

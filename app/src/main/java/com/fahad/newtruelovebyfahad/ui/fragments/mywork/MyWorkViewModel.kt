@@ -38,8 +38,7 @@ class MyWorkViewModel @Inject constructor() : ViewModel() {
             MediaStore.Images.Media._ID,
             MediaStore.Images.Media.DATA
         )
-       // val path = "${Environment.DIRECTORY_PICTURES}/${context.getString(com.project.common.R.string.folder_name)}"
-        val path = "${Environment.DIRECTORY_PICTURES}/Ar Drawing"
+        val path = "${Environment.DIRECTORY_PICTURES}/AR Drawing"
         val selection = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             MediaStore.Images.ImageColumns.RELATIVE_PATH + " like ? "
         } else {
@@ -50,8 +49,7 @@ class MyWorkViewModel @Inject constructor() : ViewModel() {
         } else {
             arrayOf(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                    .toString() + File.separator + "Ar Drawing" + "%"
-                   // .toString() + File.separator + context.getString(com.project.common.R.string.folder_name) + "%"
+                    .toString() + File.separator + "AR Drawing" + "%"
             )
         }
 
