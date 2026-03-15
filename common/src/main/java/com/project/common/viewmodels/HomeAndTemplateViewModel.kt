@@ -22,7 +22,22 @@ class HomeAndTemplateViewModel @Inject constructor() : ViewModel() {
             com.project.common.R.drawable.d_img_3,
             com.project.common.R.drawable.d_img_4,
             com.project.common.R.drawable.d_img_5,
-            com.project.common.R.drawable.d_img_6
+            com.project.common.R.drawable.d_img_6,
+            com.project.common.R.drawable.cute_1,
+            com.project.common.R.drawable.cute_2,
+            com.project.common.R.drawable.cute_3,
+            com.project.common.R.drawable.cartoon_1,
+            com.project.common.R.drawable.cartoon_2,
+            com.project.common.R.drawable.cartoon_3,
+            com.project.common.R.drawable.animal_1,
+            com.project.common.R.drawable.animal_2,
+            com.project.common.R.drawable.animal_3,
+            com.project.common.R.drawable.fantasy_1,
+            com.project.common.R.drawable.fantasy_2,
+            com.project.common.R.drawable.fantasy_3,
+            com.project.common.R.drawable.food_1,
+            com.project.common.R.drawable.food_2,
+            com.project.common.R.drawable.food_3,
         )
         _drawableImages.value = images
     }
